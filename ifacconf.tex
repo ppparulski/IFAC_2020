@@ -81,39 +81,11 @@ Robotics, Robot dynamics, Pendubot, nonlinear control, feedback linearization, n
 
 \section{Introduction}
 
-The main attempt of this paper is to verify via simulations the the new approach to control the Pendubot  that has recently appeared in the literature [\cite{Respondek_2019}].
-Authors are also interested in the applicability of such an algorithm to the physically existing root.
-% is useful in the context of future experimental research.
+Acrobot and Pendubot are well-known fundamental examples of underactuated planar mechanical systems in the presence of the gravity. Although their kinematic structures are relatively simple, still they can be considered as important benchmark systems which are useful for the development of advanced control strategies. 
 
-The considered algorithm has recently been published, thus it does not have any simulation or experimental verification.
-%Only work done by \cite{bartkowiak} presents some initial results, but in this paper authors try to extend this research.
-In this paper authors attempt to fill this gap and extend preliminary results recently discussed in  [\cite{bartkowiak}].
+A standard procedure at the stabilization process for the Pendubot system, as well as for the twin structure which is the Acrobot, is usually divided into 2 subproblems, i.e. the task of swing-up (when the robot hangs down) and the balancing task around the equilibrium point.
 
-%Zarówno Acrobot jak i Pendubot s¹ wci¹¿ ciekawymi zagadnieniami nad którymi warto pracowaæ, despite the passage of time.
-%
-%Jest to jeden z prostszych systemów niedosterowanych patrz¹c z punktu widzenia jego budowy/struktury, lecz nadal pozostaje trudnym zagadnieniem z punktu widzenia sterowania.
-%
-%Standardowo zagadnienie stabilizacji dla systemu Pendubot, jak i dla bliŸniaczej konstrukcji jak¹ jest Acrobot, dzielone jest zwykle na 2 podproblemy, tzn. zagadnienie  swing-up (w przypadku gdy robot zwisa w dó³) oraz zagadnienie balansowana wokó³ punktu równowagi.
-%Rozwi¹zanie pierwszego problemu bazuje z regu³y na pracach Sponga (tu swing sponga, oraz energy shape), druga jest nadal rozwijana przez wielu autorów.
-
-
-Both Acrobot and Pendubot are still interesting topics to work on, despite the passage of time.
-%
-These ones are of the simplest underactuated systems from the construction point of view, but they still remains a difficult task from the control point of view.
-%
-A standard procedure at the stabilization process for the Pendubot system, as well as for the twin structure which is an Acrobot, is usually divided into 2 subproblems, i.e. the task of swing-up (when the robot hangs down) and the balancing task around the equilibrium point.
-The solution to the first problem is usually based on the work of  [\cite{Spong_partial, xin_swing_new}], the second, is still being developed by many authors.
-
-
-
-
-
-
-
-
-
-
-
+Basically, many solutions to the first problem are based on the work of  \cite{Spong_partial, xin_swing_new}, the second, is still being developed by many authors.
 
 The paper is organized as follows: 
 Section \ref{sec:modelowanie} describes the mathematical model for the Acrobot system, together with constrains imposed on the model. 
@@ -123,6 +95,25 @@ In section \ref{sec:stabilization_problem} the analyzed control algorithms along
 Section \ref{sec:symulacje_i_porowanie} describes the simulation results of analyzed algorithms, while the Section \ref{sec:konkluzje} gives final remarks.
 
 
+The main attempt of this paper is to verify via simulations the the new approach to control the Pendubot  that has recently appeared in the literature [\cite{Respondek_2019}].
+Authors are also interested in the applicability of such an algorithm to the physically existing root.
+% is useful in the context of future experimental research.
+
+The considered algorithm has recently been published, thus it does not have any simulation or experimental verification.
+%Only work done by \cite{bartkowiak} presents some initial results, but in this paper authors try to extend this research.
+In this paper authors attempt to fill this gap and extend preliminary results recently discussed by \cite{bartkowiak}.
+
+%Zarówno Acrobot jak i Pendubot s¹ wci¹¿ ciekawymi zagadnieniami nad którymi warto pracowaæ, despite the passage of time.
+%
+%Jest to jeden z prostszych systemów niedosterowanych patrz¹c z punktu widzenia jego budowy/struktury, lecz nadal pozostaje trudnym zagadnieniem z punktu widzenia sterowania.
+%
+%Standardowo zagadnienie stabilizacji dla systemu Pendubot, jak i dla bliŸniaczej konstrukcji jak¹ jest Acrobot, dzielone jest zwykle na 2 podproblemy, tzn. zagadnienie  swing-up (w przypadku gdy robot zwisa w dó³) oraz zagadnienie balansowana wokó³ punktu równowagi.
+%Rozwi¹zanie pierwszego problemu bazuje z regu³y na pracach Sponga (tu swing sponga, oraz energy shape), druga jest nadal rozwijana przez wielu autorów.
+
+
+%
+
+
 
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -130,14 +121,8 @@ Section \ref{sec:symulacje_i_porowanie} describes the simulation results of anal
 
 \section{Robot's model}
 \label{sec:modelowanie}
-
-
-This section describes mathematical model of the considered robot, and all relevant constraints associated with it.
-
-The Pendubot robot is a connection of  $N = 2$ rigid bodies coupled  in a tree structure, supported on ground via an actuated, frictionless, revolute joint.
-Both links have nonzero mass, and  connection of the them is unactuated.
-This causes  that the system has one degree of underactuation ($2$ DOF with $1$ independent actuator). 
-Fig. \ref{fig:rysunek_1} depicts an example of considered robot.
+%This section describes mathematical model of the considered robot, %and all relevant constraints associated with it.
+The Pendubot robot is a connection of  $N = 2$ rigid bodies coupled  in a tree structure, supported on ground via an actuated frictionless revolute joint. Both links have non-zero mass and the revolute joint connecting them is unactuated. As a result, the system has one degree of underactuation ($2$ DOF with $1$ independent actuator).
 %
 \begin{figure}[!ht]
 \centering
@@ -147,7 +132,7 @@ Fig. \ref{fig:rysunek_1} depicts an example of considered robot.
 \end{figure}
 %
 %
-The reference frame has been attached {at the pivot point}, and coordinates are indicated as $\theta = (\theta_1, \theta_2)$.
+In Fig. \ref{fig:rysunek_1} the reference frame has been attached {at the pivot point}, and coordinates are indicated as $\theta = (\theta_1, \theta_2)$.
 The kinetic energy is quadratic, $ K = \frac{1}{2} \dot{\theta}^T D(\theta) \dot{\theta}$, with $D$ being a positive definite matrix. 
 The potential energy, $V$, depends only on the configuration variables.
 Denote the Lagrangian by  $L = K - V$, and impose the actuation on a system as below:
