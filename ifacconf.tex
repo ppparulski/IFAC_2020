@@ -81,11 +81,28 @@ Robotics, Robot dynamics, Pendubot, nonlinear control, feedback linearization, n
 
 \section{Introduction}
 
-Acrobot and Pendubot are well-known fundamental examples of underactuated planar mechanical systems in the presence of the gravity. Although their kinematic structures are relatively simple, still they can be considered as important benchmark systems which are useful for the development of advanced control strategies. 
+Acrobot and Pendubot are well-known fundamental examples of underactuated planar mechanical systems in the presence of the gravity. Although their kinematic structures are relatively simple, still they can be considered as important benchmark systems which are of great importance for the development of nonlinear control strategies. 
 
-A standard procedure at the stabilization process for the Pendubot system, as well as for the twin structure which is the Acrobot, is usually divided into 2 subproblems, i.e. the task of swing-up (when the robot hangs down) and the balancing task around the equilibrium point.
+A standard approach to stabilise both systems at an unstable equilibrium requires design of two controllers for the task of swing-up (when the robot hangs down) and the balancing task around the equilibrium point, respectively.
 
-Basically, many solutions to the first problem are based on the work of  \cite{Spong_partial, xin_swing_new}, the second, is still being developed by many authors.
+Many solutions to the first problem are based on the work of \cite{Spong_partial, xin_swing_new}, the second, is still being developed by many authors.
+
+The main attempt of this paper is to verify via simulations the new approach to control the Pendubot  which has been recently proposed by \cite{Respondek_2019}.
+
+
+The control of double inverted pendulum is still an open problem.
+As the fully actuated system is trivial in control, the underactuated is not.
+The \cite{Respondek_2019} presented new approach the the underactuated case. 
+In the recently published article, authors try to find the largest feedback linearizable subsystem for mechanical systems that are not feedback linearizable.
+Moreover, they consider the problem of choosing a partially linearizing output that renders the zero dynamics asymptotically stable,
+and illustrate the theoretical results by mathematical formulas developed for double inverted pendulum with one actuator (Acrobot and Pendubot).
+
+Authors are also interested in the applicability of such an algorithm to the physically existing root.
+% is useful in the context of future experimental research.
+
+The considered algorithm has recently been published, thus it does not have any simulation or experimental verification.
+%Only work done by \cite{bartkowiak} presents some initial results, but in this paper authors try to extend this research.
+In this paper authors attempt to fill this gap and extend preliminary results recently discussed by \cite{bartkowiak}.
 
 The paper is organized as follows: 
 Section \ref{sec:modelowanie} describes the mathematical model for the Acrobot system, together with constrains imposed on the model. 
@@ -95,13 +112,7 @@ In section \ref{sec:stabilization_problem} the analyzed control algorithms along
 Section \ref{sec:symulacje_i_porowanie} describes the simulation results of analyzed algorithms, while the Section \ref{sec:konkluzje} gives final remarks.
 
 
-The main attempt of this paper is to verify via simulations the the new approach to control the Pendubot  that has recently appeared in the literature [\cite{Respondek_2019}].
-Authors are also interested in the applicability of such an algorithm to the physically existing root.
-% is useful in the context of future experimental research.
 
-The considered algorithm has recently been published, thus it does not have any simulation or experimental verification.
-%Only work done by \cite{bartkowiak} presents some initial results, but in this paper authors try to extend this research.
-In this paper authors attempt to fill this gap and extend preliminary results recently discussed by \cite{bartkowiak}.
 
 %Zarówno Acrobot jak i Pendubot s¹ wci¹¿ ciekawymi zagadnieniami nad którymi warto pracowaæ, despite the passage of time.
 %
@@ -130,13 +141,9 @@ The Pendubot robot is a connection of  $N = 2$ rigid bodies coupled  in a tree s
 \caption{Two link inverted pendulum, with one actuator -- Pendubot}
 \label{fig:rysunek_1}
 \end{figure}
+%e is depicted. 
 %
-%
-In Fig. \ref{fig:rysunek_1} the reference frame has been attached {at the pivot point}, and coordinates are indicated as $\theta = (\theta_1, \theta_2)$.
-The kinetic energy is quadratic, $ K = \frac{1}{2} \dot{\theta}^T D(\theta) \dot{\theta}$, with $D$ being a positive definite matrix. 
-The potential energy, $V$, depends only on the configuration variables.
-Denote the Lagrangian by  $L = K - V$, and impose the actuation on a system as below:
-%assume that the system is actuated such that
+In Fig. \ref{fig:rysunek_1} a standard pendulum structure is depicted. The reference frame is attached {at the pivot point}, and coordinates are indicated as $\theta = \left[\theta_1\ \theta_2\right]^\top\in S^1\times S^1$. In order to establish system dynamics one can define Lagrangian $L = K - V$, while  $K = \frac{1}{2} \dot{\theta}^T D(\theta) \dot{\theta}$ denotes kinetic energy, with $D$ being a positive definite inertia matrix, and $V$ is the potential energy. Next, taking into account the actuation on the system one obtains 
 %
 \begin{equation}
 \frac{d}{dt}\frac{\partial L}{\partial\dot{\theta}_{k}}-\frac{\partial L}{\partial \theta_{k}}=\begin{cases}
@@ -146,42 +153,27 @@ Denote the Lagrangian by  $L = K - V$, and impose the actuation on a system as b
 \label{eq:wzor_1}
 \end{equation}
 %
-with $\tau_k$ taking values in $\mathcal{R}$.
+with $\tau_k\in\mathbb{R}$.
 %
-The mathematical model of the system dynamics thus takes the form
+The mathematical model of the system dynamics thus takes the following standard form
 %
 \begin{equation}
-D(\theta) \ddot{\theta} + C(\theta, \dot{\theta}) \dot{\theta} + G(\theta) = B \tau
+D(\theta) \ddot{\theta} + C(\theta, \dot{\theta}) \dot{\theta} + G(\theta) = B \tau,
 \label{eq:wzor_2}
 \end{equation}
 %
-where 
-$B=[\,I \;\; 0\,]^T$ and %, and $B=[\,I \;\; 0\,]^T$ for the Pendubot.
+where corresponding entries of $D(\theta)\in\mathbb{R}^{2\times 2}$ satisfy
 %
+\begin{equation}\label{eq:dynamika_wzorki_na_d_ii}
+\begin{aligned}
+d_{11}(\theta_2) =&  a_{1} + a_2 + 2a_{3}  \cos \theta_2,\\
+d_{12}(\theta_2) =&  a_{2} + a_3  \cos \theta_2,\\
+d_{21}(\theta_2) =&  d_{12},\\
+d_{22}(\theta_2) =&  a_{2},
+\end{aligned}
+\end{equation}
 %
-%and
-
-\noindent
-$
-%
-\begin{array}{rclcl}
-%
-% -------- (53)
-d_{11}(\theta_2)  &=&  a_{1} + a_2 + 2a_{3}  \cos \theta_2
-\\
-d_{12}(\theta_2)  &=&  a_{2} + a_3  \cos \theta_2
-\\
-d_{21}(\theta_2)  &=&  d_{12}
-\\
-d_{22}(\theta_2)  &=&  a_{2}
-%G_1 &=& - \frac{\partial V}{\partial {\theta}_{1}}
-\end{array}
-\label{eq:dynamika_wzorki_na_d_ii}
-$
-
-%
-%
-\noindent
+while
 $
 a_1 = m_1 L_{c_1}^2 + m_2 L_1^2 + I_1
 $, 
@@ -204,7 +196,7 @@ C(\theta,\dot{\theta}) =
 \begin{bmatrix}
 -2 a_3 \sin\theta_2 \dot{\theta_2} & -a_3 \sin\theta_2(\dot{\theta}_1 + \dot{\theta_2})\\
 a_3 \sin\theta_2 \dot{\theta}_1 & 0
-\end{bmatrix},
+\end{bmatrix}\in\mathbb{R}^{2\times 2},
 \label{eq:dynamika_wzorek_C}
 \end{equation}
 %
@@ -216,25 +208,21 @@ G(\theta) =
 g a_5 \cos(\theta_1 + \theta_2) + a_4 \cos\theta_1 
 \\
 g a_5 \cos(\theta_1 + \theta_2)
-\end{bmatrix}.
+\end{bmatrix}\in\mathbb{R}^{2},
 \label{eq:dynamika_wzorek_G}
 \end{equation}
-
-
-
-Assuming some simplifications and ignoring dynamics of the motor, one can treat $\tau$ as a real torque generated by the motor.
+%
+$B=[1 \;\; 0\,]^\top\in\mathbb{R}^{2}$ and $\tau\in\mathbb{R}$ is the control input.
 
 %Chcemy sprawdziæ jak ten algorytm sprawdza siê zarówno dla przypadku parametrów ujednoliconych tzn. samych jedynek, przy braku ograniczenia na wymuszenie, jak równie¿ dla przypadku, gdy mamy wymiary robota kon-kretne, pochodz¹ce z fizycznie istniej¹cej konstrukcji, oraz ograniczenie na moment na silniku.
 %Interesuje nas wiêc czy ten algorytm siê w ogóle do czegokolwiek nadaje.
 
-
-
 \subsection{Robot's parameters}
 \label{sec:parametry_robota}
 
-The choice of the robot parameters (Table \ref{tab:parametry_robota}) in the simulation  was selected in order to adapt them to the physically existing mechanism, i.e. to the one legged robot presented in Fig.~\ref{fig:sprzet}.
+The choice of the robot parameters (Table \ref{tab:parametry_robota}) in the simulation  was selected in order to adapt them to the physically existing mechanism, i.e. to the one-legged robot presented in Fig.~\ref{fig:sprzet}.
 This one-legged mechanism can be successfully studied as a double inverted pendulum.
-Considered robot was built in the Institute of Automation and Robotics at  Poznan University of Technology, as a testbed for a four-legged walking robot [\cite{michalski_1_noga, parulski_michalski}].
+Considered robot was built in the Institute of Automation and Robotics at  Poznan University of Technology, as a testbed for a four-legged walking robot presented in \cite{michalski_1_noga, parulski_michalski}.
 %The robot parameters are collected in Table \ref{tab:parametry_robota}.
 %
 %
@@ -247,7 +235,7 @@ Considered robot was built in the Institute of Automation and Robotics at  Pozna
 Link & Mass & Centre of mass & Length & Inertia
 \\ 
 %\hline 
- &  [$kg$] & [$m$] & [$m$] & [$kg\, m^2$]
+ &  [$\mathrm{kg}$] & [$\mathrm{m}$] & [$\mathrm{m}$] & [$\mathrm{kg\, m^2}$]
 \\ 
 \hline 
 1 & 1.593 & 0.074 & 0.15 & 0.0119
@@ -337,24 +325,10 @@ and they are not being analyzed.
 
 The aim of this work is to verify considered algorithm whether it is capable of stabilizing the system around its top unstable position, taking into account the limitations and constraints resulting from practical or physical conditions (existing robot).
 
-
-
-
 \subsection{Control algorithm}
 \label{sec:respondek}
-
-
-The control of double inverted pendulum is still an open problem.
-As the fully actuated system is trivial in control, the underactuated is not.
-The [\cite{Respondek_2019}] presented new approach the the underactuated case. 
-In the recently published article, authors try to find the largest feedback linearizable subsystem for mechanical systems that are not feedback linearizable.
-Moreover, they consider the problem of choosing a partially linearizing output that renders the zero dynamics asymptotically stable,
-and illustrate the theoretical results by mathematical formulas developed for double inverted pendulum with one actuator (Acrobot and Pendubot).
 %
-The paper presents an attempt to use such algorithm to control the Pendubot from any initial condition to equilibrium pose.
-%
-\noindent
-This method can be briefly characterize  as follows.
+The paper presents an attempt to use algorithm originally proposed by \cite{Respondek_2019} to control the Pendubot from any initial condition to equilibrium pose. This method can be briefly characterize  as follows.
 At first, rewrite the  Eq. (\ref{eq:wzor_2}) in the following form:
 %
 \begin{equation}
@@ -366,9 +340,7 @@ d_{21}  \ddot {\theta}_1 + d_{22}  \ddot {\theta}_2 + \mu_2 + \phi_2 &=& 0
 \end{array}
 \end{equation}
 %
-where:
-$d_{ij}$ are the entries of  matrix $D(\theta)$, and
-$\mu_1 = C_{11}(\theta, \dot \theta) \dot \theta_1 + C_{12}(\theta, \dot \theta) \dot \theta_2$, 
+where $\mu_1 = C_{11}(\theta, \dot \theta) \dot \theta_1 + C_{12}(\theta, \dot \theta) \dot \theta_2$, 
 $\mu_2 = C_{21}(\theta, \dot \theta) \dot \theta_1$,
 $\phi_1 = G_1(\theta)$, 
 $\phi_2 = G_2(\theta)$, 
@@ -539,9 +511,10 @@ According to \cite{Respondek_2019}, the output function can be selected as:
 %
 \begin{equation}
 \label{eq:respondek_f_wyjscia_h_pendubot}
-{\color{black}h} =  q_1 - q_{1R}
+{\color{black}h} =  q_1 - q_{r1},
 \end{equation}
 %
+where $q_{r1}\in S^1$ denotes ??.
 %where 
 %$k_1 = 2\sin^2 \alpha_k$ 
 %and 
@@ -623,10 +596,10 @@ u =
 %
 %
 and 
-$x = [q_{1}, v_{1}, q_{2}, v_{2}]^T$ is a state vector 
+$x = [q_{1}\ v_{1}\ q_{2}\ v_{2}]^\top$ is the state vector 
 a 
-$x_r = [q_{1_r}, v_{1_r}, q_{2_r}, v_{2_r}]^T$ is a reference state vector, 
-$\omega_0$ i $K = [k_1, k_2, k_3 ,k_4]$ are controllers' gains.
+$x_r = [q_{r1}\ v_{r1}\ q_{r2}\ v_{r2}]^\top$ is the reference state vector, 
+$\omega_0$ i $K = [k_1\ k_2\ k_3\ k_4]$ are controllers gains.
 
 %
 %Druga forma regulatora, która dzia³a lepiej 
@@ -702,8 +675,7 @@ J = x^T Q x + u^T R u,
 %
 %gdzie Q, R s¹ macierzami wag dla ka¿dego parametru.
 where Q and R are the weight matrices for states and inputs, respectively.
-The optimal $K$-gains ($K = [1, 520, 1050, 50]$) were obtained with the use of Matlab's \textsf{lqr(sys,Q,R)} function, 
-where \textsf{sys} is a linearization of Eq.~(\ref{eq:wzor_2}) around equilibrium point.
+The optimal $K$-gains ($K = [1, 520, 1050, 50]$) were obtained for the linear approximation of Eq.~(\ref{eq:wzor_2}) at the equilibrium point with $Q=...$ and $R=...$.
 %
 %Po zastosowaniu tej procedury dostrajano wzmocnienia metod¹ empiryczn¹ korzystaj¹c z wczeœniej omawianego kryterium ca³kowego $ITAE$, aby uzyskiwany uchyb regulacji zbiega³ szybciej w okolice zera.
 
