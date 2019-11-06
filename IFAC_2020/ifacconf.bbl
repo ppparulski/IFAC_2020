@@ -1,0 +1,68 @@
+\begin{thebibliography}{9}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Abdel-Malek and Arora(2013)}]{human_motion_ksiazka}
+Abdel-Malek, K. and Arora, J. (2013).
+\newblock \emph{Human Motion Simulation: Predictive Dynamics}.
+\newblock Elsevier Inc.
+
+\bibitem[{Bartkowiak(2019)}]{bartkowiak}
+Bartkowiak, P. (2019).
+\newblock \emph{Control of 2 {DOF} planar underactuated manipulator}.
+\newblock Master's thesis, Poznan University of Technology.
+\newblock In Polish.
+
+\bibitem[{Koz\l{}owski et~al.(2013)Koz\l{}owski, Kowalski, Michalski, and
+  Parulski}]{parulski_michalski}
+Koz\l{}owski, K., Kowalski, M., Michalski, M., and Parulski, P. (2013).
+\newblock Universal multiaxis control system for electric drives.
+\newblock \emph{IEEE Transactions on Industrial Electronics}, 60(2), 691--698.
+
+\bibitem[{Koz\l{}owski et~al.(2008)Koz\l{}owski, Pazderski, Michalski, and
+  Kowalski}]{michalski_1_noga}
+Koz\l{}owski, K., Pazderski, D., Michalski, M., and Kowalski, M. (2008).
+\newblock Sensory system of four-legged walking robot {WR-06}.
+\newblock \emph{Elektronika -- konstrukcje, technologie, zastosowania},
+  188--190.
+\newblock In Polish.
+
+\bibitem[{Li et~al.(2019)Li, Moog, and Respondek}]{Respondek_2019}
+Li, S., Moog, C., and Respondek, W. (2019).
+\newblock Maximal feedback linearization and its internal dynamics with
+  applications to mechanical systems on ${R}^4$.
+\newblock \emph{International Journal of Robust and Nonlinear Control}, 29(9),
+  2639--2659.
+\newblock \doi{10.1002/rnc.4507}.
+
+\bibitem[{Martins(2005)}]{tuning_itae}
+Martins, F. (2005).
+\newblock Tuning {PID} controllers using the {ITAE} criterion.
+\newblock \emph{International Journal of Engineering Education}, 21.
+
+\bibitem[{Moysis(2016)}]{grecki_lqr}
+Moysis, L. (2016).
+\newblock Balancing a double inverted pendulum using optimal control and
+  {Laguerre} functions.
+\newblock \doi{10.13140/RG.2.1.2948.6486}.
+
+\bibitem[{{Spong}(1994)}]{Spong_partial}
+{Spong}, M.W. (1994).
+\newblock Partial feedback linearization of underactuated mechanical systems.
+\newblock In \emph{Proceedings of IEEE/RSJ International Conference on
+  Intelligent Robots and Systems (IROS'94)}, volume~1, 314--321 vol.1.
+
+\bibitem[{Xin and {Kaneda}(2004)}]{xin_swing_new}
+Xin, X. and {Kaneda}, M. (2004).
+\newblock New analytical results of the energy based swinging up control of the
+  acrobot.
+\newblock In \emph{2004 43rd IEEE Conference on Decision and Control (CDC)
+  (IEEE Cat. No.04CH37601)}, volume~1, 704--709 Vol.1.
+\newblock \doi{10.1109/CDC.2004.1428728}.
+
+\end{thebibliography}
