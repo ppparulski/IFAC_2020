@@ -66,7 +66,7 @@
 
 \begin{abstract}                % Abstract of not more than 250 words.
 The aim of this paper is to
-test the usefulness of a new approach presented in [\cite{Respondek_2019}] to control the Pendubot.
+test the usefulness of a new approach based on  partial feedback linearisation to control the Pendubot.
 %Its efficiency will be compared with well known algorithm based on \cite{Grizzle}.
 The control problem stated in the article is to stabilize the Pendubot in the upright position.
 \end{abstract}
@@ -514,7 +514,7 @@ According to \cite{Respondek_2019}, the output function can be selected as:
 {\color{black}h} =  q_1 - q_{r1},
 \end{equation}
 %
-where $q_{r1}\in S^1$ denotes ??.
+where $q_{r1}\in S^1$ denotes the desired coordinate.
 %where 
 %$k_1 = 2\sin^2 \alpha_k$ 
 %and 
@@ -550,11 +550,11 @@ According to \cite{Respondek_2019} relative degree of $h$ is not well defined ar
 %
 Moreover, the control signal $u$ explodes to plus or minus infinity.
 %
-This means that the Pendubot can not be part-linearizable, with a 3-dimensional linear subsystem around an equilibrium point.
+This means that the Pendubot cannot be part-linearizable, with a 3-dimensional linear subsystem around an equilibrium point.
 %
 As a result, one needs to use a different control algorithm around equilibrium, to settle the robots state vector at required upright position.
 %
-In this article authors used the LQR (\textit{Linear Quadratic Regulator}) controller to settle the robot at the equilibrium pose.
+In this article authors employ the LQR (\textit{Linear Quadratic Regulator}) controller to settle the robot at the equilibrium pose.
 \\
 %
 %Jak wczeœniej wspomniano sterowanie dla pendubota sk³ada siê z dwóch regulatorów. 

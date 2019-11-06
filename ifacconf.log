@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.17)  7 NOV 2019 00:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.17)  7 NOV 2019 00:18
 entering extended mode
 **./ifacconf.tex
 (ifacconf.tex
@@ -480,7 +480,7 @@ Here is how much of TeX's memory you used:
  7962 multiletter control sequences out of 15000+200000
  15376 words of font info for 57 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,35p,570b,263s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,11n,35p,570b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/iar/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{
 C:/Users/iar/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plit.enc}<C:/
 Users/iar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex
@@ -502,7 +502,7 @@ s/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Users/iar/AppData/Local/Progr
 ams/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><C:/Users/iar/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Users/iar/AppData/Local/Prog
 rams/MiKTeX 2.9/fonts/type1/public/pl/plti10.pfb>
-Output written on ifacconf.pdf (5 pages, 3512176 bytes).
+Output written on ifacconf.pdf (5 pages, 3512167 bytes).
 PDF statistics:
  96 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
