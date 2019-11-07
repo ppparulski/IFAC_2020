@@ -105,7 +105,7 @@ The considered algorithm has recently been published, thus it does not have any 
 In this paper authors attempt to fill this gap and extend preliminary results recently discussed by \cite{bartkowiak}.
 
 The paper is organized as follows: 
-Section \ref{sec:modelowanie} describes the mathematical model for the Acrobot system, together with constrains imposed on the model. 
+Section \ref{sec:modelowanie} describes the mathematical model for the Pendubot system, together with constrains imposed on the model. 
 %
 In section \ref{sec:stabilization_problem} the analyzed control algorithms along with the state transformation for the stabilization task is introduced.
 %
@@ -675,7 +675,7 @@ J = x^T Q x + u^T R u,
 %
 %gdzie Q, R s¹ macierzami wag dla ka¿dego parametru.
 where Q and R are the weight matrices for states and inputs, respectively.
-The optimal $K$-gains ($K = [1, 520, 1050, 50]$) were obtained for the linear approximation of Eq.~(\ref{eq:wzor_2}) at the equilibrium point with $Q=...$ and $R=...$.
+The optimal $K$-gains ($K = [1, 520, 1050, 50]$) were obtained for the linear approximation of Eq.~(\ref{eq:wzor_2}) at the equilibrium point with $Q = \mathrm{diag}([1000, 1000, 1000, 1000])$ and $R = 0.5$.
 %
 %Po zastosowaniu tej procedury dostrajano wzmocnienia metod¹ empiryczn¹ korzystaj¹c z wczeœniej omawianego kryterium ca³kowego $ITAE$, aby uzyskiwany uchyb regulacji zbiega³ szybciej w okolice zera.
 
