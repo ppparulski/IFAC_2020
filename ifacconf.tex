@@ -67,7 +67,7 @@
 \begin{abstract}                % Abstract of not more than 250 words.
 The aim of this paper is to
 test the usefulness of a new approach based on  partial feedback linearisation to control the Pendubot.
-%Its efficiency will be compared with well known algorithm based on \cite{Grizzle}.
+%
 The control problem stated in the article is to stabilize the Pendubot in the upright position.
 \end{abstract}
 
@@ -94,12 +94,11 @@ In the recently published article, authors try to find the largest feedback line
 Moreover, they consider the problem of choosing a partially linearizing output that renders the zero dynamics asymptotically stable,
 and illustrate the theoretical results by mathematical formulas developed for double inverted pendulum with one actuator (Acrobot and Pendubot).
 
-Authors are also interested in the applicability of such an algorithm to the physically existing root.
-% is useful in the context of future experimental research.
 
 The considered algorithm has recently been published, thus it does not have any simulation or experimental verification.
-%Only work done by \cite{bartkowiak} presents some initial results, but in this paper authors try to extend this research.
+%
 In this paper authors attempt to fill this gap and extend preliminary results recently discussed by \cite{bartkowiak}.
+Authors are also interested in the applicability of such an algorithm to the physically existing root.
 
 The main attempt of this paper is to verify via simulations the new approach to control the Pendubot  which has been recently proposed by \cite{Respondek_2019}.
 
@@ -112,25 +111,12 @@ Section \ref{sec:symulacje_i_porowanie} describes the simulation results of anal
 
 
 
-
-%Zarówno Acrobot jak i Pendubot s¹ wci¹¿ ciekawymi zagadnieniami nad którymi warto pracowaæ, despite the passage of time.
-%
-%Jest to jeden z prostszych systemów niedosterowanych patrz¹c z punktu widzenia jego budowy/struktury, lecz nadal pozostaje trudnym zagadnieniem z punktu widzenia sterowania.
-%
-%Standardowo zagadnienie stabilizacji dla systemu Pendubot, jak i dla bliŸniaczej konstrukcji jak¹ jest Acrobot, dzielone jest zwykle na 2 podproblemy, tzn. zagadnienie  swing-up (w przypadku gdy robot zwisa w dó³) oraz zagadnienie balansowana wokó³ punktu równowagi.
-%Rozwi¹zanie pierwszego problemu bazuje z regu³y na pracach Sponga (tu swing sponga, oraz energy shape), druga jest nadal rozwijana przez wielu autorów.
-
-
-%
-
-
-
-
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 
 \section{Model}
 \label{sec:modelowanie}
+
 %This section describes mathematical model of the considered robot, %and all relevant constraints associated with it.
 The Pendubot robot is a connection of  $N = 2$ rigid bodies coupled  in a tree structure, supported on ground via an actuated frictionless revolute joint. Both links have non-zero mass and the revolute joint connecting them is unactuated. As a result, the system has one degree of underactuation ($2$ DOF with $1$ independent actuator).
 %
@@ -213,14 +199,25 @@ g a_5 \cos(\theta_1 + \theta_2)
 %
 $B=[1 \;\; 0\,]^\top\in\mathbb{R}^{2}$ and $\tau\in\mathbb{R}$ is the control input.
 
-%Chcemy sprawdziæ jak ten algorytm sprawdza siê zarówno dla przypadku parametrów ujednoliconych tzn. samych jedynek, przy braku ograniczenia na wymuszenie, jak równie¿ dla przypadku, gdy mamy wymiary robota kon-kretne, pochodz¹ce z fizycznie istniej¹cej konstrukcji, oraz ograniczenie na moment na silniku.
-%Interesuje nas wiêc czy ten algorytm siê w ogóle do czegokolwiek nadaje.
-%Dla obu systemow zostaly nadane te same parametry modelu dynamiki, mianowicie przyjeto: $m_1$ = 1 $kg$, $m_2$ = 1 $kg$, $L_1$ = 1 $m$, $L_2$ = 1 $m$, $l_{c_1}$ = 1 $m$, $l_{c_2}$ = 1 $m$, $J_1$ = 0 $kg\cdot m^2$, $J_2$ = 0 $kg\cdot m^2$. Przyspieszenie grawitacyjne zostalo przyjete jako $g$ = 9.81 $\frac{m}{s^2}$. Dla takich wartosci parametrow mozna zauwazyc, ze $a_x$ $>$ $b_x$ i $a_2$ = $a_3$,
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \section{Stabilization problem}
 \label{sec:stabilization_problem}
 
-The system (\ref{eq:wzor_1}) for $\tau_1=0$ has four equilibrium points: 
+
+Taking into consideration the last entry of Eq. (\ref{eq:dynamika_wzorek_G}) and last of 
+%Eq. (\ref{eq:Respondek_Acrobot_dynamika_2}) 
+Eq. (\ref{eq:wzor_1}) 
+one can obtain a relationship describing the equilibrium condition.
+Specifically, one can obtain the following relation:
+$
+\cos(\theta_1 + \theta_2) = 0
+$.
+%
+Thus the system (\ref{eq:wzor_1}) for $\tau_1=0$ has four equilibrium points: 
 first of them are two unstable positions (top and mid position) 
 where 
 $
@@ -266,21 +263,6 @@ $\phi_1 = G_1(\theta)$,
 $\phi_2 = G_2(\theta)$, 
 where $C_{ij}$, $G_i$ are entries of  Eq.~(\ref{eq:dynamika_wzorek_C}) and Eq.~(\ref{eq:dynamika_wzorek_G}), respectively, 
 %
-%\begin{equation}
-%\label{eq:Respondek_Acrobot_mifi}
-%\begin{array}{lcl}
-%\mu_1 & = &
-%-2 a_3 \dot \theta_1 \dot \theta_2 \sin \theta_2 - a_3 \dot \theta^2_2 \sin \theta_2
-%\\
-%\phi_1 & = &
-%a_4 \cos \theta_1 - a_5 
-%\\
-%\mu_2 & = &
-%\\
-%\phi_2 & = & f
-%\end{array}
-%\end{equation}
-%
 and  apply the feedback transformation according to \cite{Spong_partial}.
 %\noindent
 The overall robot's dynamics model after this transformation can be written in the following form:
@@ -307,8 +289,6 @@ $
 J_2 (\theta_2) = - d_{22}^{-1} d_{21}. 
 $
 %
-%Zdefiniujmy nowe zmienne stanu i przeszktalcmy do postaci unormowanej
-%Let's define the new state variables and then transform robot's dynamics into the normal form
 After introducing new state variables (\ref{eq:Respondek_nowe_zmienne})
 %
 \begin{equation}
@@ -331,11 +311,7 @@ $
 I_2 (\theta_2) = \int_{0}^{\theta_2} J_2^{-1}(s) ds
 $,
 %and 
-%$
-%\sigma (q_2) = e^{\int_{0}^{q_2} \beta(s) ds}
-%$,
 and transforming into normal form, one obtains the Pendubot's dynamics 
-%
 %
 %
 in new variables  $x = [q_1, {v}_1, q_2, v_2]^T$:
@@ -417,16 +393,8 @@ $.
 
 
 
-
-
-% Z pracy Bartowiaka
-
 Finding the control signal $u$ is identical to obtaining such an output function $h$ that maximally linearizes considered dynamics.
 According to \cite{Respondek_2019}, the output function can be selected as:
-%
-%W celu wyznaczenia sterowania $u$ nalezy odszukac funkcje spelniajaca wymagane kryteria. 
-%W artykule \cite{respondek} zawarta jest propozycja, aby wybrac funkcje wyjscia $h$ taka, ktora jest wyjsciem maksymalnie linearyzujacym.
-%Dlatego przyjeta funkcja wyjscia jest postaci:
 % 
 %
 \begin{equation}
@@ -435,14 +403,7 @@ According to \cite{Respondek_2019}, the output function can be selected as:
 \end{equation}
 %
 where $q_{r1}\in S^1$ denotes the desired coordinate.
-%where 
-%$k_1 = 2\sin^2 \alpha_k$ 
-%and 
-%$k_2 = 2\cos^2 \alpha_k$ 
-%are gains dependent on arbitrary chosen 
-%$
-%\alpha_k = \pi/3
-%$.
+
 
 \noindent
 The control function $u$ becomes
@@ -477,24 +438,12 @@ As a result, one needs to use a different control algorithm around equilibrium, 
 In this article authors employ the LQR (\textit{Linear Quadratic Regulator}) controller to settle the robot at the equilibrium pose.
 \\
 %
-%Jak wczeœniej wspomniano sterowanie dla pendubota sk³ada siê z dwóch regulatorów. 
-%Pierwszy regulator jest typem \textit{swing-up}, którego zadaniem jest sprowadzenie manipulatora w otoczenie punktu stabilizacji. 
-%Kiedy konfiguracja manipulatora znajdzie siê w tunelu b³êdu zdefiniowanego przez parametry $\delta_1$ i $\delta_2$, nastêpuje prze³¹czenie na sterownik LQR (,,Linear Quadratic Regulator''), opisany w artykule \cite{grecki_lqr}. 
-%Ten¿e kontroler ma za zadanie utrzymaæ uk³ad w punkcie stabilizacji. 
-%Ze wzglêdu na jego w³asnoœæ dzia³ania mo¿na go nazwaæ typem \textit{balance}, co jak sama nazwa wskazuje sprowadza uchyby do zera poprzez balansowanie. 
-%Sk³ada siê on z sprzê¿enia od stanu wraz z wektorem wzmocnieñ K. 
-%Nazwa regulatora LQR pochodzi od metody jego strojenia. 
-%Ostatecznie regu³ê sterowania dla Pendubot'a mo¿na zapisaæ poni¿szym równaniem:
-%
-%
 %
 As discussed above, the Pendubot control consists of two regulators.
 The first one is a swing-up-like type, whose task is to bring the manipulator near the equilibrium point.
 When the robot is in the error tunnel defined by the $\delta$  parameter, it switches to the LQR controller (as in \cite{grecki_lqr}).
 This controller is designed to keep the system at an equilibrium pose.
-%Due to its properties, it can be called \textit {balance}, which, as the name suggests, reduces offset to zero by balancing.
 It consists of a state-feedback part together with the $K$-gain vector.
-%The name of the LQR regulator comes from the method of tuning. 
 Finally, the control rule for Pendubot can be written in the following form:
 %
 %
@@ -521,43 +470,6 @@ a
 $x_r = [q_{r1}\ v_{r1}\ q_{r2}\ v_{r2}]^\top$ is the reference state vector, 
 $\omega_0$ i $K = [k_1\ k_2\ k_3\ k_4]$ are controllers gains.
 
-%
-%Druga forma regulatora, która dzia³a lepiej 
-%%
-%\begin{equation}
-%\label{eq:pendubot_u2}
-%u = 
-%\begin{cases}
-%- (\omega_0^3 h + 3 \omega_0^2 \dot h + 3 \omega_0 \ddot h) , 
-%& \text{for  }  
-%|\theta_{1_r} - \theta_1| > \delta_1 
-%\\
-%&
-%\text{ OR } 
-%|\theta_{2_r} - \theta_2| > \delta_2
-%\\
-%-K (x_r - x), 
-%& \text{for  } 
-%|\theta_{1_r} - \theta_1| \leq  \delta_1
-%\\
-%&
-%\text{ AND }
-%|\theta_{2_r} - \theta_2| \leq \delta_2
-%\end{cases}
-%\end{equation}
-%%
-
-
-
-
-
-%Zgodnie z \cite{Respondek_2019} rz¹d wzglêdny dla $h=q_1$ nie jest dobrze zdefiniowany, oraz........
-%W takim przypadku rz¹d wzglêdny nie jest dobrze zdefiniowany i sterowanie $u$ eksploduje do $\pm \infty$.
-%Dlatego te¿ istnieje koniecznoœæ u¿ycia innego regulatora wokól punktu równowagi, jak np. LQR.
-
-
-
-
 
 
 
@@ -566,7 +478,7 @@ $\omega_0$ i $K = [k_1\ k_2\ k_3\ k_4]$ are controllers gains.
 \label{sec:parametry_robota}
 
 The choice of the robot parameters (Table \ref{tab:parametry_robota}) in the simulation  was selected in order to adapt them to the physically existing mechanism, i.e. to the one-legged robot presented in Fig.~\ref{fig:sprzet}.
-This one-legged mechanism can be successfully studied as a double inverted pendulum.
+This one-legged mechanism can be studied as a double inverted pendulum.
 Considered robot was built in the Institute of Automation and Robotics at  Poznan University of Technology, as a testbed for a four-legged walking robot presented in \cite{michalski_1_noga, parulski_michalski}.
 %The robot parameters are collected in Table \ref{tab:parametry_robota}.
 %
@@ -593,29 +505,7 @@ Considered robot was built in the Institute of Automation and Robotics at  Pozna
 	\end{tabular} 
 \end{table}
 %
-%%
-%\begin{table}[!ht]
-%	\caption{Nominal  robot's parameters}
-%	\label{tab:parametry_robota}
-%	\centering
-%	\begin{tabular}{|c|c|c|c|c|}
-%		\hline 
-%		Link & Mass & Centre of mass & Length & Inertia
-%		\\ 
-%		%\hline 
-%		&  [$kg$] & [$m$] & [$m$] & [$kg\, m^2$]
-%		\\ 
-%		\hline 
-%		1 & 1 & 1 & 1 & 1
-%		\\ 
-%		\hline 
-%		2 & 1 & 1 & 1 & 1
-%		\\ 
-%		\hline 
-%		
-%	\end{tabular} 
-%\end{table}
-%%
+%
 %
 The physical model depicted in Fig.~\ref{fig:sprzet} is driven by Maxon's 200W EC-Powermax~30 brushless motors with planetary gearhead of $n=53$ reduction.
 Such drives provides the maximum torque of approximately $6$~Nm.
@@ -632,10 +522,10 @@ This value is considered as a saturation of the control input.
 
 
 
+
+
 \subsubsection{Tuning the controllers parameters}
 
-%W celu dostrojenia parametru $\omega_0$ wykorzystano kryterium ca³kowe regulacji $ITAE$ (\ref{eq:ITAE}).
-%Najni¿sza wartoœæ wskaŸnika $ITAE$ wynios³a w przybli¿eniu $\omega_0 = {\color{red}ILE?}$.
 
 
 To acquire the best parameter  $\omega_0$, the integral of time-weighted absolute error (ITAE, Eq. (\ref{eq:ITAE})) performance index was used [\cite{tuning_itae}]
@@ -653,7 +543,6 @@ In the following step the $K$-vector was obtained, which is the LQR controller's
 In order to calculate them, the cost function $J$ (Eq.~\ref{eq:funkcja_J_lqr}), dependent on state and control signal, was defined.
 %
 %
-%Kolejnym etapem by³ dobór wzmocnieñ regulatora LQR, czyli wyznaczenie wektora parametrów $K$. W tym celu zdefiniowano funkcje kosztu zale¿n¹ od stanu oraz sygna³u steruj¹cego. 
 %
 \begin{equation}
 J = \int_t^\infty \left(x^T Q x + u^T R u\right) d\tau,
@@ -664,7 +553,6 @@ J = \int_t^\infty \left(x^T Q x + u^T R u\right) d\tau,
 where $Q$ and $R$ are the weight matrices for states and inputs, respectively.
 The optimal $K$-gains ($K = [1, 520, 1050, 50]$) were obtained for the linear approximation of Eq.~(\ref{eq:wzor_2}) at the equilibrium point with $Q = 1000 I_{4\times 4}$ and $R = 0.5$.
 %
-%Po zastosowaniu tej procedury dostrajano wzmocnienia metod¹ empiryczn¹ korzystaj¹c z wczeœniej omawianego kryterium ca³kowego $ITAE$, aby uzyskiwany uchyb regulacji zbiega³ szybciej w okolice zera.
 
 
 
@@ -676,12 +564,6 @@ The optimal $K$-gains ($K = [1, 520, 1050, 50]$) were obtained for the linear ap
 \section{Simulation results}
 \label{sec:symulacje_i_porowanie}
 
-
-
-%Badanym systemem jest Pendubot, którego  regu³a sterowania jest opisana wzorami (\ref{eq:pendubot_u1}).  
-%W tej sekcji zostan¹ przedstawione wyniki symulacyjne dla ró¿nej konfiguracji startowej, ale tych samych nastaw sterownika. 
-%W tym celu zosta³y zobrazowane wykresy k¹tów skrêtu ogniw, ich prêdkoœci k¹towe oraz sygna³ sterowania $u$ a tak¿e wartoœci poszczególnych sk³adowych w celu przybli¿eniu warunków jakie musi spe³niaæ system w celu zastosowania regu³y regulacji.
-%
 
 
 
@@ -713,6 +595,30 @@ $\theta_{2_0}$ from $-90^\circ$ to $90^\circ$, which gave more than 1300 simulat
 These initial conditions mean that the swing-up problem is not considered, i.e. only situations where the robot is above the ground are taken into account.
 The trial was being taken as successful while the error between actual and desired angle was smaller than  $\frac{1}{180}\pi \,$rad within simulation time  $t = 15 \,$s. 
 %
+
+Considered algorithm does not guarantee that the robot will not reach singularity.
+Thus, time must be another constraint imposed on the simulation.
+As the time can be treated as the simulation time and a real time of executing the program, one should distinguish them.
+First of them is a "standard" simulation time, calculated by solver.
+The other one is the time of program's execution.
+The need of imposing such a constraint results from the nature of considered system.
+Double inverted pendulum can reach a singularity position, which leads to discontinuities in some characteristics.
+These causes that the solver and simulation "hangs" or crash.
+%
+Authors concluded that while 75 seconds of the program's execution no result was obtained (achieving the desired configuration), such a situation should be treated as the occurrence of singularities in the object and a crash of the program. 
+
+As mentioned before in section \ref{sec:respondek} the control signal explodes around equilibria.
+Thus, the additional imposed restriction is the maximal value of $\sigma$ parameter from Eq. (\ref{eq:pendubot_u1}).
+Authors assume the $\sigma$ parameter as $\sigma = 0.04$, which was obtained by trail end error.
+
+The additional problem with execution the algorithm is the need of inverting the decoupling matrix $L_g L_f^2 h$ in Eq.~(\ref{eq:RE_acrobot_u}).
+Fig. \ref{fig:} depicts a plot of $L_g L_f^2 h$ during simulation.
+To overcome the problem of inverting this matrix, authors use an arbitrarily chosen parameter $\epsilon$, which was added to $L_g L_f^2 h$  when was close to $0$.
+Parameter $\epsilon$ can enlarge the region of attraction of analysed algorithm, but was not designed by \cite{Respondek_2019}.
+This procedure can be treated as an attempt to improve  the performance of the algorithm.
+The invertibility of $L_g L_f^2 h$ was another constraint imposed on the model.
+ 
+
 
 To see how the algorithm drives the robot to the reference upright position one of the successful trails from Fig~\ref{fig:} and Fig~\ref{fig:}  was chosen.
 The common exemplary successful initial condition was chosen as $\theta_{1_0} = 70^\circ$ and $\theta_{2_0} = 90^\circ$.
