@@ -338,8 +338,8 @@ or in a form of
 \end{equation}
 %
 where
-
-$
+%
+\begin{equation}
 f(x) =
 \left[
 \begin{array}{c}
@@ -352,16 +352,18 @@ v_2
 0
 \end{array}
 \right]
-$
 ,
-$
+%
+\quad
+%
 g(x) =
 \left[
 \begin{array}{c}
 0\\0\\0\\1
 \end{array}
 \right]
-$
+\label{eq:wektory_f_oraz_g}
+\end{equation}
 
 
 
@@ -453,11 +455,11 @@ u =
 \begin{cases}
 \frac{1}{L_g L_f^2 h} (-L_f^3 h + X), 
 & \text{for  }  
-\gamma(\theta_2) < |\delta| 
+\gamma(\theta_2) < |\delta_d| 
 \\
 -K (x_r - x), 
 & \text{for  } 
-\gamma(\theta_2) > |\delta| 
+\gamma(\theta_2) > |\delta_d| 
 \end{cases}
 \end{equation}
 %
@@ -468,7 +470,8 @@ and
 $x = [q_{1}\ v_{1}\ q_{2}\ v_{2}]^\top$ is the state vector 
 a 
 $x_r = [q_{r1}\ v_{r1}\ q_{r2}\ v_{r2}]^\top$ is the reference state vector, 
-$\omega_0$ i $K = [k_1\ k_2\ k_3\ k_4]$ are controllers gains.
+$\omega_0$ i $K = [k_1\ k_2\ k_3\ k_4]$ are controllers gains,
+$\delta_d$ is a desired value of parameter $\delta$ from Eq~(\ref{eq:wektory_f_oraz_g}).
 
 
 
