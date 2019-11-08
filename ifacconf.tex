@@ -612,7 +612,7 @@ Thus, the additional imposed restriction is the maximal value of $\sigma$ parame
 Authors assume the $\sigma$ parameter as $\sigma = 0.04$, which was obtained by trail end error.
 
 The additional problem with execution the algorithm is the need of inverting the decoupling matrix $L_g L_f^2 h$ in Eq.~(\ref{eq:RE_acrobot_u}).
-Fig. \ref{fig:} depicts a plot of $L_g L_f^2 h$ during simulation.
+Fig. \ref{fig:} depicts a plot of $L_g L_f^2 h$ during one exemplary simulation trial.
 To overcome the problem of inverting this matrix, authors use an arbitrarily chosen parameter $\epsilon$, which was added to $L_g L_f^2 h$  when was close to $0$.
 Parameter $\epsilon$ can enlarge the region of attraction of analysed algorithm, but was not designed by \cite{Respondek_2019}.
 This procedure can be treated as an attempt to improve  the performance of the algorithm.
@@ -768,6 +768,9 @@ Figures for the second case
 \label{sec:konkluzje}
 
 The main objective of this paper was to present a simulation results of the new approach of controlling the Pendubot system.
+
+One can draw a conclusion that analyzed approach is rather a representation of Pendubot's properties than an overall recipe  for stabilizing a double inverted pendulum with one actuation.
+% The algorithm does not guarantee that the system will not reach singularities.
 
 
 \begin{ack}
