@@ -573,10 +573,12 @@ The optimal $K$-gains ($K = [1, 520, 1050, 50]$) were obtained for the linear ap
 This section provides a simulation results of implementing control method (\ref{eq:pendubot_u1}) to the system in a form of (\ref{eq:dynamika_f_x_g}).
 The aim of presented simulations was to stabilize the robot in upright position.
 Authors also want to verify the convergence area of this new approach, which means that the set of initial conditions are going to be checked  to see whether they are appropriate to stabilize the robot under certain boundary conditions.
-One of them is defined by zero initial angular velocities in the joints.
+%
+{\color{blue}\textsf{Zmieniæ} -- One of them is defined by zero initial angular velocities in the joints.
 Contrary to appearances this situation is not favorable as there is no  any initial energy in the plant at the beginning of the pendulum movement.
 This causes that the algorithm has to "inject" a~lot of energy to move the robot from the initial condition and not to fall at the very beginning. 
 Moreover, the robot is not fixed to the ground and the reaction forces are considered preventing the robot to liftoff.
+}
 %
 
 The algorithm verification is carried out in two ways.
@@ -584,8 +586,8 @@ Firstly, one wants to know how the algorithm behaves when no restrictions on the
 Secondly, the motor torque saturation is imposed on the model (Case II).
 Thus, the algorithm is being checked whether is capable of controlling the model of physical robot.
 
-The algorithm is not able to stabilize the Pendubot from any initial conditions, with the adopted assumptions (like e.g maximal simulation time).
-It is interesting to see how far can the Pendubot be moved away from the equilibrium pose, to be stabilized in the upright position.
+The algorithm is not able to stabilize the Pendubot from any initial conditions, with the adopted assumptions.
+It is interesting to see how far can the Pendubot be moved away from the equilibrium pose, to be stabilized in the upright position under certain boundary conditions.
 The desired stabilization pose was the upright position for which the angles $\theta_{1r}$ and $\theta_{2r}$ were equal $\frac{\pi}{2}$ and $0$, respectively.
 To determine the convergence area of analyzed method, a series of tests were conducted.
 The results are depicted in Fig.~\ref{fig:} for Case I and  Fig.~\ref{fig: } for second case.
@@ -623,11 +625,57 @@ The invertibility of $L_g L_f^2 h$ was another constraint imposed on the model.
  
 
 
-To see how the algorithm drives the robot to the reference upright position one of the successful trails from Fig~\ref{fig:} and Fig~\ref{fig:}  was chosen.
-The common exemplary successful initial condition was chosen as $\theta_{1_0} = 70^\circ$ and $\theta_{2_0} = 90^\circ$.
+
+A series of tests were conducted to determine the convergence area.
+The results are depicted in Fig.~\ref{fig:re_pendu_wykreszbieznosci_case_1} for the first case, where there is no saturation on the control signal.
+The results depicted in Fig~\ref{fig:re_pendu_wykreszbieznosci_case_2} are for the case were motor torque is restricted to $6$~Nm, as in the section  \ref{sec:parametry_robota}.
 %
-The obtained angular trajectories are shown in Fig.~\ref{fig: } and Fig.~\ref{fig: } for the first and second approach, respectively.
+The blue colour indicates the successful trial, while the red one indicates the initial conditions that lead to failure (robot collapse).
 %
+%
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci}
+	\caption{Convergence area -- Case I}
+	\label{fig:re_pendu_wykreszbieznosci_case_1}
+\end{figure}
+%
+%
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci}
+	\caption{Convergence area -- Case II}
+	\label{fig:re_pendu_wykreszbieznosci_case_2}
+\end{figure}
+%
+
+
+
+
+
+
+To see how the algorithm drives the robot to the reference upright position one of the successful trails from Fig~\ref{fig:re_pendu_wykreszbieznosci_case_1} and Fig~\ref{fig:re_pendu_wykreszbieznosci_case_1}  was chosen.
+The common exemplary successful initial condition (for Case I and II) was chosen as {\color{red} $\theta_{1_0} = 70^\circ$ and $\theta_{2_0} = 90^\circ$}.
+%
+The obtained angular trajectories are shown in Fig.~\ref{fig:re_pendu_th1th2_case_1} and Fig.~\ref{fig:re_pendu_th1th2_case_2} for the first and second Case, respectively.
+%
+%
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.85\linewidth]{img/RE_pendu_th1th2}
+	\caption{Angular positions of links -- Case I}
+	\label{fig:re_pendu_th1th2_case_1}
+\end{figure}
+%
+%
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.85\linewidth]{img/RE_pendu_th1th2}
+	\caption{Angular positions of links -- Case II}
+	\label{fig:re_pendu_th1th2_case_2}
+\end{figure}
+%
+
 One can observe that the algorithm for Case~I drives the joints to theirs reference values about ??? times faster than this for the Case~II (it is obvious, as there is no restriction on the control signal.). 
 
 
@@ -650,50 +698,27 @@ Figure~\ref{fig: } and Fig.~\ref{fig: } depict the motor's torque expended durin
 The drawings depicting the total torque consumption during simulation are presented in Fig.~\ref{fig: } and Fig.~\ref{fig: } for the Case~I and  Case~II, respectively.
 
 
-\subsection{Case I}
+%\subsection{Case I}
 
-A series of tests were conducted to determine the convergence area.
-The results are depicted in Fig.~\ref{fig:re_pendu_wykreszbieznosci} for the first case, where there is no saturation on the control signal.
-The results depicted in Fig~\ref{fig:} are for the case were motor torque is restricted to $6$Nm, as in the section  \ref{sec:parametry_robota}.
-%
-The blue colour indicates the successful trial, while the red one indicates the initial conditions that lead to failure (robot collapse).
-%
-%
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci}
-	\caption{Convergence area -- Case I}
-\label{fig:re_pendu_wykreszbieznosci}
-\end{figure}
-%
-
-
-
-
-
-The obtained angular trajectories are shown in Fig.~\ref{fig:re_pendu_th1th2}
+%The obtained angular trajectories are shown in Fig.~\ref{fig:re_pendu_th1th2_case_2}
 % 
-%
-\begin{figure}[!h]
-\centering
-\includegraphics[width=0.85\linewidth]{img/RE_pendu_th1th2}
-\caption{Angular positions of links -- Case ?}
-\label{fig:re_pendu_th1th2}
-\end{figure}
-%
 
-
-
-
-
-Figure \ref{fig:re_pendu_reakcja} show vertical component of ground reaction forces for exemplary successful trial.
+Figure \ref{fig:re_pendu_reakcja_case_1} and \ref{fig:re_pendu_reakcja_case_2} show vertical component of ground reaction forces for exemplary successful trial.
 %
 %
 \begin{figure}[!h]
 \centering
 \includegraphics[width=0.9\linewidth]{img/RE_pendu_reakcja}
-\caption{Ground reaction forces -- Case ?}
-\label{fig:re_pendu_reakcja}
+\caption{Ground reaction forces -- Case I}
+\label{fig:re_pendu_reakcja_case_2}
+\end{figure}
+%
+%
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.9\linewidth]{img/RE_pendu_reakcja}
+	\caption{Ground reaction forces -- Case UI}
+	\label{fig:re_pendu_reakcja_case_2}
 \end{figure}
 %
 
@@ -739,26 +764,6 @@ The drawings depicting the total torque consumption during simulation are presen
 %
 
 %--------------------------------------------
-
-
-\subsection{Case II}
-
-Figures for the second case
-
-%
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci}
-	\caption{Convergence area -- Case II}
-	\label{fig:re_pendu_wykreszbieznosci}
-\end{figure}
-%
-
-
-
-
-
-
 
 
 
