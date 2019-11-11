@@ -635,15 +635,15 @@ The blue colour indicates the successful trial, while the red one indicates the 
 %
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci}
-	\caption{Convergence area -- Case I}
+	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_bez_sat}
+	\caption{Convergence area -- Case I (blue  -- successful trial, red -- failure)}
 	\label{fig:re_pendu_wykreszbieznosci_case_1}
 \end{figure}
 %
 %
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci}
+	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_sat}
 	\caption{Convergence area -- Case II}
 	\label{fig:re_pendu_wykreszbieznosci_case_2}
 \end{figure}
@@ -655,14 +655,14 @@ The blue colour indicates the successful trial, while the red one indicates the 
 
 
 To see how the algorithm drives the robot to the reference upright position one of the successful trails from Fig~\ref{fig:re_pendu_wykreszbieznosci_case_1} and Fig~\ref{fig:re_pendu_wykreszbieznosci_case_1}  was chosen.
-The common exemplary successful initial condition (for Case I and II) was chosen as {\color{red} $\theta_{1_0} = 70^\circ$ and $\theta_{2_0} = 90^\circ$}.
+The common exemplary successful initial condition (for Case I and II) was chosen as {\color{red} $\theta_{1_0} = 120^\circ$ and $\theta_{2_0} = -15^\circ$}.
 %
 The obtained angular trajectories are shown in Fig.~\ref{fig:re_pendu_th1th2_case_1} and Fig.~\ref{fig:re_pendu_th1th2_case_2} for the first and second Case, respectively.
 %
 %
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.85\linewidth]{img/RE_pendu_th1th2}
+	\includegraphics[width=0.85\linewidth]{img/pendubot_th1th2_bez_sat}
 	\caption{Angular positions of links -- Case I}
 	\label{fig:re_pendu_th1th2_case_1}
 \end{figure}
@@ -670,7 +670,7 @@ The obtained angular trajectories are shown in Fig.~\ref{fig:re_pendu_th1th2_cas
 %
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.85\linewidth]{img/RE_pendu_th1th2}
+	\includegraphics[width=0.85\linewidth]{img/pendubot_th1th2_sat}
 	\caption{Angular positions of links -- Case II}
 	\label{fig:re_pendu_th1th2_case_2}
 \end{figure}
@@ -692,10 +692,10 @@ T =
 %
 which is the integration of squares of all join torques over time (\cite{human_motion_ksiazka}).
 %
-Figure~\ref{fig: } and Fig.~\ref{fig: } depict the motor's torque expended during stabilization process for exemplary initial conditions.
+Figure~\ref{fig:re_pendu_reakcja_case_1} and Fig.~\ref{fig:re_pendu_reakcja_case_2} depict the motor's torque expended during stabilization process for exemplary initial conditions.
 
 
-The drawings depicting the total torque consumption during simulation are presented in Fig.~\ref{fig: } and Fig.~\ref{fig: } for the Case~I and  Case~II, respectively.
+The drawings depicting the total torque consumption during simulation are presented in Fig.~\ref{fig:re_pendu_tau_total_bez_sat} and Fig.~\ref{fig:re_pendu_tau_total_sat} for the Case~I and  Case~II, respectively.
 
 
 %\subsection{Case I}
@@ -708,15 +708,15 @@ Figure \ref{fig:re_pendu_reakcja_case_1} and \ref{fig:re_pendu_reakcja_case_2} s
 %
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.9\linewidth]{img/RE_pendu_reakcja}
+\includegraphics[width=0.9\linewidth]{img/Fr_bez_sat}
 \caption{Ground reaction forces -- Case I}
-\label{fig:re_pendu_reakcja_case_2}
+\label{fig:re_pendu_reakcja_case_1}
 \end{figure}
 %
 %
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.9\linewidth]{img/RE_pendu_reakcja}
+	\includegraphics[width=0.9\linewidth]{img/Fr_sat}
 	\caption{Ground reaction forces -- Case UI}
 	\label{fig:re_pendu_reakcja_case_2}
 \end{figure}
@@ -725,14 +725,22 @@ Figure \ref{fig:re_pendu_reakcja_case_1} and \ref{fig:re_pendu_reakcja_case_2} s
 
 
 
-Figure \ref{fig:re_pendu_tau} depict the motor's torque expended during stabilization process for exemplary initial conditions.
+Figure \ref{fig:re_pendu_tau_bez_sat} depict the motor's torque expended during stabilization process for exemplary initial conditions.
 %
 %
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.9\linewidth]{img/RE_pendu_tau}
-\caption{Motor torque -- Case ?}
-\label{fig:re_pendu_tau}
+\includegraphics[width=0.9\linewidth]{img/tau_bez_sat}
+\caption{Motor torque -- Case I}
+\label{fig:re_pendu_tau_bez_sat}
+\end{figure}
+%
+%
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\linewidth]{img/tau_sat}
+	\caption{Motor torque -- Case II}
+	\label{fig:re_pendu_tau_sat}
 \end{figure}
 %
 
@@ -752,14 +760,22 @@ which is the integration of squares of all join torques over time
 
 
 
-The drawings depicting the total torque consumption during simulation are presented in Fig.~\ref{fig:re_pendu_tau_total}.
+The drawings depicting the total torque consumption during simulation are presented in Fig.~\ref{fig:re_pendu_tau_total_bez_sat}.
 %}
 %
 \begin{figure}[!ht]
 \centering
-\includegraphics[width=0.93\linewidth]{img/RE_pendu_wykres_KE}
-\caption{Energetic cost of successful trials  -- Case ?}
-\label{fig:re_pendu_tau_total}
+\includegraphics[width=0.93\linewidth]{img/RE_pendu_wykres_KE_bez_sat}
+\caption{Energetic cost of successful trials  -- Case I}
+\label{fig:re_pendu_tau_total_bez_sat}
+\end{figure}
+%
+%
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.93\linewidth]{img/RE_pendu_wykres_KE_sat}
+	\caption{Energetic cost of successful trials  -- Case II}
+	\label{fig:re_pendu_tau_total_sat}
 \end{figure}
 %
 
