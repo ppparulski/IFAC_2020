@@ -574,27 +574,46 @@ This section provides a simulation results of implementing control method (\ref{
 The aim of presented simulations was to stabilize the robot in upright position.
 Authors also want to verify the convergence area of this new approach, which means that the set of initial conditions are going to be checked  to see whether they are appropriate to stabilize the robot under certain boundary conditions.
 %
-{\color{blue}\textsf{Zmieniæ} -- One of them is defined by zero initial angular velocities in the joints.
-Contrary to appearances this situation is not favorable as there is no  any initial energy in the plant at the beginning of the pendulum movement.
-This causes that the algorithm has to "inject" a~lot of energy to move the robot from the initial condition and not to fall at the very beginning. 
-Moreover, the robot is not fixed to the ground and the reaction forces are considered preventing the robot to liftoff.
-}
-%
-
 The algorithm verification is carried out in two ways.
 Firstly, one wants to know how the algorithm behaves when no restrictions on the motor torque are imposed (Case I).
 Secondly, the motor torque saturation is imposed on the model (Case II).
 Thus, the algorithm is being checked whether is capable of controlling the model of physical robot.
+%
+Another condition which is being checked is a restricion imposed on initial angular velocities in the joints.
+This situation is not favorable, as there is no any initial energy in the system at the beginning of the Pendubot movement.
+The algorithm must provide a great deal of energy to drive the robot from starting to desired position, and not to fall at the very beginning of the movement. 
+Moreover, the robot is not fixed to the ground and the reaction forces are considered preventing the robot to liftoff.
+%
 
 The algorithm is not able to stabilize the Pendubot from any initial conditions, with the adopted assumptions.
 It is interesting to see how far can the Pendubot be moved away from the equilibrium pose, to be stabilized in the upright position under certain boundary conditions.
 The desired stabilization pose was the upright position for which the angles $\theta_{1r}$ and $\theta_{2r}$ were equal $\frac{\pi}{2}$ and $0$, respectively.
-To determine the convergence area of analyzed method, a series of tests were conducted.
-The results are depicted in Fig.~\ref{fig:re_pendu_th1th2_case_1} for Case~I and  Fig.~\ref{fig:re_pendu_th1th2_case_2} for second case.
+%
+To determine the convergence area of analyzed method, a~series of tests were conducted.
+%The results are depicted in Fig.~\ref{fig:re_pendu_wykreszbieznosci_case_1} for Case~I and  Fig.~\ref{fig:re_pendu_wykreszbieznosci_case_2} for second case.
+%
+The results are depicted in Fig.~\ref{fig:re_pendu_wykreszbieznosci_case_1} for the first case, where there is no saturation on the control signal.
+The results depicted in Fig~\ref{fig:re_pendu_wykreszbieznosci_case_2} are for the case were motor torque is restricted to $6$~Nm, as in the section  \ref{sec:parametry_robota}.
 %
 The blue colour indicates the successful trial, while the red one indicates the initial conditions that lead to failure (robot collapse).
 %
-
+%
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_bez_sat}
+	\caption{Convergence area -- Case I (blue  -- successful trial, red -- failure)}
+	\label{fig:re_pendu_wykreszbieznosci_case_1}
+\end{figure}
+%
+%
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_sat}
+	\caption{Convergence area -- Case II}
+	\label{fig:re_pendu_wykreszbieznosci_case_2}
+\end{figure}
+%
+%
 Simulations in this paper were conducted with a step size equal 5$^\circ$, within range of $\theta_{1_0}$ from $0$ to $180^\circ$ and
 $\theta_{2_0}$ from $-90^\circ$ to $90^\circ$, which gave more than 1300 simulation per approach.
 These initial conditions mean that the swing-up problem is not considered, i.e. only situations where the robot is above the ground are taken into account.
@@ -602,22 +621,23 @@ The trial was being taken as successful while the error between actual and desir
 %
 
 Considered algorithm does not guarantee that the robot will not reach singularity.
-Thus, time must be another constraint imposed on the simulation.
+Thus, other constrains had to be imposed on the model.
+%Thus, time must be another constraint imposed on the simulation.
 As the time can be treated as the simulation time and a real time of executing the program, one should distinguish them.
 First of them is a "standard" simulation time, calculated by solver.
-The other one is the time of program's execution.
+The other one is the time of program's execution (or iterations of the program, to become independent of the computer's CPU).
 The need of imposing such a constraint results from the nature of considered system.
 Double inverted pendulum can reach a singularity position, which leads to discontinuities in some characteristics.
 These causes that the solver and simulation "hangs" or crash.
 %
-Authors concluded that while 75 seconds of the program's execution no result was obtained (achieving the desired configuration), such a situation should be treated as the occurrence of singularities in the object and a crash of the program. 
-
+Authors concluded that while {\color{red} ???? iterations} of the program's execution no result was obtained (achieving the desired configuration), such a situation should be treated as the occurrence of singularities in the object and a crash of the program. 
+\\
 As mentioned before in section \ref{sec:respondek} the control signal explodes around equilibria.
-Thus, the additional imposed restriction is the maximal value of $\sigma$ parameter from Eq. (\ref{eq:pendubot_u1}).
+Thus, the additional imposed restriction is the maximal value of $\sigma$ parameter from Eq.~(\ref{eq:pendubot_u1}).
 Authors assume the $\sigma$ parameter as $\sigma = 0.04$, which was obtained by trail end error.
-
+\\
 The additional problem with execution the algorithm is the need of inverting the decoupling matrix $L_g L_f^2 h$ in Eq.~(\ref{eq:RE_acrobot_u}).
-Fig.~\ref{fig:re_pendu_mianownik_case_1} and Fig.~\ref{fig:re_pendu_mianownik_case_2} depicts a plot of $L_g L_f^2 h$ during one exemplary simulation trial, for Case I and II, respectively.
+Fig.~\ref{fig:re_pendu_mianownik_case_1} and Fig.~\ref{fig:re_pendu_mianownik_case_2} depicts a plot of $L_g L_f^2 h$ during one exemplary simulation trial, for Case~I and II, respectively.
 To overcome the problem of inverting this matrix, authors use an arbitrarily chosen parameter $\epsilon$, which was added to $L_g L_f^2 h$  when was close to $0$.
 Parameter $\epsilon$ can enlarge the region of attraction of analysed algorithm, but was not designed by \cite{Respondek_2019}.
 This procedure can be treated as an attempt to improve  the performance of the algorithm.
@@ -641,36 +661,11 @@ The invertibility of $L_g L_f^2 h$ was another constraint imposed on the model.
 
 
 
-A series of tests were conducted to determine the convergence area.
-The results are depicted in Fig.~\ref{fig:re_pendu_wykreszbieznosci_case_1} for the first case, where there is no saturation on the control signal.
-The results depicted in Fig~\ref{fig:re_pendu_wykreszbieznosci_case_2} are for the case were motor torque is restricted to $6$~Nm, as in the section  \ref{sec:parametry_robota}.
-%
-The blue colour indicates the successful trial, while the red one indicates the initial conditions that lead to failure (robot collapse).
-%
-%
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_bez_sat}
-	\caption{Convergence area -- Case I (blue  -- successful trial, red -- failure)}
-	\label{fig:re_pendu_wykreszbieznosci_case_1}
-\end{figure}
-%
-%
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_sat}
-	\caption{Convergence area -- Case II}
-	\label{fig:re_pendu_wykreszbieznosci_case_2}
-\end{figure}
-%
 
 
 
-
-
-
-To see how the algorithm drives the robot to the reference upright position one of the successful trails from Fig~\ref{fig:re_pendu_wykreszbieznosci_case_1} and Fig~\ref{fig:re_pendu_wykreszbieznosci_case_1}  was chosen.
-The common exemplary successful initial condition (for Case I and II) was chosen as {\color{red} $\theta_{1_0} = 120^\circ$ and $\theta_{2_0} = -15^\circ$}.
+To see how the algorithm drives the robot to the reference upright position one of the successful trails from Fig.~\ref{fig:re_pendu_wykreszbieznosci_case_1} and Fig.~\ref{fig:re_pendu_wykreszbieznosci_case_2}  was chosen.
+The common exemplary successful initial condition (for Case~I and II) was chosen as {\color{red} $\theta_{1_0} = 120^\circ$ and $\theta_{2_0} = -15^\circ$}.
 %
 The obtained angular trajectories are shown in Fig.~\ref{fig:re_pendu_th1th2_case_1} and Fig.~\ref{fig:re_pendu_th1th2_case_2} for the first and second Case, respectively.
 %
@@ -690,11 +685,11 @@ The obtained angular trajectories are shown in Fig.~\ref{fig:re_pendu_th1th2_cas
 	\label{fig:re_pendu_th1th2_case_2}
 \end{figure}
 %
+%
+{\color{red} One can observe that the algorithm for Case~I ..............}
 
-One can observe that the algorithm for Case~I drives the joints to theirs reference values about ??? times faster than this for the Case~II (it is obvious, as there is no restriction on the control signal.). 
 
-
-A wide range of  robotic application reguire an energy savings or restrictions on its expenditure  (through e.g. motors' finite power). 
+A wide range of  robotic application require an energy savings or restrictions on its expenditure  (through e.g. motors' finite power). 
 As a consequence, the total energetic cost of driving the robot to the upright position was calculated during the simulation.
 %
 The dynamic effort criterion (\ref{eq:kryterium_energetyczne}) was used as an indicator of energy used by the algorithm. The effort was defined as
@@ -705,20 +700,51 @@ T =
 \int_0^{t_{max}} \tau^2 dt
 \end{equation}
 %
-which is the integration of squares of all join torques over time (\cite{human_motion_ksiazka}).
+which is the integration of squares of all join torques over time \cite{human_motion_ksiazka}.
 %
-Figure~\ref{fig:re_pendu_reakcja_case_1} and Fig.~\ref{fig:re_pendu_reakcja_case_2} depict the motor's torque expended during stabilization process for exemplary initial conditions.
+Figure~\ref{fig:re_pendu_tau_bez_sat} and Fig.~\ref{fig:re_pendu_tau_z_sat} depict the motor's torque expended during stabilization process for exemplary initial conditions.
+%
+%
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\linewidth]{img/tau_bez_sat}
+	\caption{Motor torque -- Case I}
+	\label{fig:re_pendu_tau_bez_sat}
+\end{figure}
+%
+%
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.9\linewidth]{img/tau_sat}
+	\caption{Motor torque -- Case II}
+	\label{fig:re_pendu_tau_z_sat}
+\end{figure}
+%
 
 
 The drawings depicting the total torque consumption during simulation are presented in Fig.~\ref{fig:re_pendu_tau_total_bez_sat} and Fig.~\ref{fig:re_pendu_tau_total_sat} for the Case~I and  Case~II, respectively.
+%
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.93\linewidth]{img/RE_pendu_wykres_KE_bez_sat}
+	\caption{Energetic cost of successful trials  -- Case I}
+	\label{fig:re_pendu_tau_total_bez_sat}
+\end{figure}
+%
+%
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.93\linewidth]{img/RE_pendu_wykres_KE_sat}
+	\caption{Energetic cost of successful trials  -- Case II}
+	\label{fig:re_pendu_tau_total_sat}
+\end{figure}
+%
+One can observe how the energy is being distributed over analyzed trials.
+This observation can be useful to pick a specific trial with respect to energy consumption, to test the algorithm in a real robot, for example. 
 
-
-%\subsection{Case I}
-
-%The obtained angular trajectories are shown in Fig.~\ref{fig:re_pendu_th1th2_case_2}
-% 
 
 Figure \ref{fig:re_pendu_reakcja_case_1} and \ref{fig:re_pendu_reakcja_case_2} show vertical component of ground reaction forces for exemplary successful trial.
+One can observe that these values do not cross zero, which means that the robot does not lift-off during its movement.
 %
 %
 \begin{figure}[!h]
@@ -739,64 +765,7 @@ Figure \ref{fig:re_pendu_reakcja_case_1} and \ref{fig:re_pendu_reakcja_case_2} s
 
 
 
-
-Figure \ref{fig:re_pendu_tau_bez_sat} depict the motor's torque expended during stabilization process for exemplary initial conditions.
-%
-%
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=0.9\linewidth]{img/tau_bez_sat}
-\caption{Motor torque -- Case I}
-\label{fig:re_pendu_tau_bez_sat}
-\end{figure}
-%
-%
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/tau_sat}
-	\caption{Motor torque -- Case II}
-	\label{fig:re_pendu_tau_sat}
-\end{figure}
-%
-
-
-
-The dynamic effort criterion (\ref{eq:kryterium_energetyczne}) was used as an indicator of energy used by the algorithm. The effort was defined as
-%
-\begin{equation}
-\label{eq:kryterium_energetyczne}
-T = 
-\int_0^{t_{max}} \tau^2 dt
-\end{equation}
-%
-which is the integration of squares of all join torques over time
-%The value of this integration is a torque square summation, which is very closely related to the energy of the system 
-\cite{human_motion_ksiazka}.
-
-
-
-The drawings depicting the total torque consumption during simulation are presented in Fig.~\ref{fig:re_pendu_tau_total_bez_sat}.
-%}
-%
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=0.93\linewidth]{img/RE_pendu_wykres_KE_bez_sat}
-\caption{Energetic cost of successful trials  -- Case I}
-\label{fig:re_pendu_tau_total_bez_sat}
-\end{figure}
-%
-%
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.93\linewidth]{img/RE_pendu_wykres_KE_sat}
-	\caption{Energetic cost of successful trials  -- Case II}
-	\label{fig:re_pendu_tau_total_sat}
-\end{figure}
-%
-
 %--------------------------------------------
-
-
 
 
 
@@ -809,13 +778,14 @@ The drawings depicting the total torque consumption during simulation are presen
 The main objective of this paper was to present a simulation results of the new approach of controlling the Pendubot system.
 
 One can draw a conclusion that analyzed approach is rather a representation of Pendubot's properties than an overall recipe  for stabilizing a double inverted pendulum with one actuation.
-% The algorithm does not guarantee that the system will not reach singularities.
-
-
-\begin{ack}
-Place acknowledgments here.
-\end{ack}
-
+The algorithm does not guarantee that the system will not reach singularities.
+One needs to impose several constraints in order to reflect the nature of the considered object as good as possible.
+%
+%
+%\begin{ack}
+%Place acknowledgments here.
+%\end{ack}
+%
 
 
 
