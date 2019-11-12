@@ -590,7 +590,7 @@ The algorithm is not able to stabilize the Pendubot from any initial conditions,
 It is interesting to see how far can the Pendubot be moved away from the equilibrium pose, to be stabilized in the upright position under certain boundary conditions.
 The desired stabilization pose was the upright position for which the angles $\theta_{1r}$ and $\theta_{2r}$ were equal $\frac{\pi}{2}$ and $0$, respectively.
 To determine the convergence area of analyzed method, a series of tests were conducted.
-The results are depicted in Fig.~\ref{fig:} for Case I and  Fig.~\ref{fig: } for second case.
+The results are depicted in Fig.~\ref{fig:re_pendu_th1th2_case_1} for Case~I and  Fig.~\ref{fig:re_pendu_th1th2_case_2} for second case.
 %
 The blue colour indicates the successful trial, while the red one indicates the initial conditions that lead to failure (robot collapse).
 %
@@ -598,7 +598,7 @@ The blue colour indicates the successful trial, while the red one indicates the 
 Simulations in this paper were conducted with a step size equal 5$^\circ$, within range of $\theta_{1_0}$ from $0$ to $180^\circ$ and
 $\theta_{2_0}$ from $-90^\circ$ to $90^\circ$, which gave more than 1300 simulation per approach.
 These initial conditions mean that the swing-up problem is not considered, i.e. only situations where the robot is above the ground are taken into account.
-The trial was being taken as successful while the error between actual and desired angle was smaller than  $\frac{1}{180}\pi \,$rad within simulation time  $t = 15 \,$s. 
+The trial was being taken as successful while the error between actual and desired angle was smaller than  $\frac{1}{180}\pi \,$rad within simulation time  {\color{red} $t = 15 \,$s}. 
 %
 
 Considered algorithm does not guarantee that the robot will not reach singularity.
@@ -617,12 +617,27 @@ Thus, the additional imposed restriction is the maximal value of $\sigma$ parame
 Authors assume the $\sigma$ parameter as $\sigma = 0.04$, which was obtained by trail end error.
 
 The additional problem with execution the algorithm is the need of inverting the decoupling matrix $L_g L_f^2 h$ in Eq.~(\ref{eq:RE_acrobot_u}).
-Fig. \ref{fig:} depicts a plot of $L_g L_f^2 h$ during one exemplary simulation trial.
+Fig.~\ref{fig:re_pendu_mianownik_case_1} and Fig.~\ref{fig:re_pendu_mianownik_case_2} depicts a plot of $L_g L_f^2 h$ during one exemplary simulation trial, for Case I and II, respectively.
 To overcome the problem of inverting this matrix, authors use an arbitrarily chosen parameter $\epsilon$, which was added to $L_g L_f^2 h$  when was close to $0$.
 Parameter $\epsilon$ can enlarge the region of attraction of analysed algorithm, but was not designed by \cite{Respondek_2019}.
 This procedure can be treated as an attempt to improve  the performance of the algorithm.
 The invertibility of $L_g L_f^2 h$ was another constraint imposed on the model.
- 
+%
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.85\linewidth]{img/M_d_bez_sat}
+	\caption{Decoupling matrix -- Case I }
+	\label{fig:re_pendu_mianownik_case_1}
+\end{figure}
+% 
+%
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.85\linewidth]{img/M_d_z_sat}
+	\caption{Decoupling matrix -- Case II }
+	\label{fig:re_pendu_mianownik_case_2}
+\end{figure}
+% 
 
 
 
