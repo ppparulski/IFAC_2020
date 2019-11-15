@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.13)  15 NOV 2019 12:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.13)  15 NOV 2019 14:11
 entering extended mode
 **./ifacconf.tex
 (ifacconf.tex
@@ -363,125 +363,154 @@ File: img/sprzet.jpg Graphic file (type jpg)
 <use img/sprzet.jpg>
 Package pdftex.def Info: img/sprzet.jpg  used on input line 521.
 (pdftex.def)             Requested size: 214.03738pt x 142.67819pt.
-<img/RE_pendu_wykres_zbieznosci_bez_sat.png, id=24, 578.16pt x 433.62pt>
+<img/LQR_sam.png, id=24, 532.23843pt x 380.17032pt>
+File: img/LQR_sam.png Graphic file (type png)
+<use img/LQR_sam.png>
+Package pdftex.def Info: img/LQR_sam.png  used on input line 590.
+(pdftex.def)             Requested size: 214.03738pt x 152.88336pt.
+<img/pendubot_th1th2_z_lqr.png, id=25, 301.125pt x 218.9781pt>
+File: img/pendubot_th1th2_z_lqr.png Graphic file (type png)
+<use img/pendubot_th1th2_z_lqr.png>
+Package pdftex.def Info: img/pendubot_th1th2_z_lqr.png  used on input line 599.
+
+(pdftex.def)             Requested size: 123.38675pt x 89.72813pt.
+<img/Fr_bez_sat.png, id=26, 301.125pt x 218.9781pt>
+File: img/Fr_bez_sat.png Graphic file (type png)
+<use img/Fr_bez_sat.png>
+Package pdftex.def Info: img/Fr_bez_sat.png  used on input line 600.
+(pdftex.def)             Requested size: 123.38675pt x 89.72813pt.
+<img/M_d_z_lqr.png, id=27, 301.125pt x 218.9781pt>
+File: img/M_d_z_lqr.png Graphic file (type png)
+<use img/M_d_z_lqr.png>
+Package pdftex.def Info: img/M_d_z_lqr.png  used on input line 608.
+(pdftex.def)             Requested size: 123.38675pt x 89.72813pt.
+<img/tau_z_lqr.png, id=28, 301.125pt x 218.9781pt>
+File: img/tau_z_lqr.png Graphic file (type png)
+<use img/tau_z_lqr.png>
+Package pdftex.def Info: img/tau_z_lqr.png  used on input line 609.
+(pdftex.def)             Requested size: 123.38675pt x 89.72813pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3 <./img/sprzet.jpg> <./img/LQR_sam.png (PNG copy)>]
+<img/RE_pendu_wykres_zbieznosci_bez_sat.png, id=35, 578.16pt x 433.62pt>
 File: img/RE_pendu_wykres_zbieznosci_bez_sat.png Graphic file (type png)
 <use img/RE_pendu_wykres_zbieznosci_bez_sat.png>
 Package pdftex.def Info: img/RE_pendu_wykres_zbieznosci_bez_sat.png  used on in
-put line 603.
+put line 653.
 (pdftex.def)             Requested size: 214.03738pt x 160.5229pt.
-<img/RE_pendu_wykres_zbieznosci_sat.png, id=25, 578.16pt x 433.62pt>
+<img/RE_pendu_wykres_zbieznosci_sat.png, id=36, 578.16pt x 433.62pt>
 File: img/RE_pendu_wykres_zbieznosci_sat.png Graphic file (type png)
 <use img/RE_pendu_wykres_zbieznosci_sat.png>
 Package pdftex.def Info: img/RE_pendu_wykres_zbieznosci_sat.png  used on input 
-line 611.
+line 661.
 (pdftex.def)             Requested size: 214.03738pt x 160.5229pt.
-<img/M_d_bez_sat.png, id=26, 301.125pt x 218.9781pt>
+<img/M_d_bez_sat.png, id=37, 301.125pt x 218.9781pt>
 File: img/M_d_bez_sat.png Graphic file (type png)
 <use img/M_d_bez_sat.png>
-Package pdftex.def Info: img/M_d_bez_sat.png  used on input line 648.
-(pdftex.def)             Requested size: 214.03738pt x 155.65262pt.
-<img/M_d_z_sat.png, id=27, 301.125pt x 218.9781pt>
+Package pdftex.def Info: img/M_d_bez_sat.png  used on input line 698.
+(pdftex.def)             Requested size: 115.83286pt x 84.23499pt.
+<img/M_d_z_sat.png, id=38, 301.125pt x 218.9781pt>
 File: img/M_d_z_sat.png Graphic file (type png)
 <use img/M_d_z_sat.png>
-Package pdftex.def Info: img/M_d_z_sat.png  used on input line 656.
-(pdftex.def)             Requested size: 214.03738pt x 155.65262pt.
- [3 <./img/sprzet.jpg>]
-<img/pendubot_th1th2_bez_sat.png, id=34, 301.125pt x 218.9781pt>
+Package pdftex.def Info: img/M_d_z_sat.png  used on input line 699.
+(pdftex.def)             Requested size: 115.83286pt x 84.23499pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<img/pendubot_th1th2_bez_sat.png, id=39, 301.125pt x 218.9781pt>
 File: img/pendubot_th1th2_bez_sat.png Graphic file (type png)
 <use img/pendubot_th1th2_bez_sat.png>
-Package pdftex.def Info: img/pendubot_th1th2_bez_sat.png  used on input line 67
-5.
+Package pdftex.def Info: img/pendubot_th1th2_bez_sat.png  used on input line 72
+6.
 (pdftex.def)             Requested size: 214.03738pt x 155.65262pt.
-<img/pendubot_th1th2_z_sat.png, id=35, 301.125pt x 218.9781pt>
+<img/pendubot_th1th2_z_sat.png, id=40, 301.125pt x 218.9781pt>
 File: img/pendubot_th1th2_z_sat.png Graphic file (type png)
 <use img/pendubot_th1th2_z_sat.png>
-Package pdftex.def Info: img/pendubot_th1th2_z_sat.png  used on input line 683.
+Package pdftex.def Info: img/pendubot_th1th2_z_sat.png  used on input line 734.
 
 (pdftex.def)             Requested size: 214.03738pt x 155.65262pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<img/tau_bez_sat.png, id=36, 301.125pt x 218.9781pt>
+[4 <./img/pendubot_th1th2_z_lqr.png (PNG copy)> <./img/Fr_bez_sat.png (PNG copy
+)> <./img/M_d_z_lqr.png (PNG copy)> <./img/tau_z_lqr.png (PNG copy)> <./img/RE_
+pendu_wykres_zbieznosci_bez_sat.png (PNG copy)> <./img/RE_pendu_wykres_zbieznos
+ci_sat.png (PNG copy)>]
+<img/tau_bez_sat.png, id=44, 301.125pt x 218.9781pt>
 File: img/tau_bez_sat.png Graphic file (type png)
 <use img/tau_bez_sat.png>
-Package pdftex.def Info: img/tau_bez_sat.png  used on input line 710.
-(pdftex.def)             Requested size: 226.62465pt x 164.80786pt.
-<img/tau_z_sat.png, id=37, 301.125pt x 218.9781pt>
+Package pdftex.def Info: img/tau_bez_sat.png  used on input line 763.
+(pdftex.def)             Requested size: 115.83286pt x 84.23499pt.
+<img/tau_z_sat.png, id=45, 301.125pt x 218.9781pt>
 File: img/tau_z_sat.png Graphic file (type png)
 <use img/tau_z_sat.png>
-Package pdftex.def Info: img/tau_z_sat.png  used on input line 718.
-(pdftex.def)             Requested size: 226.62465pt x 164.80786pt.
-[4 <./img/RE_pendu_wykres_zbieznosci_bez_sat.png (PNG copy)> <./img/RE_pendu_wy
-kres_zbieznosci_sat.png (PNG copy)> <./img/M_d_bez_sat.png (PNG copy)> <./img/M
-_d_z_sat.png (PNG copy)>]
-<img/RE_pendu_wykres_KE_bez_sat.png, id=42, 578.16pt x 433.62pt>
+Package pdftex.def Info: img/tau_z_sat.png  used on input line 764.
+(pdftex.def)             Requested size: 115.83286pt x 84.23499pt.
+<img/RE_pendu_wykres_KE_bez_sat.png, id=46, 578.16pt x 433.62pt>
 File: img/RE_pendu_wykres_KE_bez_sat.png Graphic file (type png)
 <use img/RE_pendu_wykres_KE_bez_sat.png>
 Package pdftex.def Info: img/RE_pendu_wykres_KE_bez_sat.png  used on input line
- 729.
+ 783.
 (pdftex.def)             Requested size: 234.17856pt x 175.62837pt.
-<img/RE_pendu_wykres_KE_sat.png, id=43, 578.16pt x 433.62pt>
+<img/RE_pendu_wykres_KE_sat.png, id=47, 578.16pt x 433.62pt>
 File: img/RE_pendu_wykres_KE_sat.png Graphic file (type png)
 <use img/RE_pendu_wykres_KE_sat.png>
-Package pdftex.def Info: img/RE_pendu_wykres_KE_sat.png  used on input line 737
+Package pdftex.def Info: img/RE_pendu_wykres_KE_sat.png  used on input line 791
 .
 (pdftex.def)             Requested size: 234.17856pt x 175.62837pt.
-<img/Fr_bez_sat.png, id=44, 301.125pt x 218.9781pt>
 File: img/Fr_bez_sat.png Graphic file (type png)
 <use img/Fr_bez_sat.png>
-Package pdftex.def Info: img/Fr_bez_sat.png  used on input line 752.
-(pdftex.def)             Requested size: 226.62465pt x 164.80786pt.
-<img/Fr_z_sat.png, id=45, 301.125pt x 218.9781pt>
+Package pdftex.def Info: img/Fr_bez_sat.png  used on input line 808.
+(pdftex.def)             Requested size: 115.83286pt x 84.23499pt.
+<img/Fr_z_sat.png, id=48, 301.125pt x 218.9781pt>
 File: img/Fr_z_sat.png Graphic file (type png)
 <use img/Fr_z_sat.png>
-Package pdftex.def Info: img/Fr_z_sat.png  used on input line 760.
-(pdftex.def)             Requested size: 226.62465pt x 164.80786pt.
+Package pdftex.def Info: img/Fr_z_sat.png  used on input line 809.
+(pdftex.def)             Requested size: 115.83286pt x 84.23499pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+[5 <./img/M_d_bez_sat.png (PNG copy)> <./img/M_d_z_sat.png (PNG copy)> <./img/p
+endubot_th1th2_bez_sat.png (PNG copy)> <./img/pendubot_th1th2_z_sat.png (PNG co
+py)> <./img/tau_bez_sat.png (PNG copy)> <./img/tau_z_sat.png (PNG copy)> <./img
+/RE_pendu_wykres_KE_bez_sat.png (PNG copy)> <./img/RE_pendu_wykres_KE_sat.png (
+PNG copy)>] (ifacconf.bbl) [6
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[5 <./img/pendubot_th1th2_bez_sat.png (PNG copy)> <./img/pendubot_th1th2_z_sat.
-png (PNG copy)> <./img/tau_bez_sat.png (PNG copy)> <./img/tau_z_sat.png (PNG co
-py)> <./img/RE_pendu_wykres_KE_bez_sat.png (PNG copy)> <./img/RE_pendu_wykres_K
-E_sat.png (PNG copy)>] (ifacconf.bbl) [6 <./img/Fr_bez_sat.png (PNG copy)> <./i
-mg/Fr_z_sat.png (PNG copy)>] (ifacconf.aux) ) 
+ <./img/Fr_z_sat.png (PNG copy)>] (ifacconf.aux) ) 
 Here is how much of TeX's memory you used:
- 4597 strings out of 492524
- 58538 string characters out of 3130675
+ 4629 strings out of 492524
+ 59187 string characters out of 3130675
  141712 words of memory out of 3000000
- 8788 multiletter control sequences out of 15000+200000
+ 8816 multiletter control sequences out of 15000+200000
  15376 words of font info for 57 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,11n,37p,570b,252s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/OPTITRACK/AppData/Roamin
-g/MiKTeX/2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Users/OPTITRACK/AppData/Roaming/Mi
-KTeX/2.9/fonts/enc/dvips/pl/plit.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.p
-fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program File
-s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbol
-s/msbm10.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/public/
-pl/plbx10.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
-/pl/plbx12.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/publi
-c/pl/plr10.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/publi
-c/pl/plr8.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
-/pl/plti10.pfb>
-Output written on ifacconf.pdf (6 pages, 4248763 bytes).
+{C:/Users/OPTITRACK/AppData/R
+oaming/MiKTeX/2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Users/OPTITRACK/AppData/Roami
+ng/MiKTeX/2.9/fonts/enc/dvips/pl/plit.enc}<C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+mi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/s
+ymbols/msbm10.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/pu
+blic/pl/plbx10.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/p
+ublic/pl/plbx12.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/
+public/pl/plr10.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/
+public/pl/plr8.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/p
+ublic/pl/plti10.pfb>
+Output written on ifacconf.pdf (6 pages, 4373858 bytes).
 PDF statistics:
- 106 PDF objects out of 1000 (max. 8388607)
+ 110 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 71 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

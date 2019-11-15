@@ -579,9 +579,59 @@ Firstly, one wants to know how the algorithm behaves when no restrictions on the
 Secondly, the motor torque saturation is imposed on the model (Case II).
 Thus, the algorithm is being checked whether is capable of controlling the model of physical robot.
 %
-Another condition which is being checked is a restricion imposed on initial angular velocities in the joints.
+To check how the algorithm behaves near the equilibirum pose, the system  (\ref{eq:dynamika_f_x_g})  with only LQR controller working was checked.
+As a~result one obtained a~region of initial conditions (Fig.~\ref{fig:LQR_tunel_warunki}) that leads to upright position.
+The plot of angular positions in links, ground reaction forces, decoupling matrix and motor torque are depicted in Fig.~(\ref{fig:LQR_pendu_th1th2_reakcja}, \ref{fig:LQR_pendu_mianownik_tau}).
+Subsequently, the full controller (\ref{eq:pendubot_u1}) was used in order to verify considered control scheme.
+%
+%
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.85\linewidth]{img/LQR_sam}
+	\caption{A~region of initial conditions (Fig.~\ref{fig:LQR_tunel_warunki}) that leads to upright position, for LQR controller.}
+	\label{fig:LQR_tunel_warunki}
+\end{figure}
+%
+%
+%
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.49\linewidth]{img/pendubot_th1th2_z_lqr}
+	\includegraphics[width=0.49\linewidth]{img/Fr_bez_sat}
+	\caption{The result of LQR controller -- a) Angular positions of links, b) Ground reaction forces}
+	\label{fig:LQR_pendu_th1th2_reakcja}
+\end{figure}
+%
+%
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.49\linewidth]{img/M_d_z_lqr}
+	\includegraphics[width=0.49\linewidth]{img/tau_z_lqr}
+	\caption{The result of LQR controller -- a) Decoupling matrix, b) Motor torque}
+	\label{fig:LQR_pendu_mianownik_tau}
+\end{figure}
+% 
+%%
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.49\linewidth]{img/tau_z_lqr}
+%	\caption{Motor torque -- only LQR}
+%	\label{fig:LQR_pendu_tau}
+%\end{figure}
+%
+%
+%\begin{figure}[!h]
+%\centering
+%\includegraphics[width=0.9\linewidth]{img/Fr_bez_sat}
+%\caption{Ground reaction forces -- only LQR}
+%\label{fig:LQR_pendu_reakcja}
+%\end{figure}
+%
+%
+After applying the  controller (\ref{eq:pendubot_u1}) several conditions had to be imposed on the model.
+One of them is a restricion imposed on initial angular velocities in the joints.
 This situation is not favorable, as there is no any initial energy in the system at the beginning of the Pendubot movement.
-The algorithm must provide a great deal of energy to drive the robot from starting to desired position, and not to fall at the very beginning of the movement. 
+The algorithm must provide a~great deal of energy to drive the robot from starting to desired position, and not to fall at the very beginning of the movement. 
 Moreover, the robot is not fixed to the ground and the reaction forces are considered preventing the robot to liftoff.
 %
 
@@ -599,18 +649,18 @@ The blue colour indicates the successful trial, while the red one indicates the 
 %
 %
 \begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_bez_sat}
-	\caption{Convergence area -- Case I (blue  -- successful trial, red -- failure)}
-	\label{fig:re_pendu_wykreszbieznosci_case_1}
+\centering
+\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_bez_sat}
+\caption{Convergence area -- Case I (blue  -- successful trial, red -- failure)}
+\label{fig:re_pendu_wykreszbieznosci_case_1}
 \end{figure}
 %
 %
 \begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_sat}
-	\caption{Convergence area -- Case II}
-	\label{fig:re_pendu_wykreszbieznosci_case_2}
+\centering
+\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_sat}
+\caption{Convergence area -- Case II}
+\label{fig:re_pendu_wykreszbieznosci_case_2}
 \end{figure}
 %
 %
@@ -630,14 +680,14 @@ The need of imposing such a constraint results from the nature of considered sys
 Double inverted pendulum can reach a singularity position, which leads to discontinuities in some characteristics.
 These causes that the solver and simulation "hangs" or crash.
 %
-Authors concluded that while {\color{red} ???? iterations} of the program's execution no result was obtained (achieving the desired configuration), such a situation should be treated as the occurrence of singularities in the object and a crash of the program. 
+Authors concluded that while {\color{black} 50000 iterations} of the program's execution no result was obtained (achieving the desired configuration), such a situation should be treated as the occurrence of singularities in the object and a crash of the program. 
 \\
 As mentioned before in section \ref{sec:respondek} the control signal explodes around equilibria.
 Thus, the additional imposed restriction is the maximal value of $\sigma$ parameter from Eq.~(\ref{eq:pendubot_u1}).
 Authors assume the $\sigma$ parameter as $\sigma = 0.04$, which was obtained by trail end error.
 \\
 The additional problem with execution the algorithm is the need of inverting the decoupling matrix $L_g L_f^2 h$ in Eq.~(\ref{eq:RE_acrobot_u}).
-Fig.~\ref{fig:re_pendu_mianownik_case_1} and Fig.~\ref{fig:re_pendu_mianownik_case_2} depicts a plot of $L_g L_f^2 h$ during one exemplary simulation trial, for Case~I and II, respectively.
+Fig.~\ref{fig:re_pendu_mianownik} depicts a plot of $L_g L_f^2 h$ during one exemplary simulation trial, for Case~I and II, respectively.
 To overcome the problem of inverting this matrix, authors use an arbitrarily chosen parameter $\epsilon$, which was added to $L_g L_f^2 h$  when was close to $0$.
 Parameter $\epsilon$ can enlarge the region of attraction of analysed algorithm, but was not designed by \cite{Respondek_2019}.
 This procedure can be treated as an attempt to improve  the performance of the algorithm.
@@ -645,19 +695,20 @@ The invertibility of $L_g L_f^2 h$ was another constraint imposed on the model.
 %
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=0.85\linewidth]{img/M_d_bez_sat}
-	\caption{Decoupling matrix -- Case I }
-	\label{fig:re_pendu_mianownik_case_1}
+{\footnotesize a)}\includegraphics[width=0.46\linewidth]{img/M_d_bez_sat}
+{\footnotesize b)}\includegraphics[width=0.46\linewidth]{img/M_d_z_sat}
+\caption{Decoupling matrix -- a) Case I, b) Case II }
+	\label{fig:re_pendu_mianownik}
 \end{figure}
 % 
-%
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.85\linewidth]{img/M_d_z_sat}
-	\caption{Decoupling matrix -- Case II }
-	\label{fig:re_pendu_mianownik_case_2}
-\end{figure}
-% 
+%%
+%\begin{figure}[!h]
+%	\centering
+%	\includegraphics[width=0.85\linewidth]{img/M_d_z_sat}
+%	\caption{Decoupling matrix -- Case II }
+%	\label{fig:re_pendu_mianownik_case_2}
+%\end{figure}
+%% 
 
 
 
@@ -702,23 +753,26 @@ T =
 %
 which is the integration of squares of all join torques over time \cite{human_motion_ksiazka}.
 %
-Figure~\ref{fig:re_pendu_tau_bez_sat} and Fig.~\ref{fig:re_pendu_tau_z_sat} depict the motor's torque expended during stabilization process for exemplary initial conditions.
+Figure~\ref{fig:re_pendu_tau}
+% and Fig.~\ref{fig:re_pendu_tau_z_sat}
+depicts the motor's torque expended during stabilization process for exemplary initial conditions.
 %
 %
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.9\linewidth]{img/tau_bez_sat}
-	\caption{Motor torque -- Case I}
-	\label{fig:re_pendu_tau_bez_sat}
+	{\footnotesize a)}\includegraphics[width=0.46\linewidth]{img/tau_bez_sat}
+	{\footnotesize b)}\includegraphics[width=0.46\linewidth]{img/tau_z_sat}
+	\caption{Motor torque -- a) Case I, b) Case II}
+	\label{fig:re_pendu_tau}
 \end{figure}
 %
 %
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/tau_z_sat}
-	\caption{Motor torque -- Case II}
-	\label{fig:re_pendu_tau_z_sat}
-\end{figure}
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.9\linewidth]{img/tau_z_sat}
+%	\caption{Motor torque -- Case II}
+%	\label{fig:re_pendu_tau_z_sat}
+%\end{figure}
 %
 
 
@@ -743,25 +797,27 @@ One can observe how the energy is being distributed over analyzed trials.
 This observation can be useful to pick a specific trial with respect to energy consumption, to test the algorithm in a real robot, for example. 
 
 
-Figure \ref{fig:re_pendu_reakcja_case_1} and \ref{fig:re_pendu_reakcja_case_2} show vertical component of ground reaction forces for exemplary successful trial.
+Figure \ref{fig:re_pendu_reakcja_case} 
+%and \ref{fig:re_pendu_reakcja_case_2} 
+shows vertical component of ground reaction forces for exemplary successful trial.
 One can observe that these values do not cross zero, which means that the robot does not lift-off during its movement.
 %
 %
 \begin{figure}[!h]
 \centering
-\includegraphics[width=0.9\linewidth]{img/Fr_bez_sat}
-\caption{Ground reaction forces -- Case I}
-\label{fig:re_pendu_reakcja_case_1}
+{\footnotesize a)}\includegraphics[width=0.46\linewidth]{img/Fr_bez_sat}
+{\footnotesize b)}\includegraphics[width=0.46\linewidth]{img/Fr_z_sat}
+\caption{Ground reaction forces -- a) Case I, b) Case II}
+\label{fig:re_pendu_reakcja_case}
 \end{figure}
 %
 %
-\begin{figure}[!h]
-	\centering
-	\includegraphics[width=0.9\linewidth]{img/Fr_z_sat}
-	\caption{Ground reaction forces -- Case UI}
-	\label{fig:re_pendu_reakcja_case_2}
-\end{figure}
-%
+%\begin{figure}[!h]
+%	\centering
+%	\caption{Ground reaction forces -- Case UI}
+%	\label{fig:re_pendu_reakcja_case_2}
+%\end{figure}
+%%
 
 
 
