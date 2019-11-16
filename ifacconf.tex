@@ -82,7 +82,7 @@ Robotics, Robot dynamics, Pendubot, nonlinear control, feedback linearization, n
 
 \section{Introduction}
 
-Acrobot and Pendubot are well-known fundamental examples of underactuated planar mechanical systems moving in the presence of gravity. Although their kinematic structures are relatively simple, still they can be considered as important benchmark systems which are of great importance for the development of nonlinear control strategies. 
+Acrobot and Pendubot are well-known fundamental examples of underactuated planar mechanical systems moving in the presence of gravity. Although their kinematic structures are relatively simple, still they can be considered as important benchmark systems which are of great importance for the development of nonlinear control strategies.  
 
 Basically, a standard approach to stabilise both systems at an unstable equilibrium requires design of two controllers for the task of swing-up (when the robot hangs down) and the balancing task around the equilibrium point, respectively.
 
@@ -420,6 +420,9 @@ X = -(\omega_0^3 h + 3\omega_0^2 L_f h + 3\omega_0 L_f^2 h).
 %Czesc sprzezenia od wyjscia $X$ zawiera pulsacje $\omega_0$, ktora jest parametrem regulatora.
 and $L_f h$, $L_f^2 h$ are Lie derivatives along vector field $f(x)$.
 
+
+
+
 {\color{blue}According to \cite{Respondek_2019} relative degree of $h$ is not well defined around $v_1=v_2=0$, thus the equilibria of Eq.~(\ref{eq:dynamika_f_x_g}) cannot be regular.}
 %
 Since at {\color{blue} non regular} points $L_g L_f^2 h=0$, from \eqref{eq:RE_acrobot_u} one can easily conclude that control signal $u$ explodes to plus or minus infinity. 
@@ -434,24 +437,23 @@ Taking into account these limitations the control strategy is proposed as follow
 Firstly, a set of feasible initial conditions for which the controller~(\ref{eq:RE_acrobot_u}) applied for system~(\ref{eq:dynamika_f_x_g}) brings the robot near the equilibrium point should be obtained.
 %(Tutaj mo¿e rysunek jak siê uda go zrobiæ).
 \\
-Then the convergence area  for the linear controller in the following form
+Secondly, the convergence area  for system~(\ref{eq:dynamika_f_x_g}) with the use of the linear controller in the following form (\ref{eq:sterownik_liniowy})
 %
 \begin{equation}
 u_{lin} = -K (x_r - x),
 \label{eq:sterownik_liniowy}
 \end{equation}
 %
-which stabilizes the robot in the equilibrium pose 
-{\color{orange} !!!!!!!Not here! HERE ONLY general statements. Results in Section 4}
-(Fig.~\ref{fig:obszar_zbierznosci_tylko_liniowy}) should be determined.
-%
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_bez_sat_lqr}
-	\caption{The convergence area  for the linear controller}
-	\label{fig:obszar_zbierznosci_tylko_liniowy}
-\end{figure}
-%
+which stabilizes the robot in the equilibrium pose should be determined.
+% (Fig.~\ref{fig:obszar_zbierznosci_tylko_liniowy}).
+%%
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_bez_sat_lqr}
+%	\caption{The convergence area  for the linear controller}
+%	\label{fig:obszar_zbierznosci_tylko_liniowy}
+%\end{figure}
+%%
 {\color{blue}As both controllers have a different convergence area, one can propose to combine them in order to increase this area, obtaining the control rule for Pendubot  in the following form}
 %Jako, ¿e oba sterowniki maj¹ inny obszar zbie¿noœci, postanowiono dokonaæ ich po³¹czenia w celu zwi¹kszenia tego¿ obszaru, uzyskuj¹c zale¿noœæ na sterowanie dan¹ wzorem 
 %
@@ -477,24 +479,24 @@ $x_r = [q_{r1}\ v_{r1}\ q_{r2}\ v_{r2}]^\top$ is the reference state vector,
 $\omega_0$ i $K = [k_1\ k_2\ k_3\ k_4]$ are controllers gains,
 $\delta_d$ is a desired value of parameter $\delta$ from Eq~(\ref{eq:wektory_f_oraz_g}).
 \\
-tutaj jakieœ ³adne wzorki opisujace te prze³¹czenie...
-\\
+{\color{blue}tutaj jakieœ ³adne wzorki opisujace te prze³¹czenie...}
 {\color{orange} !!!!!!!Not here! HERE ONLY general statements. Results in Section 4}
+\\
 W wyniku otrzymano obszar zbierznoœci przedstwiony na Fig.~\ref{fig:obszar_zbierznosci_stero_hybrid_bez_saturacji}.
 %
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.85\linewidth]{img/RE_pendu_HYBRID_wykres_zbieznosci_bez_sat}
-	\caption{Obszar zbieznosci dla sterownika hybrydowego -- bez saturacji}
-	\label{fig:obszar_zbierznosci_stero_hybrid_bez_saturacji}
-\end{figure}
-%%
-\begin{figure}[!ht]
-	\centering
-	\includegraphics[width=0.85\linewidth]{img/RE_pendu_HYBRID_wykres_zbieznosci_z_sat}
-	\caption{Obszar zbieznosci dla sterownika hybrydowego -- z saturacj¹}
-	\label{fig:obszar_zbierznosci_stero_hybrid_z_saturacja}
-\end{figure}
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.85\linewidth]{img/RE_pendu_HYBRID_wykres_zbieznosci_bez_sat}
+%	\caption{Obszar zbieznosci dla sterownika hybrydowego -- bez saturacji}
+%	\label{fig:obszar_zbierznosci_stero_hybrid_bez_saturacji}
+%\end{figure}
+%%%
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.85\linewidth]{img/RE_pendu_HYBRID_wykres_zbieznosci_z_sat}
+%	\caption{Obszar zbieznosci dla sterownika hybrydowego -- z saturacj¹}
+%	\label{fig:obszar_zbierznosci_stero_hybrid_z_saturacja}
+%\end{figure}
 %
 %
 }
@@ -504,7 +506,8 @@ W wyniku otrzymano obszar zbierznoœci przedstwiony na Fig.~\ref{fig:obszar_zbier
 %
 As discussed above, the Pendubot control consists of two regulators.
 The first one is a swing-up-like type, whose task is to bring the manipulator near the equilibrium point.
-When the robot is in the error tunnel defined by the $\delta$  parameter, it switches to the LQR controller (as in \cite{grecki_lqr}).
+When the robot is in the error tunnel defined by the $\delta$  parameter, it switches to the linear controller.
+% (as in \cite{grecki_lqr}).
 This controller is designed to keep the system at an equilibrium pose.
 It consists of a state-feedback part together with the $K$-gain vector.
 %Finally, the control rule for Pendubot can be written in the following form:
@@ -597,7 +600,7 @@ where $t$ is  the  time  and $e(t)$ is  the  difference between reference value 
 %
 The best index value coincided with the $\omega_0 = 11$.
 %
-In the following step the $K$-vector was obtained, which is the LQR controller's gain.
+In the following step the $K$-vector was obtained, which is the linear controller's gain.
 In order to calculate them, the cost function $J$ (Eq.~\ref{eq:funkcja_J_lqr}), dependent on state and control signal, was defined.
 %
 %
@@ -625,7 +628,7 @@ The optimal $K$-gains ($K = [1, 520, 1050, 50]$) were obtained for the linear ap
 
 
 
-This section provides a simulation results of implementing control method (\ref{eq:pendubot_u1}) to the system in a form of (\ref{eq:dynamika_f_x_g}).
+This section provides a simulation results of implementing control method (\ref{eq:pendubot_u_hybrydowe}) to the system in a form of (\ref{eq:dynamika_f_x_g}).
 The aim of presented simulations was to stabilize the robot in upright position.
 Authors also want to verify the convergence area of this new approach, which means that the set of initial conditions are going to be checked  to see whether they are appropriate to stabilize the robot under certain boundary conditions.
 %
@@ -634,18 +637,26 @@ Firstly, one wants to know how the algorithm behaves when no restrictions on the
 Secondly, the motor torque saturation is imposed on the model (Case II).
 Thus, the algorithm is being checked whether is capable of controlling the model of physical robot.
 %
-To check how the algorithm behaves near the equilibirum pose, the system  (\ref{eq:dynamika_f_x_g})  with only LQR controller working was checked.
-As a~result one obtained a~region of initial conditions (Fig.~\ref{fig:LQR_tunel_warunki}) that leads to upright position.
-The plot of angular positions in links, ground reaction forces, decoupling matrix and motor torque are depicted in Fig.~(\ref{fig:LQR_pendu_th1th2_reakcja}, \ref{fig:LQR_pendu_mianownik_tau}).
-Subsequently, the full controller (\ref{eq:pendubot_u1}) was used in order to verify considered control scheme.
-%
+To check how the algorithm behaves near the equilibirum pose, the system  (\ref{eq:dynamika_f_x_g})  with only linear controller (\ref{eq:sterownik_liniowy}) working was checked.
+As a~result one obtained a~region of initial conditions (Fig.~\ref{fig:obszar_zbierznosci_tylko_liniowy}) that leads to upright position.
 %
 \begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.85\linewidth]{img/LQR_sam}
-	\caption{A~region of initial conditions (Fig.~\ref{fig:LQR_tunel_warunki}) that leads to upright position, for LQR controller.}
-	\label{fig:LQR_tunel_warunki}
+	\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_bez_sat_lqr}
+	\caption{A~region of initial conditions that leads to upright position for linear controller.}
+	\label{fig:obszar_zbierznosci_tylko_liniowy}
 \end{figure}
+%
+The plot of angular positions in links, ground reaction forces, decoupling matrix and motor torque for exemplary successful trial are depicted in Fig.~(\ref{fig:LQR_pendu_th1th2_reakcja}, \ref{fig:LQR_pendu_mianownik_tau}).
+Subsequently, the hybrid controller (\ref{eq:pendubot_u_hybrydowe}) was used in order to verify considered control scheme.
+%
+%
+%\begin{figure}[!ht]
+%	\centering
+%	\includegraphics[width=0.85\linewidth]{img/LQR_sam}
+%	\caption{A~region of initial conditions (Fig.~\ref{fig:LQR_tunel_warunki}) that leads to upright position, for linear controller.}
+%	\label{fig:LQR_tunel_warunki}
+%\end{figure}
 %
 %
 %
@@ -683,7 +694,7 @@ Subsequently, the full controller (\ref{eq:pendubot_u1}) was used in order to ve
 %\end{figure}
 %
 %
-After applying the  controller (\ref{eq:pendubot_u1}) several conditions had to be imposed on the model.
+After applying controller (\ref{eq:pendubot_u_hybrydowe}) several conditions had to be imposed on the model.
 One of them is a restricion imposed on initial angular velocities in the joints.
 This situation is not favorable, as there is no any initial energy in the system at the beginning of the Pendubot movement.
 The algorithm must provide a~great deal of energy to drive the robot from starting to desired position, and not to fall at the very beginning of the movement. 
@@ -703,23 +714,23 @@ The results depicted in Fig~\ref{fig:re_pendu_wykreszbieznosci_case_2} are for t
 The blue colour indicates the successful trial, while the red one indicates the initial conditions that lead to failure (robot collapse).
 %
 %
+%
 \begin{figure}[!ht]
-\centering
-\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_bez_sat}
-\caption{Convergence area -- Case I (blue  -- successful trial, red -- failure)}
-\label{fig:re_pendu_wykreszbieznosci_case_1}
+	\centering
+	\includegraphics[width=0.85\linewidth]{img/RE_pendu_HYBRID_wykres_zbieznosci_bez_sat}
+	\caption{Convergence area -- Case I (blue  -- successful trial, red -- failure)}
+	\label{fig:obszar_zbierznosci_stero_hybrid_bez_saturacji}
+\end{figure}
+%%
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=0.85\linewidth]{img/RE_pendu_HYBRID_wykres_zbieznosci_z_sat}
+	\caption{Convergence area -- Case II}
+	\label{fig:obszar_zbierznosci_stero_hybrid_z_saturacja}
 \end{figure}
 %
 %
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_sat}
-\caption{Convergence area -- Case II}
-\label{fig:re_pendu_wykreszbieznosci_case_2}
-\end{figure}
-%
-%
-Simulations in this paper were conducted with a step size equal 5$^\circ$, within range of $\theta_{1_0}$ from $0$ to $180^\circ$ and
+Simulations in this paper were conducted with a step size equal 10$^\circ$, within range of $\theta_{1_0}$ from $0$ to $180^\circ$ and
 $\theta_{2_0}$ from $-90^\circ$ to $90^\circ$, which gave more than 1300 simulation per approach.
 These initial conditions mean that the swing-up problem is not considered, i.e. only situations where the robot is above the ground are taken into account.
 The trial was being taken as successful while the error between actual and desired angle was smaller than  $\frac{1}{180}\pi \,$rad within simulation time  {\color{red} $t = 15 \,$s}. 
