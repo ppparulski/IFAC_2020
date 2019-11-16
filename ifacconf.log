@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250 64-bit) (preloaded format=pdflatex 2019.11.13)  15 NOV 2019 14:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6880 64-bit) (preloaded format=pdflatex 2018.12.17)  16 NOV 2019 12:41
 entering extended mode
 **./ifacconf.tex
 (ifacconf.tex
-LaTeX2e <2019-10-01> patch level 3
+LaTeX2e <2018-04-01> patch level 5
 (ifacconf.cls
 Document Class: ifacconf 2008/04/14, 3.2ModD: IFAC conferences
 
@@ -31,21 +31,21 @@ Document Class: ifacconf 2008/04/14, 3.2ModD: IFAC conferences
 \c@subsubsection=\count83
 \c@paragraph=\count84
 \c@subparagraph=\count85
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\theorem.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\theorem.sty"
 Package: theorem 2014/10/28 v2.2c Theorem extension package (FMi)
 \theorem@style=\toks14
 \theorem@bodyfont=\toks15
 \theorempreskipamount=\skip44
 \theorempostskipamount=\skip45
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/tools\thp.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\thp.sty"
 File: thp.sty 2014/10/28 v2.2c Theorem extension package (FMi)
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\newlfont.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\newlfont.sty"
 Package: newlfont 1998/08/17 v2.2m Standard LaTeX package
 LaTeX Info: Redefining \em on input line 57.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\latexsym.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\latexsym.sty"
 Package: latexsym 1998/08/17 v2.2e Standard LaTeX package (lasy symbols)
 \symlasy=\mathgroup4
 LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
@@ -79,28 +79,27 @@ LaTeX Info: Redefining \sc on input line 601.
 \sv@hyphenpenalty=\count101
 \prev@elem=\count102
 \cur@elem=\count103
-\fm@box=\box27
+\fm@box=\box26
 \fm@size=\dimen119
-\t@abstract=\box28
-\t@keyword=\box29
+\t@abstract=\box27
+\t@keyword=\box28
 \rep@mod=\count104
 \t@xtheight=\dimen120
 \@logoheight=\dimen121
 \@pubyear=\count105
 \c@firstpage=\count106
 \c@lastpage=\count107
-\slashbox=\box30
+\slashbox=\box29
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 1506.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 1506.
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 15
-06.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 1506.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\ulasy.fd"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ulasy.fd"
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-\Slashbox=\box31
+\Slashbox=\box30
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 1507.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -109,41 +108,45 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 1507.
 \@frontindent=\dimen122
 )
-(C:\Users\OPTITRACK\AppData\Roaming\MiKTeX\2.9\tex/latex/natbib\natbib.sty
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip46
 \bibsep=\skip47
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count108
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphicx.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.st
+y"
 Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\keyval.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks18
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\graphics.sty"
-Package: graphics 2019/11/01 v1.3d Standard LaTeX Graphics (DPC,SPQR)
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\trig.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.st
+y"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+ ("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\graphics.cfg"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\graphic
+s.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-def\pdftex.def"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdftex.
+def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen123
 \Gin@req@width=\dimen124
 )
-(C:\Users\OPTITRACK\AppData\Roaming\MiKTeX\2.9\tex/latex/xcolor\xcolor.sty
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics-cfg\color.cfg"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\color.c
+fg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Package option `usenames' ignored on input line 216.
@@ -158,45 +161,44 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/graphics\dvipsnam.def"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\dvipsnam.de
+f"
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsmath.sty"
-Package: amsmath 2019/04/01 v2.17c AMS math features
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip48
-
 For additional information on amsmath, use the `?' option.
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amstext.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsgen.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks19
 \ex@=\dimen125
-))
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsbsy.sty"
+)) ("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.st
+y"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen126
-)
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsmath\amsopn.sty"
+) ("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty
+"
 Package: amsopn 2016/03/08 v2.02 operator names
 LaTeX Info: Redefining \operatorname on input line 43.
 )
 \inf@bad=\count109
-LaTeX Info: Redefining \frac on input line 227.
+LaTeX Info: Redefining \frac on input line 213.
 \uproot@=\count110
 \leftroot@=\count111
-LaTeX Info: Redefining \overline on input line 389.
+LaTeX Info: Redefining \overline on input line 375.
 \classnum@=\count112
 \DOTSCASE@=\count113
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box32
-\strutbox@=\box33
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box31
+\strutbox@=\box32
 \big@size=\dimen127
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \macc@depth=\count114
 \c@MaxMatrixCols=\count115
 \dotsspace@=\muskip10
@@ -217,40 +219,41 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \multlinegap=\skip49
 \multlinetaggap=\skip50
 \mathdisplay@stack=\toks23
-LaTeX Info: Redefining \[ on input line 2855.
-LaTeX Info: Redefining \] on input line 2856.
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amssymb.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty
+"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\amsfonts.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.st
+y"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup5
 \symAMSb=\mathgroup6
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\inputenc.sty"
-Package: inputenc 2018/08/11 v1.3c Input encoding file
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2018/04/06 v1.3b Input encoding file
 \inpenc@prehook=\toks24
 \inpenc@posthook=\toks25
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\cp1250.def"
-File: cp1250.def 2018/08/11 v1.3c Input encoding file
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\cp1250.def"
+File: cp1250.def 2018/04/06 v1.3b Input encoding file
 ))
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\fontenc.sty"
-Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
 
-("C:\Program Files\MiKTeX 2.9\tex/latex/base\ot4enc.def"
-File: ot4enc.def 2018/08/11 v2.0j Standard LaTeX file
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\ot4enc.def"
+File: ot4enc.def 2017/04/05 v2.0i Standard LaTeX file
 Now handling font encoding OT4 ...
 ... no UTF-8 mapping file for font encoding OT4
 )
-LaTeX Font Info:    Trying to load font information for OT4+cmr on input line 1
-05.
+LaTeX Font Info:    Try loading font information for OT4+cmr on input line 105.
 
-(C:\Users\OPTITRACK\AppData\Roaming\MiKTeX\2.9\tex/latex/polski\ot4cmr.fd
+
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\polski\ot4cmr.fd"
 File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 ))
 (ifacconf.aux)
@@ -271,12 +274,12 @@ LaTeX Font Info:    ... okay on input line 37.
 LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 37.
 LaTeX Font Info:    ... okay on input line 37.
 
-(C:\Users\OPTITRACK\AppData\Roaming\MiKTeX\2.9\tex/context/base/mkii\supp-pdf.m
-kii
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\context\base\supp-pdf.mkii
+"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count121
 \scratchdimen=\dimen134
-\scratchbox=\box34
+\scratchbox=\box33
 \nofMPsegments=\count122
 \nofMParguments=\count123
 \everyMPshowfont=\toks26
@@ -285,41 +288,51 @@ kii
 \MPnumerator=\count125
 \makeMPintoPDFobject=\count126
 \everyMPtoPDFconversion=\toks27
-) ("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
+)
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-ba
+se.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\infwarerr.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwarerr
+.sty"
 Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
-("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\grfext.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\kvdefinekeys.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdefinek
+eys.sty"
 Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\ltxcmds.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.s
+ty"
 Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )))
-("C:\Program Files\MiKTeX 2.9\tex/latex/oberdiek\kvoptions.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.s
+ty"
 Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\kvsetkeys.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvsetkeys
+.sty"
 Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\etexcmds.sty"
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexcmds.
+sty"
 Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 
-(C:\Users\OPTITRACK\AppData\Roaming\MiKTeX\2.9\tex/generic/iftex\ifluatex.sty
-Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-
-(C:\Users\OPTITRACK\AppData\Roaming\MiKTeX\2.9\tex/generic/iftex\iftex.sty
-Package: iftex 2019/11/07 v1.0c TeX engine tests
-))))) ("C:\Program Files\MiKTeX 2.9\tex/generic/oberdiek\pdftexcmds.sty"
-Package: pdftexcmds 2019/07/25 v0.30 Utility functions of pdfTeX for LuaTeX (HO
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifluatex.
+sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+))))
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmd
+s.sty"
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(C:\Users\OPTITRACK\AppData\Roaming\MiKTeX\2.9\tex/generic/iftex\ifpdf.sty
-Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
+("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty
+"
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
@@ -334,16 +347,12 @@ G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 LaTeX Font Info:    Calculating math sizes for size <14> on input line 42.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 42.
-
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsa.fd"
+LaTeX Font Info:    Try loading font information for U+msa on input line 42.
+ ("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 42.
-
-
-("C:\Program Files\MiKTeX 2.9\tex/latex/amsfonts\umsb.fd"
+LaTeX Font Info:    Try loading font information for U+msb on input line 42.
+ ("C:\Users\iar\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \c@sv@footnote=\count127
@@ -353,41 +362,42 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <./img/2_link.png, id=1, 352.4367pt x 392.9079pt>
 File: ./img/2_link.png Graphic file (type png)
 <use ./img/2_link.png>
-Package pdftex.def Info: ./img/2_link.png  used on input line 125.
+Package pdftex.def Info: ./img/2_link.png  used on input line 113.
 (pdftex.def)             Requested size: 139.3481pt x 155.35362pt.
- [1{C:/Users/OPTITRACK/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+ [1{C:/Users/iar/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-] [2 <./img/2_link.png>]
+ <./img/2_link.png>]
+[2]
 <img/sprzet.jpg, id=23, 2601.72pt x 1734.48pt>
 File: img/sprzet.jpg Graphic file (type jpg)
 <use img/sprzet.jpg>
-Package pdftex.def Info: img/sprzet.jpg  used on input line 521.
+Package pdftex.def Info: img/sprzet.jpg  used on input line 507.
 (pdftex.def)             Requested size: 214.03738pt x 142.67819pt.
 <img/LQR_sam.png, id=24, 532.23843pt x 380.17032pt>
 File: img/LQR_sam.png Graphic file (type png)
 <use img/LQR_sam.png>
-Package pdftex.def Info: img/LQR_sam.png  used on input line 590.
+Package pdftex.def Info: img/LQR_sam.png  used on input line 576.
 (pdftex.def)             Requested size: 214.03738pt x 152.88336pt.
 <img/pendubot_th1th2_z_lqr.png, id=25, 301.125pt x 218.9781pt>
 File: img/pendubot_th1th2_z_lqr.png Graphic file (type png)
 <use img/pendubot_th1th2_z_lqr.png>
-Package pdftex.def Info: img/pendubot_th1th2_z_lqr.png  used on input line 599.
+Package pdftex.def Info: img/pendubot_th1th2_z_lqr.png  used on input line 585.
 
 (pdftex.def)             Requested size: 123.38675pt x 89.72813pt.
 <img/Fr_bez_sat.png, id=26, 301.125pt x 218.9781pt>
 File: img/Fr_bez_sat.png Graphic file (type png)
 <use img/Fr_bez_sat.png>
-Package pdftex.def Info: img/Fr_bez_sat.png  used on input line 600.
+Package pdftex.def Info: img/Fr_bez_sat.png  used on input line 586.
 (pdftex.def)             Requested size: 123.38675pt x 89.72813pt.
 <img/M_d_z_lqr.png, id=27, 301.125pt x 218.9781pt>
 File: img/M_d_z_lqr.png Graphic file (type png)
 <use img/M_d_z_lqr.png>
-Package pdftex.def Info: img/M_d_z_lqr.png  used on input line 608.
+Package pdftex.def Info: img/M_d_z_lqr.png  used on input line 594.
 (pdftex.def)             Requested size: 123.38675pt x 89.72813pt.
 <img/tau_z_lqr.png, id=28, 301.125pt x 218.9781pt>
 File: img/tau_z_lqr.png Graphic file (type png)
 <use img/tau_z_lqr.png>
-Package pdftex.def Info: img/tau_z_lqr.png  used on input line 609.
+Package pdftex.def Info: img/tau_z_lqr.png  used on input line 595.
 (pdftex.def)             Requested size: 123.38675pt x 89.72813pt.
 
 
@@ -396,28 +406,28 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3 <./img/sprzet.jpg> <./img/LQR_sam.png (PNG copy)>]
-<img/RE_pendu_wykres_zbieznosci_bez_sat.png, id=35, 578.16pt x 433.62pt>
+<img/RE_pendu_wykres_zbieznosci_bez_sat.png, id=29, 578.16pt x 433.62pt>
 File: img/RE_pendu_wykres_zbieznosci_bez_sat.png Graphic file (type png)
 <use img/RE_pendu_wykres_zbieznosci_bez_sat.png>
 Package pdftex.def Info: img/RE_pendu_wykres_zbieznosci_bez_sat.png  used on in
-put line 653.
+put line 639.
 (pdftex.def)             Requested size: 214.03738pt x 160.5229pt.
-<img/RE_pendu_wykres_zbieznosci_sat.png, id=36, 578.16pt x 433.62pt>
+<img/RE_pendu_wykres_zbieznosci_sat.png, id=30, 578.16pt x 433.62pt>
 File: img/RE_pendu_wykres_zbieznosci_sat.png Graphic file (type png)
 <use img/RE_pendu_wykres_zbieznosci_sat.png>
 Package pdftex.def Info: img/RE_pendu_wykres_zbieznosci_sat.png  used on input 
-line 661.
+line 647.
 (pdftex.def)             Requested size: 214.03738pt x 160.5229pt.
+[3 <./img/sprzet.jpg> <./img/LQR_sam.png (PNG copy)>]
 <img/M_d_bez_sat.png, id=37, 301.125pt x 218.9781pt>
 File: img/M_d_bez_sat.png Graphic file (type png)
 <use img/M_d_bez_sat.png>
-Package pdftex.def Info: img/M_d_bez_sat.png  used on input line 698.
+Package pdftex.def Info: img/M_d_bez_sat.png  used on input line 684.
 (pdftex.def)             Requested size: 115.83286pt x 84.23499pt.
 <img/M_d_z_sat.png, id=38, 301.125pt x 218.9781pt>
 File: img/M_d_z_sat.png Graphic file (type png)
 <use img/M_d_z_sat.png>
-Package pdftex.def Info: img/M_d_z_sat.png  used on input line 699.
+Package pdftex.def Info: img/M_d_z_sat.png  used on input line 685.
 (pdftex.def)             Requested size: 115.83286pt x 84.23499pt.
 
 
@@ -426,13 +436,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <img/pendubot_th1th2_bez_sat.png, id=39, 301.125pt x 218.9781pt>
 File: img/pendubot_th1th2_bez_sat.png Graphic file (type png)
 <use img/pendubot_th1th2_bez_sat.png>
-Package pdftex.def Info: img/pendubot_th1th2_bez_sat.png  used on input line 72
-6.
+Package pdftex.def Info: img/pendubot_th1th2_bez_sat.png  used on input line 71
+2.
 (pdftex.def)             Requested size: 214.03738pt x 155.65262pt.
 <img/pendubot_th1th2_z_sat.png, id=40, 301.125pt x 218.9781pt>
 File: img/pendubot_th1th2_z_sat.png Graphic file (type png)
 <use img/pendubot_th1th2_z_sat.png>
-Package pdftex.def Info: img/pendubot_th1th2_z_sat.png  used on input line 734.
+Package pdftex.def Info: img/pendubot_th1th2_z_sat.png  used on input line 720.
 
 (pdftex.def)             Requested size: 214.03738pt x 155.65262pt.
 [4 <./img/pendubot_th1th2_z_lqr.png (PNG copy)> <./img/Fr_bez_sat.png (PNG copy
@@ -442,33 +452,33 @@ ci_sat.png (PNG copy)>]
 <img/tau_bez_sat.png, id=44, 301.125pt x 218.9781pt>
 File: img/tau_bez_sat.png Graphic file (type png)
 <use img/tau_bez_sat.png>
-Package pdftex.def Info: img/tau_bez_sat.png  used on input line 763.
+Package pdftex.def Info: img/tau_bez_sat.png  used on input line 749.
 (pdftex.def)             Requested size: 115.83286pt x 84.23499pt.
 <img/tau_z_sat.png, id=45, 301.125pt x 218.9781pt>
 File: img/tau_z_sat.png Graphic file (type png)
 <use img/tau_z_sat.png>
-Package pdftex.def Info: img/tau_z_sat.png  used on input line 764.
+Package pdftex.def Info: img/tau_z_sat.png  used on input line 750.
 (pdftex.def)             Requested size: 115.83286pt x 84.23499pt.
 <img/RE_pendu_wykres_KE_bez_sat.png, id=46, 578.16pt x 433.62pt>
 File: img/RE_pendu_wykres_KE_bez_sat.png Graphic file (type png)
 <use img/RE_pendu_wykres_KE_bez_sat.png>
 Package pdftex.def Info: img/RE_pendu_wykres_KE_bez_sat.png  used on input line
- 783.
+ 769.
 (pdftex.def)             Requested size: 234.17856pt x 175.62837pt.
 <img/RE_pendu_wykres_KE_sat.png, id=47, 578.16pt x 433.62pt>
 File: img/RE_pendu_wykres_KE_sat.png Graphic file (type png)
 <use img/RE_pendu_wykres_KE_sat.png>
-Package pdftex.def Info: img/RE_pendu_wykres_KE_sat.png  used on input line 791
+Package pdftex.def Info: img/RE_pendu_wykres_KE_sat.png  used on input line 777
 .
 (pdftex.def)             Requested size: 234.17856pt x 175.62837pt.
 File: img/Fr_bez_sat.png Graphic file (type png)
 <use img/Fr_bez_sat.png>
-Package pdftex.def Info: img/Fr_bez_sat.png  used on input line 808.
+Package pdftex.def Info: img/Fr_bez_sat.png  used on input line 794.
 (pdftex.def)             Requested size: 115.83286pt x 84.23499pt.
 <img/Fr_z_sat.png, id=48, 301.125pt x 218.9781pt>
 File: img/Fr_z_sat.png Graphic file (type png)
 <use img/Fr_z_sat.png>
-Package pdftex.def Info: img/Fr_z_sat.png  used on input line 809.
+Package pdftex.def Info: img/Fr_z_sat.png  used on input line 795.
 (pdftex.def)             Requested size: 115.83286pt x 84.23499pt.
 
 
@@ -482,33 +492,36 @@ PNG copy)>] (ifacconf.bbl) [6
 
  <./img/Fr_z_sat.png (PNG copy)>] (ifacconf.aux) ) 
 Here is how much of TeX's memory you used:
- 4629 strings out of 492524
- 59187 string characters out of 3130675
- 141712 words of memory out of 3000000
- 8816 multiletter control sequences out of 15000+200000
+ 4238 strings out of 492969
+ 55794 string characters out of 3127473
+ 138314 words of memory out of 3000000
+ 8012 multiletter control sequences out of 15000+200000
  15376 words of font info for 57 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,11n,37p,570b,252s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/OPTITRACK/AppData/R
-oaming/MiKTeX/2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Users/OPTITRACK/AppData/Roami
-ng/MiKTeX/2.9/fonts/enc/dvips/pl/plit.enc}<C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-mi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Program
- Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/s
-ymbols/msbm10.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/pu
-blic/pl/plbx10.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/p
-ublic/pl/plbx12.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/
-public/pl/plr10.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/
-public/pl/plr8.pfb><C:/Users/OPTITRACK/AppData/Roaming/MiKTeX/2.9/fonts/type1/p
-ublic/pl/plti10.pfb>
-Output written on ifacconf.pdf (6 pages, 4373858 bytes).
+ 41i,11n,35p,570b,248s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/iar/AppData/Local/P
+rograms/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Users/iar/AppData/Local/Prog
+rams/MiKTeX 2.9/fonts/enc/dvips/pl/plit.enc}<C:/Users/iar/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/iar/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/iar
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:
+/Users/iar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
+i7.pfb><C:/Users/iar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb><C:/Users/iar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmr5.pfb><C:/Users/iar/AppData/Local/Programs/MiKTeX 2.9/fonts
+/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/iar/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/iar/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/iar/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/iar/A
+ppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/U
+sers/iar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb><C:/Users/iar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/p
+l/plbx10.pfb><C:/Users/iar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
+/pl/plbx12.pfb><C:/Users/iar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
+ic/pl/plr10.pfb><C:/Users/iar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/pl/plr8.pfb><C:/Users/iar/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
+lic/pl/plti10.pfb>
+Output written on ifacconf.pdf (6 pages, 4371968 bytes).
 PDF statistics:
  110 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

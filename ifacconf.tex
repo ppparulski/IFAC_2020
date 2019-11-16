@@ -81,33 +81,22 @@ Robotics, Robot dynamics, Pendubot, nonlinear control, feedback linearization, n
 
 \section{Introduction}
 
-Acrobot and Pendubot are well-known fundamental examples of underactuated planar mechanical systems in the presence of the gravity. Although their kinematic structures are relatively simple, still they can be considered as important benchmark systems which are of great importance for the development of nonlinear control strategies. 
+Acrobot and Pendubot are well-known fundamental examples of underactuated planar mechanical systems moving in the presence of the gravity. Although their kinematic structures are relatively simple, still they can be considered as important benchmark systems which are of great importance for the development of nonlinear control strategies. 
 
 Basically, a standard approach to stabilise both systems at an unstable equilibrium requires design of two controllers for the task of swing-up (when the robot hangs down) and the balancing task around the equilibrium point, respectively.
 
 Many solutions to the first problem are based on the work of \cite{Spong_partial, xin_swing_new}, the second, is still being developed by many authors.
 
-The control of double inverted pendulum is still an open problem.
-As the fully actuated system is trivial in control, the underactuated is not.
-The \cite{Respondek_2019} presented new approach the the underactuated case. 
-In the recently published article, authors try to find the largest feedback linearizable subsystem for mechanical systems that are not feedback linearizable.
-Moreover, they consider the problem of choosing a partially linearizing output that renders the zero dynamics asymptotically stable,
-and illustrate the theoretical results by mathematical formulas developed for double inverted pendulum with one actuator (Acrobot and Pendubot).
-
-
-The considered algorithm has recently been published, thus it does not have any simulation or experimental verification.
+The control of double inverted pendulum is still an open problem. Recently, in \cite{Respondek_2019} a new insight to control of underactuated systems is investigated. The proposed concept is to find the largest feedback linearizable subsystem for mechanical systems that are not feedback linearizable. Basically, the authors of this paper ore focused on the problem of choosing a partially linearizing output that renders the zero dynamics asymptotically stable,
+and illustrate the theoretical results by mathematical formulas developed for double inverted pendulum with one actuator (Acrobot and Pendubot). However, no attempt is done  to use the discussed concept to design a controller for these benchmark systems. Hence, any simulation or experimental verification has not been reported yet.
 %
-In this paper authors attempt to fill this gap and extend preliminary results recently discussed by \cite{bartkowiak}.
-Authors are also interested in the applicability of such an algorithm to the physically existing root.
+In this paper authors attempt to fill this gap and extend preliminary results recently discussed by \cite{bartkowiak} for the Pendubot. Authors are also interested in the applicability of such an algorithm to the physically existing root.
 
-The main attempt of this paper is to verify via simulations the new approach to control the Pendubot  which has been recently proposed by \cite{Respondek_2019}.
-
-The paper is organized as follows: 
-Section \ref{sec:modelowanie} describes the mathematical model for the Pendubot system, together with constrains imposed on the model. 
+The paper is organized as follows. Section \ref{sec:modelowanie} describes the mathematical model for the Pendubot system, together with constrains imposed on the model. 
 %
-In section \ref{sec:stabilization_problem} the analyzed control algorithms along with the state transformation for the stabilization task is introduced.
+In section \ref{sec:stabilization_problem} the analysed control algorithms along with the state transformation for the stabilization task is introduced.
 %
-Section \ref{sec:symulacje_i_porowanie} describes the simulation results of analyzed algorithms, while the Section \ref{sec:konkluzje} gives final remarks.
+Section \ref{sec:symulacje_i_porowanie} describes the simulation results of analysed algorithms, while the Section \ref{sec:konkluzje} gives final remarks.
 
 
 
@@ -117,8 +106,7 @@ Section \ref{sec:symulacje_i_porowanie} describes the simulation results of anal
 \section{Model}
 \label{sec:modelowanie}
 
-%This section describes mathematical model of the considered robot, %and all relevant constraints associated with it.
-The Pendubot robot is a connection of  $N = 2$ rigid bodies coupled  in a tree structure, supported on ground via an actuated frictionless revolute joint. Both links have non-zero mass and the revolute joint connecting them is unactuated. As a result, the system has one degree of underactuation ($2$ DOF with $1$ independent actuator).
+The Pendubot is a connection of  $N = 2$ rigid bodies coupled  in a tree structure, supported on ground via an actuated frictionless revolute joint. Both links have non-zero mass and the revolute joint connecting them is unactuated. As a result, the system has one degree of underactuation ($2$ DOF with $1$ independent actuator).
 %
 \begin{figure}[!ht]
 \centering
@@ -210,14 +198,13 @@ $B=[1 \;\; 0\,]^\top\in\mathbb{R}^{2}$ and $\tau\in\mathbb{R}$ is the control in
 
 Taking into consideration the last entry of Eq. (\ref{eq:dynamika_wzorek_G}) and last of 
 %Eq. (\ref{eq:Respondek_Acrobot_dynamika_2}) 
-Eq. (\ref{eq:wzor_1}) 
-one can obtain a relationship describing the equilibrium condition.
-Specifically, one can obtain the following relation:
+Eq. (\ref{eq:wzor_1}), 
+one can obtain a relationship describing the equilibrium condition. Specifically, one can obtain the following relation:
 $
 \cos(\theta_1 + \theta_2) = 0
 $.
 %
-Thus the system (\ref{eq:wzor_1}) for $\tau_1=0$ has four equilibrium points: 
+However for $\tau_1=0$ the system (\ref{eq:wzor_1})  has four equilibrium points: 
 first of them are two unstable positions (top and mid position) 
 where 
 $
@@ -228,15 +215,15 @@ $
 (q_1, q_2, \dot{q}_1, \dot{q}_2) = (-\frac{\pi}{2}, \pi,0,0)
 $, 
 respectively.
-The other two  are trivial 
+The other two, determined by  
 $
 (\frac{\pi}{2}, \pi,0,0)
-$, 
+$ 
 and
 $
-(-\frac{\pi}{2}, 0,0,0)
+(-\frac{\pi}{2}, 0,0,0),
 $ 
-and they are not being analyzed.
+are trivial and they are not being analysed here.
 
 %The cotrol aim is to stabilize the system around its top unstable position.
 
@@ -245,7 +232,7 @@ The aim of this work is to verify considered algorithm whether it is capable of 
 \subsection{Control algorithm}
 \label{sec:respondek}
 %
-The paper presents an attempt to use algorithm originally proposed by \cite{Respondek_2019} to control the Pendubot from any initial condition to equilibrium pose. This method can be briefly characterize  as follows.
+The paper presents an attempt to use algorithm originally proposed by \cite{Respondek_2019} to control the Pendubot from any initial condition to an equilibrium pose. This method can be briefly characterize  as follows.
 At first, rewrite the  Eq. (\ref{eq:wzor_2}) in the following form:
 %
 \begin{equation}
@@ -265,7 +252,7 @@ where $C_{ij}$, $G_i$ are entries of  Eq.~(\ref{eq:dynamika_wzorek_C}) and Eq.~(
 %
 and  apply the feedback transformation according to \cite{Spong_partial}.
 %\noindent
-The overall robot's dynamics model after this transformation can be written in the following form:
+The overall robot dynamics model after this transformation can be written in the following form:
 %Calkowity model dynamiki Acrobota po transformacji mozemy zapisac w nastepujacej postaci:
 %
 %
@@ -311,7 +298,7 @@ $
 I_2 (\theta_2) = \int_{0}^{\theta_2} J_2^{-1}(s) ds
 $,
 %and 
-and transforming into normal form, one obtains the Pendubot's dynamics 
+and transforming into normal form, one obtains the Pendubot dynamics 
 %
 %
 in new variables  $x = [q_1, {v}_1, q_2, v_2]^T$:
@@ -406,7 +393,6 @@ According to \cite{Respondek_2019}, the output function can be selected as:
 %
 where $q_{r1}\in S^1$ denotes the desired coordinate.
 
-
 \noindent
 The control function $u$ becomes
 %
@@ -431,7 +417,7 @@ and $L_f h$, $L_f^2 h$ are Lie derivatives along vector field $f(x)$.
 
 According to \cite{Respondek_2019} relative degree of $h$ is not well defined around equilibria, thus the equilibria of Eq.~(\ref{eq:dynamika_f_x_g}) are not regular.
 %
-Moreover, the control signal $u$ explodes to plus or minus infinity.
+Since at singular points $L_g L_f^2 h=0$ from \eqref{eq:RE_acrobot_u} one can easily conclude that control signal $u$ explodes to plus or minus infinity. 
 %
 This means that the Pendubot cannot be part-linearizable, with a 3-dimensional linear subsystem around an equilibrium point.
 %
