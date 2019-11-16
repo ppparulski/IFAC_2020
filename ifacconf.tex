@@ -82,13 +82,13 @@ Robotics, Robot dynamics, Pendubot, nonlinear control, feedback linearization, n
 
 \section{Introduction}
 
-Acrobot and Pendubot are well-known fundamental examples of underactuated planar mechanical systems moving in the presence of the gravity. Although their kinematic structures are relatively simple, still they can be considered as important benchmark systems which are of great importance for the development of nonlinear control strategies. 
+Acrobot and Pendubot are well-known fundamental examples of underactuated planar mechanical systems moving in the presence of gravity. Although their kinematic structures are relatively simple, still they can be considered as important benchmark systems which are of great importance for the development of nonlinear control strategies. 
 
 Basically, a standard approach to stabilise both systems at an unstable equilibrium requires design of two controllers for the task of swing-up (when the robot hangs down) and the balancing task around the equilibrium point, respectively.
 
 Many solutions to the first problem are based on the work of \cite{Spong_partial, xin_swing_new}, the second, is still being developed by many authors.
 
-The control of double inverted pendulum is still an open problem. Recently, in \cite{Respondek_2019} a new insight to control of underactuated systems is investigated. The proposed concept is to find the largest feedback linearizable subsystem for mechanical systems that are not feedback linearizable. Basically, the authors of this paper ore focused on the problem of choosing a partially linearizing output that renders the zero dynamics asymptotically stable,
+The control of double inverted pendulum is still an open problem. Recently, in \cite{Respondek_2019} a new insight to control of underactuated systems is investigated. The proposed concept is to find the largest feedback linearisable subsystem for mechanical systems that are not feedback linearisable. Basically, the authors of this paper ore focused on the problem of choosing a partially linearising output that renders the zero dynamics asymptotically stable,
 and illustrate the theoretical results by mathematical formulas developed for double inverted pendulum with one actuator (Acrobot and Pendubot). However, no attempt is done  to use the discussed concept to design a controller for these benchmark systems. Hence, any simulation or experimental verification has not been reported yet.
 %
 In this paper authors attempt to fill this gap and extend preliminary results recently discussed by \cite{bartkowiak} for the Pendubot. Authors are also interested in the applicability of such an algorithm to the physically existing root.
@@ -420,31 +420,30 @@ X = -(\omega_0^3 h + 3\omega_0^2 L_f h + 3\omega_0 L_f^2 h).
 %Czesc sprzezenia od wyjscia $X$ zawiera pulsacje $\omega_0$, ktora jest parametrem regulatora.
 and $L_f h$, $L_f^2 h$ are Lie derivatives along vector field $f(x)$.
 
-
-
-
-According to \cite{Respondek_2019} relative degree of $h$ is not well defined around equilibria, thus the equilibria of Eq.~(\ref{eq:dynamika_f_x_g}) are not regular.
+{\color{blue}According to \cite{Respondek_2019} relative degree of $h$ is not well defined around $v_1=v_2=0$, thus the equilibria of Eq.~(\ref{eq:dynamika_f_x_g}) cannot be regular.}
 %
-Since at singular points $L_g L_f^2 h=0$ from \eqref{eq:RE_acrobot_u} one can easily conclude that control signal $u$ explodes to plus or minus infinity. 
+Since at {\color{blue} non regular} points $L_g L_f^2 h=0$, from \eqref{eq:RE_acrobot_u} one can easily conclude that control signal $u$ explodes to plus or minus infinity. 
 %
 This means that the Pendubot cannot be part-linearizable, with a 3-dimensional linear subsystem around an equilibrium point.
 %
-As a result, one needs to use a different control algorithm around equilibrium, to settle the robots state vector at required upright position.
+As a result, one needs to use a different control algorithm around equilibrium, to settle the robot state at required upright position.
 %
 \\
 {\color{red}
-Thus the control strategy is as follows.
-Firstly, authors obtained a set of initial conditions for which the control~(\ref{eq:RE_acrobot_u}) for system~(\ref{eq:dynamika_f_x_g}) brings the robot near the equilibrium point.
+Taking into account these limitations the control strategy is proposed as follows.
+Firstly, a set of feasible initial conditions for which the controller~(\ref{eq:RE_acrobot_u}) applied for system~(\ref{eq:dynamika_f_x_g}) brings the robot near the equilibrium point should be obtained.
 %(Tutaj mo¿e rysunek jak siê uda go zrobiæ).
 \\
-Then the convergence area  for the linear controller in the form of (\ref{eq:sterownik_liniowy}) was determined
+Then the convergence area  for the linear controller in the following form
 %
 \begin{equation}
 u_{lin} = -K (x_r - x),
 \label{eq:sterownik_liniowy}
 \end{equation}
 %
-which stabilizes the robot in the equilibrium pose (Fig.~\ref{fig:obszar_zbierznosci_tylko_liniowy}).
+which stabilizes the robot in the equilibrium pose 
+{\color{orange} !!!!!!!Not here! HERE ONLY general statements. Results in Section 4}
+(Fig.~\ref{fig:obszar_zbierznosci_tylko_liniowy}) should be determined.
 %
 \begin{figure}[!ht]
 	\centering
@@ -453,7 +452,7 @@ which stabilizes the robot in the equilibrium pose (Fig.~\ref{fig:obszar_zbierzn
 	\label{fig:obszar_zbierznosci_tylko_liniowy}
 \end{figure}
 %
-As both controllers have a different convergence area, one decided to combine them in order to increase this area, obtaining the control rule for Pendubot  in the following form
+{\color{blue}As both controllers have a different convergence area, one can propose to combine them in order to increase this area, obtaining the control rule for Pendubot  in the following form}
 %Jako, ¿e oba sterowniki maj¹ inny obszar zbie¿noœci, postanowiono dokonaæ ich po³¹czenia w celu zwi¹kszenia tego¿ obszaru, uzyskuj¹c zale¿noœæ na sterowanie dan¹ wzorem 
 %
 \begin{equation}
@@ -480,6 +479,7 @@ $\delta_d$ is a desired value of parameter $\delta$ from Eq~(\ref{eq:wektory_f_o
 \\
 tutaj jakieœ ³adne wzorki opisujace te prze³¹czenie...
 \\
+{\color{orange} !!!!!!!Not here! HERE ONLY general statements. Results in Section 4}
 W wyniku otrzymano obszar zbierznoœci przedstwiony na Fig.~\ref{fig:obszar_zbierznosci_stero_hybrid_bez_saturacji}.
 %
 \begin{figure}[!ht]
