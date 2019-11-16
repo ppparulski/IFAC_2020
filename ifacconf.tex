@@ -42,7 +42,7 @@
 
 %\title{Style for IFAC Conferences \& Symposia: Use Title Case for
 %  Paper Title\thanksref{footnoteinfo}} 
-\title{Hybrid controller for the Pendubot} 
+\title{A hybrid controller for the Pendubot based on linearisation methods} 
 % Title, preferably not more than 10 words.
 
 %\thanks[footnoteinfo]{Sponsor and financial support acknowledgment
@@ -51,22 +51,13 @@
 
 
 \author[First]{Pawe\l{} Parulski} 
-\author[Second]{Patryk Bartkowiak} 
-\author[Third]{Dariusz Pazderski}
-\author[Fourth]{Krzysztof Koz\l{}owski}
+\author[First]{Patryk Bartkowiak} 
+\author[First]{Dariusz Pazderski}
+\author[First]{Krzysztof Koz\l{}owski}
 
 \address[First]{Institute of Automation and Robotics, 
    Poznan University of Technology, Poznan, Poland 
    (e-mail: pawel.parulski@put.poznan.pl).}
-\address[Second]{Institute of Automation and Robotics, 
-   Poznan University of Technology, Poznan, Poland 
-   (e-mail: author@put.poznan.pl)}
-\address[Third]{Institute of Automation and Robotics, 
-   Poznan University of Technology, Poznan, Poland  
-   (e-mail: author@put.poznan.pl)}
-\address[Fourth]{Institute of Automation and Robotics, 
-   Poznan University of Technology, Poznan, Poland  
-   (e-mail: author@put.poznan.pl)}
 
 \begin{abstract}                % Abstract of not more than 250 words.
 The aim of this paper is to
@@ -91,8 +82,8 @@ Basically, a standard approach to stabilise both systems at an unstable equilibr
 %
 Many solutions to the first problem are based on the work of \cite{Spong_partial, xin_swing_new}, the second, is still being developed by many authors.
 
-The control of double inverted pendulum is still an open problem. Recently, in \cite{Respondek_2019} a new insight to control of underactuated systems is investigated. The proposed concept is to find the largest feedback linearisable subsystem for mechanical systems that are not feedback linearisable. Basically, the authors of this paper are focused on the problem of choosing a partially linearising output that renders the zero dynamics asymptotically stable,
-and illustrate the theoretical results by mathematical formulas developed for double inverted pendulum with one actuator (Acrobot and Pendubot). However, no attempt is done  to use the discussed concept to design a controller for these benchmark systems. Hence, any simulation or experimental verification has not been reported yet.
+The control of double inverted pendulum is still an open problem. Recently, in \cite{Respondek_2019} a new insight to control of underactuated systems is investigated. The proposed concept is to find the largest feedback linearisable subsystem for mechanical systems that are not fully feedback linearisable. Basically, the authors of this paper are focused on the problem of choosing a partially linearising output that renders the zero dynamics asymptotically stable,
+and illustrate the theoretical results by mathematical formulas developed for double inverted pendulum with one actuator (Acrobot and Pendubot). However, no attempt is done to apply the discussed concept for a constructive design of a controller for these benchmark systems. Hence, any simulation or experimental verification has not been reported yet.
 %
 In this paper authors attempt to fill this gap and extend preliminary results recently discussed by \cite{bartkowiak} for the Pendubot. Authors are also interested in the applicability of such an algorithm to the physically existing robot.
 
@@ -229,16 +220,7 @@ $
 $ 
 are trivial and they are not being analysed here.
 
-
-{\color{red}
-%	Celem pracy jest zbadanie u¿ytecznoœci hybrydowego sterownika wykorzystuj¹cego formalizm zawarty w pracy [ABCD] do stabilizacji robota typu Pendubot
-The aim of the work is to examine the usability of a hybrid controller using the formalism presented in \cite{Respondek_2019} to stabilize a Pendubot
-}
-around its top unstable position, taking into account the limitations and constraints resulting from practical or physical conditions (existing robot).
-
-
-
-
+The aim of the work is to examine the usability of a hybrid controller using the formalism presented in \cite{Respondek_2019} to stabilize a Pendubot around its top unstable position, taking into account the limitations and constraints resulting from practical or physical conditions (existing robot).
 
 \subsection{Control algorithm}
 \label{sec:respondek}
@@ -465,28 +447,28 @@ which stabilizes the robot in the equilibrium pose should be determined.
 u = 
 \begin{cases}
 %\frac{1}{L_g L_f^2 h} (-L_f^3 h + X), 
-u_h, 
+u_h 
 & \text{for  
-{\color{violet}swing}}
+{\color{violet}swing},}
 \\
 %-K (x_r - x), 
 u_{Lin}
-& \text{for {\color{violet}stabilization}}
+& \text{for {\color{violet}stabilization}},
 \end{cases}
 \end{equation}
 %
 %gdzie warunek prze³¹czenia dany jest zale¿noœci¹....
 }
 where 
-$x = [q_{1}\ v_{1}\ q_{2}\ v_{2}]^\top$ is the state vector 
+$x = [q_{1}\ v_{1}\ q_{2}\ v_{2}]^\top$ is the state
 and 
-$x_r = [q_{r1}\ v_{r1}\ q_{r2}\ v_{r2}]^\top$ is the reference state vector, 
-$\omega_0$ i $K = [k_1\ k_2\ k_3\ k_4]$ are controllers gains.
+$x_r = [q_{r1}\ v_{r1}\ q_{r2}\ v_{r2}]^\top$ is the reference state, 
+$\omega_0$ and $K = [k_1\ k_2\ k_3\ k_4]$ are controllers gains.
 \\
 %
-As discussed above, the Pendubot control consists of two regulators.
+As discussed above, the Pendubot control law consists of two regulators.
 The first one is a swing-up-like type (Eq.~\ref{eq:RE_acrobot_u}), whose task is to bring the manipulator near the equilibrium point.
-When the robot is in the error tunnel near the equilibrium it switches to the linear controller (Eq.~\ref{eq:sterownik_liniowy}).
+When the robot state is in the error tunnel near the equilibrium it switches to the linear controller (Eq.~\ref{eq:sterownik_liniowy}).
 %
 This controller is designed to keep the system at an equilibrium pose.
 It consists of a state-feedback part together with the $K$-gain vector.
@@ -500,7 +482,7 @@ It consists of a state-feedback part together with the $K$-gain vector.
 
 The choice of the robot parameters (Table~\ref{tab:parametry_robota}) in the simulation  was selected in order to adapt them to the physically existing mechanism, i.e. to the one-legged robot presented in Fig.~\ref{fig:sprzet}.
 This one-legged mechanism can be studied as a double inverted pendulum.
-Considered robot was built in the Institute of Automation and Robotics at  Poznan University of Technology, as a testbed for a four-legged walking robot presented in \cite{michalski_1_noga, parulski_michalski}.
+Considered robot was built in the Institute of Automation and Robotics at  Poznan University of Technology, as a testbed for a four-legged walking robot presented in \cite{MKP:2008, parulski_michalski}.
 %The robot parameters are collected in Table \ref{tab:parametry_robota}.
 %
 %
@@ -633,7 +615,7 @@ Subsequently, the hybrid controller (\ref{eq:pendubot_u_hybrydowe}) was used in 
 \end{figure}
 % 
 {\color{red}To determine which controller should be used during stabilization process, a following switching procedure was implemented.
-One can present this procedure as a pseudo-code described by Algorithm~(\ref{code:alg_1}):
+One can present this procedure as a pseudo-code described by Algorithm~\ref{code:alg_1}:
 %
 \begin{algorithm}
 	\caption{Switching procedure for Eq.~(\ref{eq:pendubot_u_hybrydowe})}
@@ -645,13 +627,13 @@ One can present this procedure as a pseudo-code described by Algorithm~(\ref{cod
 		\If{
 			$(\theta_{2_0} > a_1 \cdotp \theta_{1_0} + b_1)$	
 			AND $(\theta_{2_0} < a_2 \cdotp \theta_{1_0} + b_2)$
-			OR $(\gamma < \gamma_d)$
+			OR $(\left|\gamma\right| < \gamma_d)$
 %			\OR {$\gamma < \gamma_{ref}$}
 		}
 		\State $u = u_{Lin}$
 		\ElsIf
 %		{$\frac{1}{L_g L_f^2 h} > 0.001$}
-		{$\frac{1}{L_g L_f^2 h} > \delta$}
+		{$\frac{1}{\left| L_g L_f^2 h\right|} > \delta$}
 		\State $u = u_h$
 		\Else
 		\State $u=0$
@@ -659,7 +641,7 @@ One can present this procedure as a pseudo-code described by Algorithm~(\ref{cod
 	\end{algorithmic}
 \end{algorithm}
 %
-where $a_1, a_2, b_1, b_2$ are coefficients of a straight  line $y_i = a_i \cdotp \theta_{j,0} + b_i$ for $i=\{1,2\}$ which are the lower and upper bound of a convergence area from Fig.~\ref{fig:obszar_zbierznosci_tylko_liniowy}, 
+where $a_1, a_2, b_1, b_2$ are coefficients of straight  lines $y_i = a_i \cdotp \theta_{j,0} + b_i$ for $i=\{1,2\}$ which stand for the lower and upper bound of a convergence area from Fig.~\ref{fig:obszar_zbierznosci_tylko_liniowy}, 
 and $\gamma_d$ is a desired value of parameter $\gamma$ from Eq~(\ref{eq:wektory_f_oraz_g}).
 }
 %
@@ -853,8 +835,8 @@ One can observe that these values do not cross zero, which means that the robot 
 
 The main objective of this paper was to present a simulation results of the new approach of controlling the Pendubot system.
 
-One can draw a conclusion that analyzed approach is rather a representation of Pendubot's properties than an overall recipe  for stabilizing a double inverted pendulum with one actuation.
-The algorithm does not guarantee that the system will not reach singularities.
+One can draw a conclusion that analysed approach is rather a representation of Pendubot's properties than an overall recipe  for stabilizing a double inverted pendulum with one actuation.
+Basically, the algorithm does not guarantee that trajectories of the closed-loop system do not reach singularities. In order to overcome this issue one could employ tracking of feasible reference trajectory. This concept, however, will explored in future works.
 %One needs to impose several constraints in order to reflect the nature of the considered object as good as possible.
 %
 

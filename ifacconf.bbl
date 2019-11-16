@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\urlprefix}{URL }
@@ -24,14 +24,6 @@ Koz\l{}owski, K., Kowalski, M., Michalski, M., and Parulski, P. (2013).
 \newblock Universal multiaxis control system for electric drives.
 \newblock \emph{IEEE Transactions on Industrial Electronics}, 60(2), 691--698.
 
-\bibitem[{Koz\l{}owski et~al.(2008)Koz\l{}owski, Pazderski, Michalski, and
-  Kowalski}]{michalski_1_noga}
-Koz\l{}owski, K., Pazderski, D., Michalski, M., and Kowalski, M. (2008).
-\newblock Sensory system of four-legged walking robot {WR-06}.
-\newblock \emph{Elektronika -- konstrukcje, technologie, zastosowania},
-  188--190.
-\newblock In Polish.
-
 \bibitem[{Li et~al.(2019)Li, Moog, and Respondek}]{Respondek_2019}
 Li, S., Moog, C., and Respondek, W. (2019).
 \newblock Maximal feedback linearization and its internal dynamics with
@@ -45,11 +37,12 @@ Martins, F. (2005).
 \newblock Tuning {PID} controllers using the {ITAE} criterion.
 \newblock \emph{International Journal of Engineering Education}, 21.
 
-\bibitem[{Moysis(2016)}]{grecki_lqr}
-Moysis, L. (2016).
-\newblock Balancing a double inverted pendulum using optimal control and
-  {Laguerre} functions.
-\newblock \doi{10.13140/RG.2.1.2948.6486}.
+\bibitem[{Michalski et~al.(2009)Michalski, Kowalski, and Pazderski}]{MKP:2008}
+Michalski, M., Kowalski, M., and Pazderski, D. (2009).
+\newblock Quadruped walking robot wr-06 -- design, control and sensor
+  subsystems.
+\newblock In K.~Koz{\l}owski (ed.), \emph{Robot Motion and Control 2009},
+  175--184. Springer London, London.
 
 \bibitem[{{Spong}(1994)}]{Spong_partial}
 {Spong}, M.W. (1994).
