@@ -39,17 +39,18 @@
 
 %\title{Style for IFAC Conferences \& Symposia: Use Title Case for
 %  Paper Title\thanksref{footnoteinfo}} 
-\title{Tytul naszego artykulu brzmi nastepujaco.....} 
+\title{Hybrid controller for the Pendubot} 
 % Title, preferably not more than 10 words.
 
 %\thanks[footnoteinfo]{Sponsor and financial support acknowledgment
 %goes here. Paper titles should be written in uppercase and lowercase
 %letters, not all uppercase.}
 
+
 \author[First]{Pawe\l{} Parulski} 
 \author[Second]{Patryk Bartkowiak} 
-\author[Third]{Krzysztof Koz\l{}owski}
-\author[Fourth]{Dariusz Pazderski}
+\author[Third]{Dariusz Pazderski}
+\author[Fourth]{Krzysztof Koz\l{}owski}
 
 \address[First]{Institute of Automation and Robotics, 
    Poznan University of Technology, Poznan, Poland 
@@ -225,9 +226,16 @@ $
 $ 
 are trivial and they are not being analysed here.
 
-%The cotrol aim is to stabilize the system around its top unstable position.
 
-The aim of this work is to verify considered algorithm whether it is capable of stabilizing the system around its top unstable position, taking into account the limitations and constraints resulting from practical or physical conditions (existing robot).
+{\color{red}
+	Celem pracy jest zbadanie u¿ytecznoœci hybrydowego sterownika wykorzystuj¹cego formalizm zawarty w pracy [ABCD] do stabilizacji robota typu Pendubot
+}
+%The aim of this work is to verify considered algorithm whether it is capable of stabilizing the system
+around its top unstable position, taking into account the limitations and constraints resulting from practical or physical conditions (existing robot).
+
+
+
+
 
 \subsection{Control algorithm}
 \label{sec:respondek}
@@ -423,7 +431,58 @@ This means that the Pendubot cannot be part-linearizable, with a 3-dimensional l
 %
 As a result, one needs to use a different control algorithm around equilibrium, to settle the robots state vector at required upright position.
 %
-In this article authors employ the LQR (\textit{Linear Quadratic Regulator}) controller to settle the robot at the equilibrium pose.
+
+
+{\color{red}
+	The control strategy is as follows.
+	\\
+	Na pocz¹tku autorzy wyznaczyli zbiór warunków pocz¹tkowych dla których prawo sterowania Eq.~(\ref{eq:RE_acrobot_u}) dla obiektu Eq.~(\ref{eq:dynamika_f_x_g}) sprowadza system w pobli¿e punktu równowagi (Tutaj mo¿e rysunek jak siê uda go zrobiæ).
+	\\
+	Nastepnie wyznaczono obszar zbie¿noœci dla sterowanika liniowego w postaci 
+	\begin{equation}
+	u_{lin} = -K (x_r - x),
+	\end{equation}
+	który stabilizuje robota w punkcie równowagi (Fig.~\ref{fig:obszar_zbierznosci_tylko_liniowy}).
+	%
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=0.85\linewidth]{img/RE_pendu_wykres_zbieznosci_bez_sat_lqr}
+		\caption{Obszar zbieznosci dla samego sterownika liniowego}
+		\label{fig:obszar_zbierznosci_tylko_liniowy}
+	\end{figure}
+	%
+	Jako, ¿e oba sterowniki maj¹ inny obszar zbie¿noœci, postanowiono dokonaæ ich po³¹czenia w celu zwi¹kszenia tego¿ obszaru, uzyskuj¹c zale¿noœæ na sterowanie dan¹ wzorem 
+	%
+	\begin{equation}
+	\label{eq:pendubot_u_hybrydowe}
+	u = 
+	\begin{cases}
+	\frac{1}{L_g L_f^2 h} (-L_f^3 h + X), 
+	& \text{for  }  
+	\mathrm{something-} 1
+	\\
+	-K (x_r - x), 
+	& \text{for  } 
+	\mathrm{something-} 2
+	\end{cases}
+	\end{equation}
+	%
+	gdzie warunek prze³¹czenia dany jest zale¿noœci¹....
+	\\
+	tutaj jakieœ ³adne wzorki opisujace te prze³¹czenie...
+	\\
+	W wyniku otrzymano obszar zbierznoœci przedstwiony na Fig.~\ref{fig:obszar_zbierznosci_stero_hybrid_bez_saturacji}.
+	%
+	\begin{figure}[!ht]
+		\centering
+		\includegraphics[width=0.85\linewidth]{img/RE_pendu_HYBRID_wykres_zbieznosci_bez_sat}
+		\caption{Obszar zbieznosci dla sterownika hybrydowego -- bez saturacji}
+		\label{fig:obszar_zbierznosci_stero_hybrid_bez_saturacji}
+	\end{figure}
+	%
+	%
+}
+%In this article authors employ the LQR (\textit{Linear Quadratic Regulator}) controller to settle the robot at the equilibrium pose.
 \\
 %
 %
