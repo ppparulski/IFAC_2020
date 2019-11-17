@@ -191,15 +191,13 @@ $B=[1 \;\; 0\,]^\top\in\mathbb{R}^{2}$ and $\tau\in\mathbb{R}$ is the control in
 \label{sec:stabilization_problem}
 
 
-Taking into consideration the last entry of Eq. (\ref{eq:dynamika_wzorek_G}) and last of 
-%Eq. (\ref{eq:Respondek_Acrobot_dynamika_2}) 
-Eq. (\ref{eq:wzor_1}), 
-one can obtain a relationship describing the equilibrium condition. Specifically, one can obtain the following relation:
+{\color{red}Taking into consideration the last terms in Eqs. \eqref{eq:dynamika_wzorek_G} and 
+\eqref{eq:wzor_1}}, one can obtain a relationship describing the equilibrium condition. Specifically, one can obtain the following relation:
 $
 \cos(\theta_1 + \theta_2) = 0
 $.
 %
-However for $\tau_1=0$ the system (\ref{eq:wzor_1})  has four characteristic equilibrium points: 
+However, for $\tau_1=0$ the system (\ref{eq:wzor_1})  has four characteristic equilibrium points: 
 first of them are two unstable positions (top and mid position) 
 where 
 $
@@ -269,7 +267,7 @@ $
 J_2 (\theta_2) = - d_{22}^{-1} d_{21}. 
 $
 %
-After introducing new state variables (\ref{eq:Respondek_nowe_zmienne})
+After introducing {\color{red}the following new state variables}
 %
 \begin{equation}
 \label{eq:Respondek_nowe_zmienne}
@@ -291,10 +289,9 @@ $
 I_2 (\theta_2) = \int_{0}^{\theta_2} J_2^{-1}(s) ds
 $,
 %and 
-and transforming into normal form, one obtains the Pendubot dynamics 
+and {\color{red}transforming \eqref{eq:respondek_forma_spong} into normal form, one obtains equivalent dynamics defined by}
 %
 %
-in new variables  $x = [q_1, {v}_1, q_2, v_2]^T$:
 %model dynamiki Acrobota przybiera postac
 %
 \begin{equation}
@@ -317,7 +314,7 @@ or in a form of
 \label{eq:dynamika_f_x_g}
 \end{equation}
 %
-where
+where {\color{red}$x = [q_1\ {v}_1\ q_2\ v_2]^\top$ is a new state},
 %
 \begin{equation}
 f(x) =
@@ -372,10 +369,7 @@ $
 %
 $.
 
-
-
-
-Finding the control signal $u$ is identical to obtaining such an output function $h$ that maximally linearizes considered dynamics.
+{\color{red}Now in order to find control $u$ we look for such an output function $h$ that maximally linearises \eqref{eq:Respondek_pendubot_nowe}.}
 According to \cite{Respondek_2019}, the output function can be selected as:
 % 
 %
@@ -385,28 +379,22 @@ According to \cite{Respondek_2019}, the output function can be selected as:
 \end{equation}
 %
 where $q_{r1}\in S^1$ denotes the desired coordinate.
-
-\noindent
-The control function $u$ becomes
+%
+{\color{red}Then the following stabilising feedback can be proposed}
 %
 \begin{equation}
 u = u_h = \frac{1}{L_g L_f^2 h} (-L_f^3 h + X),
 \label{eq:RE_acrobot_u}
 \end{equation}
 %
-where
+{\color{red}where $L_f h$, $L_f^2 h$ are Lie derivatives along vector field $f(x)$ and}
 %
 \begin{equation}
-X = -(\omega_0^3 h + 3\omega_0^2 L_f h + 3\omega_0 L_f^2 h).
-%X = - ( K_1 h + K_2 L_f h + K_3 L_f^2 h)
+X = -(\omega_0^3 h + 3\omega_0^2 L_f h + 3\omega_0 L_f^2 h),
 \label{eq:RE_acrobot_u_X}
 \end{equation}
 %
-%Czesc sprzezenia od wyjscia $X$ zawiera pulsacje $\omega_0$, ktora jest parametrem regulatora.
-and $L_f h$, $L_f^2 h$ are Lie derivatives along vector field $f(x)$.
-
-
-
+{\color{red}with $\omega_0>0$ being a gain scaling factor.}
 
 {\color{black}According to \cite{Respondek_2019} relative degree of $h$ is not well defined around $v_1=v_2=0$, thus the equilibria of Eq.~(\ref{eq:dynamika_f_x_g}) cannot be regular.}
 %
@@ -416,7 +404,7 @@ This means that the Pendubot cannot be part-linearizable, with a 3-dimensional l
 %
 As a result, one needs to use a different control algorithm around equilibrium, to settle the robot state at required upright position.
 %
-\\
+
 {\color{black}
 Taking into account these limitations the control strategy is proposed as follows.
 Firstly, a set of feasible initial conditions for which the controller~(\ref{eq:RE_acrobot_u}) applied for system~(\ref{eq:dynamika_f_x_g}) brings the robot near the equilibrium point should be obtained.
@@ -429,7 +417,7 @@ u_{Lin} = -K (x_r - x),
 \label{eq:sterownik_liniowy}
 \end{equation}
 %
-which stabilizes the robot in the equilibrium pose should be determined.
+which stabilizes the robot in the equilibrium pose should be determined. {\color{red}In \eqref{eq:sterownik_liniowy} terms $x_r = [q_{r1}\ v_{r1}\ q_{r2}\ v_{r2}]^\top$ and $K = [k_1\ k_2\ k_3\ k_4]$ stand for the reference state and the controller gains, respectively.}
 % (Fig.~\ref{fig:obszar_zbierznosci_tylko_liniowy}).
 %%
 %\begin{figure}[!ht]
@@ -438,7 +426,8 @@ which stabilizes the robot in the equilibrium pose should be determined.
 %	\caption{The convergence area  for the linear controller}
 %	\label{fig:obszar_zbierznosci_tylko_liniowy}
 %\end{figure}
-%%
+%
+
 {\color{black}As both controllers have a different convergence area, one can propose to combine them in order to increase this area, obtaining the control rule for Pendubot  in the following form}
 %Jako, ¿e oba sterowniki maj¹ inny obszar zbie¿noœci, postanowiono dokonaæ ich po³¹czenia w celu zwi¹kszenia tego¿ obszaru, uzyskuj¹c zale¿noœæ na sterowanie dan¹ wzorem 
 %
@@ -453,22 +442,12 @@ u_h
 \\
 %-K (x_r - x), 
 u_{Lin}
-& \text{for {\color{black}stabilization}},
+& \text{for {\color{black}stabilisation}},
 \end{cases}
 \end{equation}
 %
-%gdzie warunek prze³¹czenia dany jest zale¿noœci¹....
-}
-where 
-$x = [q_{1}\ v_{1}\ q_{2}\ v_{2}]^\top$ is the state
-and 
-$x_r = [q_{r1}\ v_{r1}\ q_{r2}\ v_{r2}]^\top$ is the reference state, 
-$\omega_0$ and $K = [k_1\ k_2\ k_3\ k_4]$ are controllers gains.
-\\
-%
-As discussed above, the Pendubot control law consists of two regulators.
-The first one is a swing-up-like type (Eq.~\ref{eq:RE_acrobot_u}), whose task is to bring the manipulator near the equilibrium point.
-When the robot state is in the error tunnel near the equilibrium it switches to the linear controller (Eq.~\ref{eq:sterownik_liniowy}).
+{\color{red}Consequently, the proposed control law for the Pendubot consists of two regulators.} The first one is a swing-up-like type, Eq.~\eqref{eq:RE_acrobot_u}, whose task is to bring the manipulator near the equilibrium point.
+When the robot state is in the error tunnel near the equilibrium it switches to the linear controller, Eq.~\eqref{eq:sterownik_liniowy}.
 %
 This controller is designed to keep the system at an equilibrium pose.
 It consists of a state-feedback part together with the $K$-gain vector.
@@ -543,7 +522,7 @@ where $t$ is  the  time  and $e(t)$ is  the  difference between reference value 
 The best index value coincided with the $\omega_0 = 11$.
 %
 In the following step the $K$-vector was obtained, which is the linear controller's gain.
-In order to calculate them, the cost function $J$ (Eq.~\ref{eq:funkcja_J_lqr}), dependent on state and control signal, was defined.
+In order to calculate them, the following cost function $J$, dependent on state and control signal, is defined
 %
 %
 %
@@ -570,21 +549,19 @@ The optimal $K$-gains ($K = [1, 520, 1050, 50]$) were obtained for the linear ap
 
 
 
-This section provides a simulation results of implementing control method (\ref{eq:pendubot_u_hybrydowe}) to the system in a form of (\ref{eq:dynamika_f_x_g}).
-The aim of presented simulations is to stabilize the robot in upright position.
-Authors also want to verify the convergence area of this new approach, which means that the set of initial conditions are going to be checked  to see whether they are appropriate to stabilize the robot under certain boundary conditions.
+This section provides simulation results of implementing control method \eqref{eq:pendubot_u_hybrydowe} to the system in a form of \eqref{eq:dynamika_f_x_g}.
+{\color{red}The aim of presented simulations is to check the performance of the controller applied for the stabilisation of Pendubot in the upright position. Another purpose is to verify the convergence area for the closed-loop system,} which means that the set of initial conditions are going to be checked to see whether they are appropriate to stabilise the robot under certain boundary conditions.
 %
 The algorithm verification is carried out in two ways.
 Firstly, one wants to know how the algorithm behaves when no restrictions on the motor torque are imposed (Case I).
-Secondly, the motor torque saturation is imposed on the model (Case II).
+Secondly, the motor torque saturation is imposed on the model (Case II). {\color{red}Taking into account properties of the real robot  the torque magnitude is restricted to $6$~Nm.}
 Thus, the algorithm is being checked whether is capable of controlling the model of physical robot.
 %
 
-It is interesting to see how far can the Pendubot be moved away from the equilibrium pose, to be stabilized in the upright position under certain boundary conditions.
-The desired stabilization pose was the upright position for which the angles $\theta_{1r}$ and $\theta_{2r}$ were equal $\frac{\pi}{2}$ and $0$, respectively.
+It is interesting to see how far can the Pendubot be moved away from the equilibrium pose, to be stabilized in the upright position under certain boundary conditions. The desired stabilisation pose was the upright position for which the angles $\theta_{1r}$ and $\theta_{2r}$ were equal $\frac{\pi}{2}$ and $0$, respectively.
 %
-To determine the convergence area of analyzed method, a~series of tests were conducted.
-To check how the algorithm behaves near the equilibirum pose, the system  (\ref{eq:dynamika_f_x_g})  with only linear controller (\ref{eq:sterownik_liniowy}) working is checked.
+To determine the convergence area of analysed method, a~series of tests were conducted.
+To check {\color{red}properties of the algorithm near} the equilibrium pose, the system  (\ref{eq:dynamika_f_x_g})  with only linear controller (\ref{eq:sterownik_liniowy}) working is checked.
 As a~result one obtained a~region of initial conditions (Fig.~\ref{fig:obszar_zbierznosci_tylko_liniowy}) that leads to upright position.
 %
 \begin{figure}[!ht]
@@ -594,8 +571,9 @@ As a~result one obtained a~region of initial conditions (Fig.~\ref{fig:obszar_zb
 	\label{fig:obszar_zbierznosci_tylko_liniowy}
 \end{figure}
 %
-The plot of angular positions in links, ground reaction forces, decoupling matrix and motor torque for exemplary successful trial are depicted in Fig.~(\ref{fig:LQR_pendu_th1th2_reakcja},~\ref{fig:LQR_pendu_mianownik_tau}).
-Subsequently, the hybrid controller (\ref{eq:pendubot_u_hybrydowe}) was used in order to verify considered control scheme.
+The plot of angular positions in links, ground reaction forces, {\color{red}the determinant of the decoupling matrix (term $M_\delta = L_g L_f^2 h$)} and motor torque for exemplary successful trial are depicted in Fig.~(\ref{fig:LQR_pendu_th1th2_reakcja},~\ref{fig:LQR_pendu_mianownik_tau}).
+
+Subsequently, the hybrid controller (\ref{eq:pendubot_u_hybrydowe}) was considered to verify {\color{red}the effectiveness of the proposed} control scheme.
 %
 \begin{figure}[!h]
 	\centering
@@ -610,12 +588,11 @@ Subsequently, the hybrid controller (\ref{eq:pendubot_u_hybrydowe}) was used in 
 	\centering
 	\includegraphics[width=0.49\linewidth]{img/M_d_z_lqr}
 	\includegraphics[width=0.49\linewidth]{img/tau_z_lqr}
-	\caption{The result of LQR controller -- a) Decoupling matrix, b) Motor torque}
+	\caption{The result of LQR controller -- a) The determinant of decoupling matrix $M_\delta = L_g L_f^2 h$, b) Motor torque}
 	\label{fig:LQR_pendu_mianownik_tau}
 \end{figure}
 % 
-{\color{black}To determine which controller should be used during stabilization process, a following switching procedure was implemented.
-One can present this procedure as a pseudo-code described by Algorithm~\ref{code:alg_1}:
+{\color{black}To determine which controller should be used during stabilization process, a following switching procedure was implemented. One can present this procedure as a pseudo-code described by Algorithm~\ref{code:alg_1}:
 %
 \begin{algorithm}
 	\caption{Switching procedure for Eq.~(\ref{eq:pendubot_u_hybrydowe})}
@@ -642,19 +619,15 @@ One can present this procedure as a pseudo-code described by Algorithm~\ref{code
 \end{algorithm}
 %
 where $a_1, a_2, b_1, b_2$ are coefficients of straight  lines $y_i = a_i \cdotp \theta_{j,0} + b_i$ for $i=\{1,2\}$ which stand for the lower and upper bound of a convergence area from Fig.~\ref{fig:obszar_zbierznosci_tylko_liniowy}, 
-and $\gamma_d$ is a desired value of parameter $\gamma$ from Eq~(\ref{eq:wektory_f_oraz_g}).
+and $\gamma_d$ is \color{red} the chosen upper bound of $|\gamma|$} from Eq~\eqref{eq:wektory_f_oraz_g}.
 }
 %
 
-
-
 %The algorithm is not able to stabilize the Pendubot from any initial conditions, with the adopted assumptions.
 
-For the Case~I and Case~II the results are depicted in Fig.~\ref{fig:obszar_zbierznosci_stero_hybrid_bez_saturacji} and in in Fig.~\ref{fig:obszar_zbierznosci_stero_hybrid_z_saturacja}, respectively.
+For the Case~I and Case~II the results are depicted in Fig.~\ref{fig:obszar_zbierznosci_stero_hybrid_bez_saturacji} and in in Fig.~\ref{fig:obszar_zbierznosci_stero_hybrid_z_saturacja}, respectively.  
 %
-The results in Fig.~\ref{fig:obszar_zbierznosci_stero_hybrid_z_saturacja} are for the case were motor torque is restricted to $6$~Nm, as in the section  \ref{sec:parametry_robota}.
-%
-The blue colour indicates the successful trial, while the red one indicates the initial conditions that lead to failure (robot collapse).
+The blue {\color{red}cell} indicates the successful trial, while the red one indicates the initial conditions that lead to failure (robot collapse).
 %
 %
 %
@@ -673,33 +646,32 @@ The blue colour indicates the successful trial, while the red one indicates the 
 \end{figure}
 %
 %
-Simulations in this paper were conducted with a step size equal 10$^\circ$, within range of $\theta_{1_0}$ from $0$ to $180^\circ$ and
+Simulations {\color{red} were} conducted with a step size equal 10$^\circ$, within range of $\theta_{1_0}$ from $0$ to $180^\circ$ and
 $\theta_{2_0}$ from $-90^\circ$ to $90^\circ$, which gave more than 1300 simulation per approach.
-These initial conditions mean that the swing-up problem is not considered, i.e. only situations where the robot is above the ground are taken into account.
+These initial conditions mean that the swing-up problem is not considered, i.e. only {\color{red} scenarios} where the robot is above the ground are taken into account.
 The trial was being taken as successful while the error between actual and desired angle was smaller than  $\frac{1}{180}\pi \,$rad within simulation time  {\color{black} $t = 15 \,$s}. 
 %
 
 After applying controller (\ref{eq:pendubot_u_hybrydowe}) several conditions had to be imposed on the model.
-One of them is a restritcion imposed on initial angular velocities in the joints.
-This situation is not favorable, as there is no any initial energy in the system at the beginning of the Pendubot movement.
+One of them is a restriction imposed on initial angular velocities in the joints due to constraints of control law \eqref{eq:RE_acrobot_u}.
+This situation is not favourable, as there is no any initial {\color{red}kinetic} energy in the system at the beginning of the Pendubot movement.
 The algorithm must provide a~great deal of energy to drive the robot from starting to desired position, and not to fall at the very beginning of the movement. 
-Moreover, the robot is not fixed to the ground and the reaction forces are considered preventing the robot to liftoff.
+Moreover, the robot is not fixed to the ground and the reaction forces are considered preventing the robot to {\color{red}lift-off}.
 %
-Considered algorithm does not guarantee that the robot will not reach singularity.
-Thus, other constrains had to be imposed on the model.
+{\color{red}The considered algorithm does not guarantee that trajectory $x(t)$ will not reach singularity.} Thus, other constrains had to be imposed on the model.
 %Thus, time must be another constraint imposed on the simulation.
 As the time can be treated as the simulation time and a real time of executing the program, one should distinguish them.
-First of them is a "standard" simulation time, calculated by solver.
-The other one is the time of program's execution (or iterations of the program, to become independent of the computer's CPU).
-The need of imposing such a constraint results from the nature of considered system.
+First of them is a "standard" simulation time, computed by a numerical solver.
+The other one is the time of program execution (or iterations of the program, to become independent of the computer CPU).
+The need of imposing such a constraint results from the nature of the considered system.
 Double inverted pendulum can reach a singularity position, which leads to discontinuities in some characteristics.
 These causes that the solver and simulation "hangs" or crash.
 %
-Authors concluded that while {\color{black} 50000 iterations} of the program's execution no result was obtained (achieving the desired configuration), such a situation should be treated as the occurrence of singularities in the object and a crash of the program. 
+Authors concluded that while {\color{black} 50000 iterations} of the program execution no result was obtained (achieving the desired configuration), such a situation should be treated as the occurrence of singularities in the object and a crash of the program. 
 \\
 As mentioned before in section \ref{sec:respondek} the control signal explodes around equilibria.
 Thus, the additional imposed restriction is the maximal value of $\gamma$ parameter from Algorithm~(\ref{code:alg_1}).
-Authors assume  $\gamma_d = 0.04$, which was obtained by trail end error.
+Authors assumed  $\gamma_d = 0.04$, which was obtained by trail end error.
 \\
 The additional problem with execution the algorithm is the need of inverting the decoupling matrix $L_g L_f^2 h$ in Eq.~(\ref{eq:RE_acrobot_u}).
 Fig.~\ref{fig:re_pendu_mianownik} depicts a plot of $L_g L_f^2 h$ during one exemplary simulation trial, for Case~I and II, respectively.
@@ -742,7 +714,7 @@ The obtained angular trajectories are shown in Fig.~\ref{fig:re_pendu_th1th2_cas
 %{\color{red} One can observe that the algorithm for Case~I ..............}
 
 
-A wide range of  robotic application require an energy savings or restrictions on its expenditure  (through e.g. motors' finite power). 
+A wide range of  robotic application require an energy savings or restrictions on its expenditure  (through e.g. motors finite power). 
 As a consequence, the total energetic cost of driving the robot to the upright position was calculated during the simulation.
 %
 The dynamic effort criterion (\ref{eq:kryterium_energetyczne}) was used as an indicator of energy used by the algorithm. The effort was defined as
@@ -757,7 +729,7 @@ which is the integration of squares of all join torques over time \cite{human_mo
 %
 Figure~\ref{fig:re_pendu_tau}
 % and Fig.~\ref{fig:re_pendu_tau_z_sat}
-depicts the motor's torque expended during stabilization process for exemplary initial conditions.
+depicts the motor torque expended during stabilization process for exemplary initial conditions.
 %
 %
 \begin{figure}[!ht]
