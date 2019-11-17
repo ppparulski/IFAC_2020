@@ -408,16 +408,16 @@ and $L_f h$, $L_f^2 h$ are Lie derivatives along vector field $f(x)$.
 
 
 
-{\color{blue}According to \cite{Respondek_2019} relative degree of $h$ is not well defined around $v_1=v_2=0$, thus the equilibria of Eq.~(\ref{eq:dynamika_f_x_g}) cannot be regular.}
+{\color{black}According to \cite{Respondek_2019} relative degree of $h$ is not well defined around $v_1=v_2=0$, thus the equilibria of Eq.~(\ref{eq:dynamika_f_x_g}) cannot be regular.}
 %
-Since at {\color{blue} non regular} points $L_g L_f^2 h=0$, from \eqref{eq:RE_acrobot_u} one can easily conclude that control signal $u$ explodes to plus or minus infinity. 
+Since at {\color{black} non regular} points $L_g L_f^2 h=0$, from \eqref{eq:RE_acrobot_u} one can easily conclude that control signal $u$ explodes to plus or minus infinity. 
 %
 This means that the Pendubot cannot be part-linearizable, with a 3-dimensional linear subsystem around an equilibrium point.
 %
 As a result, one needs to use a different control algorithm around equilibrium, to settle the robot state at required upright position.
 %
 \\
-{\color{red}
+{\color{black}
 Taking into account these limitations the control strategy is proposed as follows.
 Firstly, a set of feasible initial conditions for which the controller~(\ref{eq:RE_acrobot_u}) applied for system~(\ref{eq:dynamika_f_x_g}) brings the robot near the equilibrium point should be obtained.
 %(Tutaj mo¿e rysunek jak siê uda go zrobiæ).
@@ -439,7 +439,7 @@ which stabilizes the robot in the equilibrium pose should be determined.
 %	\label{fig:obszar_zbierznosci_tylko_liniowy}
 %\end{figure}
 %%
-{\color{blue}As both controllers have a different convergence area, one can propose to combine them in order to increase this area, obtaining the control rule for Pendubot  in the following form}
+{\color{black}As both controllers have a different convergence area, one can propose to combine them in order to increase this area, obtaining the control rule for Pendubot  in the following form}
 %Jako, ¿e oba sterowniki maj¹ inny obszar zbie¿noœci, postanowiono dokonaæ ich po³¹czenia w celu zwi¹kszenia tego¿ obszaru, uzyskuj¹c zale¿noœæ na sterowanie dan¹ wzorem 
 %
 \begin{equation}
@@ -449,11 +449,11 @@ u =
 %\frac{1}{L_g L_f^2 h} (-L_f^3 h + X), 
 u_h 
 & \text{for  
-{\color{violet}swing},}
+{\color{black}swing},}
 \\
 %-K (x_r - x), 
 u_{Lin}
-& \text{for {\color{violet}stabilization}},
+& \text{for {\color{black}stabilization}},
 \end{cases}
 \end{equation}
 %
@@ -614,7 +614,7 @@ Subsequently, the hybrid controller (\ref{eq:pendubot_u_hybrydowe}) was used in 
 	\label{fig:LQR_pendu_mianownik_tau}
 \end{figure}
 % 
-{\color{red}To determine which controller should be used during stabilization process, a following switching procedure was implemented.
+{\color{black}To determine which controller should be used during stabilization process, a following switching procedure was implemented.
 One can present this procedure as a pseudo-code described by Algorithm~\ref{code:alg_1}:
 %
 \begin{algorithm}
@@ -676,7 +676,7 @@ The blue colour indicates the successful trial, while the red one indicates the 
 Simulations in this paper were conducted with a step size equal 10$^\circ$, within range of $\theta_{1_0}$ from $0$ to $180^\circ$ and
 $\theta_{2_0}$ from $-90^\circ$ to $90^\circ$, which gave more than 1300 simulation per approach.
 These initial conditions mean that the swing-up problem is not considered, i.e. only situations where the robot is above the ground are taken into account.
-The trial was being taken as successful while the error between actual and desired angle was smaller than  $\frac{1}{180}\pi \,$rad within simulation time  {\color{red} $t = 15 \,$s}. 
+The trial was being taken as successful while the error between actual and desired angle was smaller than  $\frac{1}{180}\pi \,$rad within simulation time  {\color{black} $t = 15 \,$s}. 
 %
 
 After applying controller (\ref{eq:pendubot_u_hybrydowe}) several conditions had to be imposed on the model.
