@@ -42,7 +42,7 @@
 
 %\title{Style for IFAC Conferences \& Symposia: Use Title Case for
 %  Paper Title\thanksref{footnoteinfo}} 
-\title{A hybrid controller for the Pendubot based on linearisation methods} 
+\title{A hybrid controller for the Pendubot based on linearization methods} 
 % Title, preferably not more than 10 words.
 
 %\thanks[footnoteinfo]{Sponsor and financial support acknowledgment
@@ -61,13 +61,13 @@
 
 \begin{abstract}                % Abstract of not more than 250 words.
 The aim of this paper is to
-test the usefulness of a new approach based on  partial feedback linearisation to control the Pendubot.
+test the usefulness of a new approach based on  partial feedback linearization to control the Pendubot.
 %
 The control problem stated in the article is to stabilize the Pendubot in the upright position.
 \end{abstract}
 
 \begin{keyword}
-Robotics, Robot dynamics, Pendubot, nonlinear control, feedback linearization, nonlinearity, 
+Robotics, Robot dynamics, Pendubot, nonlinear control, feedback linearization, nonlinearity 
 %Five to ten keywords, preferably chosen from the IFAC keyword list.
 \end{keyword}
 
@@ -78,21 +78,21 @@ Robotics, Robot dynamics, Pendubot, nonlinear control, feedback linearization, n
 
 Acrobot and Pendubot are well-known fundamental examples of underactuated planar mechanical systems moving in the presence of gravity. Although their kinematic structures are relatively simple, still they can be considered as important benchmark systems which are of great importance for the development of nonlinear control strategies.  
 
-Basically, a standard approach to stabilise both systems at an unstable equilibrium requires design of two controllers for the task of swing-up (when the robot hangs down) and the balancing task around the equilibrium point, respectively.
+Basically, a standard approach to stabilize both systems at an unstable equilibrium requires design of two controllers for the task of swing-up (when the robot hangs down) and the balancing task around the equilibrium point, respectively.
 %
 Many solutions to the first problem are based on the work of \cite{Spong_partial, xin_swing_new}, the second, is still being developed by many authors.
 
-The control of double inverted pendulum is still an open problem. Recently, in \cite{Respondek_2019} a new insight to control of underactuated systems is investigated. The proposed concept is to find the largest feedback linearisable subsystem for mechanical systems that are not fully feedback linearisable. Basically, the authors of this paper are focused on the problem of choosing a partially linearising output that renders the zero dynamics asymptotically stable,
+The control of double inverted pendulum is still an open problem. Recently, in \cite{Respondek_2019} a new insight to control of underactuated systems is investigated. The proposed concept is to find the largest feedback linearizable subsystem for mechanical systems that are not fully feedback linearizable. Basically, the authors of this paper are focused on the problem of choosing a partially linearizing output that renders the zero dynamics asymptotically stable,
 and illustrate the theoretical results by mathematical formulas developed for double inverted pendulum with one actuator (Acrobot and Pendubot). However, no attempt is done to apply the discussed concept for a constructive design of a controller for these benchmark systems. Hence, any simulation or experimental verification has not been reported yet.
 %
 In this paper authors attempt to fill this gap and extend preliminary results recently discussed by \cite{bartkowiak} for the Pendubot. Authors are also interested in the applicability of such an algorithm to the physically existing robot.
 %
 
-{\color{red}An important issue of linearisation approach using state and feedback transformations discussed in \cite{Respondek_2019} is singular points. Hence, a feasible state space is constrained and a feedback cannot be designed in a global way. In the case of Pendubot, a severe constraint comes from the requirement that the system should be in a moving phase. In order to overcome these limitations we propose a hybrid controller which is supported by a simple linear feedback. Then we consider the performance of closed-loop system based on numerical analysis. In particular we search for admissible states of the Pendubot for which the hybrid algorithm ensures the convergence to the equilibrium point and makes this point to be asymptotically stable.}
+{\color{red}An important issue of linearization approach using state and feedback transformations discussed in \cite{Respondek_2019} is singular points. Hence, a feasible state space is constrained and a feedback cannot be designed in a global way. In the case of Pendubot, a severe constraint comes from the requirement that the system should be in a moving phase. In order to overcome these limitations we propose a hybrid controller which is supported by a simple linear feedback. Then we consider the performance of closed-loop system based on numerical analysis. In particular we search for admissible states of the Pendubot for which the hybrid algorithm ensures the convergence to the equilibrium point and makes this point to be asymptotically stable.}
 
 The paper is organized as follows. Section \ref{sec:modelowanie} describes the mathematical model for the Pendubot system, together with constrains imposed on the model. 
 %
-In section \ref{sec:stabilization_problem} the analysed control algorithms along with the state transformation for the stabilization task is introduced.
+In section \ref{sec:stabilization_problem} the analyzed control algorithms along with the state transformation for the stabilization task is introduced.
 %
 Section \ref{sec:symulacje_i_porowanie} describes the simulation results of analysed algorithms, while the Section \ref{sec:konkluzje} gives final remarks.
 
@@ -219,7 +219,7 @@ and
 $
 (-\frac{\pi}{2}, 0,0,0),
 $ 
-are trivial and they are not being analysed here.
+are trivial and they are not being analyzed here.
 
 The aim of the work is to examine the usability of a hybrid controller using the formalism presented in \cite{Respondek_2019} to stabilize a Pendubot around its top unstable position, taking into account the limitations and constraints resulting from practical or physical conditions (existing robot).
 
@@ -372,7 +372,7 @@ $
 %
 $.
 
-{\color{red}Now in order to find control $u$ we look for such an output function $h$ that maximally linearises \eqref{eq:Respondek_pendubot_nowe}.}
+{\color{red}Now in order to find control $u$ we look for such an output function $h$ that maximally linearizes \eqref{eq:Respondek_pendubot_nowe}.}
 According to \cite{Respondek_2019}, the output function can be selected as:
 % 
 %
@@ -383,7 +383,7 @@ According to \cite{Respondek_2019}, the output function can be selected as:
 %
 where $q_{r1}\in S^1$ denotes the desired coordinate.
 %
-{\color{red}Then the following stabilising feedback can be proposed}
+{\color{red}Then the following stabilizing feedback can be proposed}
 %
 \begin{equation}
 u = u_h = \frac{1}{L_g L_f^2 h} (-L_f^3 h + X),
@@ -492,7 +492,7 @@ Considered robot was built in the Institute of Automation and Robotics at  Pozna
 %
 %
 %
-The physical model depicted in Fig.~\ref{fig:sprzet} is driven by Maxon's 200W EC-Powermax~30 brushless motors with planetary gearhead of $n=53$ reduction.
+The physical model depicted in Fig.~\ref{fig:sprzet} is driven by Maxon 200W EC-Powermax~30 brushless motors with planetary gearhead of $n=53$ reduction.
 Such drives provides the maximum torque of approximately $6$~Nm.
 This value is considered as a saturation of the control input.
 % which defines an additional constraint imposed on the model.
@@ -553,7 +553,7 @@ The optimal $K$-gains ($K = [1, 520, 1050, 50]$) were obtained for the linear ap
 
 
 This section provides simulation results of implementing control method \eqref{eq:pendubot_u_hybrydowe} to the system in a form of \eqref{eq:dynamika_f_x_g}.
-{\color{red}The aim of presented simulations is to check the performance of the controller applied for the stabilisation of Pendubot in the upright position. Another purpose is to verify the convergence area for the closed-loop system,} which means that the set of initial conditions are going to be checked to see whether they are appropriate to stabilise the robot under certain boundary conditions.
+{\color{red}The aim of presented simulations is to check the performance of the controller applied for the stabilization of Pendubot in the upright position. Another purpose is to verify the convergence area for the closed-loop system,} which means that the set of initial conditions are going to be checked to see whether they are appropriate to stabilize the robot under certain boundary conditions.
 %
 The algorithm verification is carried out in two ways.
 Firstly, one wants to know how the algorithm behaves when no restrictions on the motor torque are imposed (Case I).
@@ -561,9 +561,9 @@ Secondly, the motor torque saturation is imposed on the model (Case II). {\color
 Thus, the algorithm is being checked whether is capable of controlling the model of physical robot.
 %
 
-It is interesting to see how far can the Pendubot be moved away from the equilibrium pose, to be stabilized in the upright position under certain boundary conditions. The desired stabilisation pose was the upright position for which the angles $\theta_{1r}$ and $\theta_{2r}$ were equal $\frac{\pi}{2}$ and $0$, respectively.
+It is interesting to see how far can the Pendubot be moved away from the equilibrium pose, to be stabilized in the upright position under certain boundary conditions. The desired stabilization pose was the upright position for which the angles $\theta_{1r}$ and $\theta_{2r}$ were equal $\frac{\pi}{2}$ and $0$, respectively.
 %
-To determine the convergence area of analysed method, a~series of tests were conducted.
+To determine the convergence area of analyzed method, a~series of tests were conducted.
 To check {\color{red}properties of the algorithm near} the equilibrium pose, the system  (\ref{eq:dynamika_f_x_g})  with only linear controller (\ref{eq:sterownik_liniowy}) working is checked.
 As a~result one obtained a~region of initial conditions (Fig.~\ref{fig:obszar_zbierznosci_tylko_liniowy}) that leads to upright position.
 %
@@ -657,7 +657,7 @@ The trial was being taken as successful while the error between actual and desir
 
 After applying controller (\ref{eq:pendubot_u_hybrydowe}) several conditions had to be imposed on the model.
 One of them is a restriction imposed on initial angular velocities in the joints due to constraints of control law \eqref{eq:RE_acrobot_u}.
-This situation is not favourable, as there is no any initial {\color{red}kinetic} energy in the system at the beginning of the Pendubot movement.
+This situation is not favorable, as there is no any initial {\color{red}kinetic} energy in the system at the beginning of the Pendubot movement.
 The algorithm must provide a~great deal of energy to drive the robot from starting to desired position, and not to fall at the very beginning of the movement. 
 Moreover, the robot is not fixed to the ground and the reaction forces are considered preventing the robot to {\color{red}lift-off}.
 %
@@ -679,7 +679,7 @@ Authors assumed  $\gamma_d = 0.04$, which was obtained by trail end error.
 The additional problem with execution the algorithm is the need of inverting the decoupling matrix $L_g L_f^2 h$ in Eq.~(\ref{eq:RE_acrobot_u}).
 Fig.~\ref{fig:re_pendu_mianownik} depicts a plot of $L_g L_f^2 h$ during one exemplary simulation trial, for Case~I and II, respectively.
 To overcome the problem of inverting this matrix, authors use an arbitrarily chosen parameter $\epsilon$, which was added to $L_g L_f^2 h$  when was close to $0$.
-Parameter $\epsilon$ can enlarge the region of attraction of analysed algorithm, but was not designed by \cite{Respondek_2019}.
+Parameter $\epsilon$ can enlarge the region of attraction of analyzed algorithm, but was not designed by \cite{Respondek_2019}.
 This procedure can be treated as an attempt to improve  the performance of the algorithm.
 The invertibility of $L_g L_f^2 h$ was another constraint imposed on the model.
 %
@@ -808,7 +808,7 @@ One can observe that these values do not cross zero, which means that the robot 
 \section{Conclusion}
 \label{sec:konkluzje}
 
-{\color{red}The main objective of this paper is to evaluate properties of the new control approach designed for the Pendubot. Based on the obtained results it is clear that the proposed hybrid controller makes it possible to overcome limitations of the algorithms discussed in \cite{Respondek_2019}, namely  the convergence set can be increased significantly. One can conclude that application of linearisation technique with respect to the Pendubot is challenging due to singular points. Hence, this approach can be seen rather as the representation of Pendubot properties than an overall recipe  for stabilizing a double inverted pendulum with one actuation. Basically, the algorithm does not guarantee that trajectories of the closed-loop system do not reach singularities. In order to overcome this issue one could employ tracking of feasible reference trajectory. This concept, however, will explored in future works.}
+{\color{red}The main objective of this paper is to evaluate properties of the new control approach designed for the Pendubot. Based on the obtained results it is clear that the proposed hybrid controller makes it possible to overcome limitations of the algorithms discussed in \cite{Respondek_2019}, namely  the convergence set can be increased significantly. One can conclude that application of linearization technique with respect to the Pendubot is challenging due to singular points. Hence, this approach can be seen rather as the representation of Pendubot properties than an overall recipe  for stabilizing a double inverted pendulum with one actuation. Basically, the algorithm does not guarantee that trajectories of the closed-loop system do not reach singularities. In order to overcome this issue one could employ tracking of feasible reference trajectory. This concept, however, will explored in future works.}
 
 %One needs to impose several constraints in order to reflect the nature of the considered object as good as possible.
 %
