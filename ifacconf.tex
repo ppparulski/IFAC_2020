@@ -86,6 +86,9 @@ The control of double inverted pendulum is still an open problem. Recently, in \
 and illustrate the theoretical results by mathematical formulas developed for double inverted pendulum with one actuator (Acrobot and Pendubot). However, no attempt is done to apply the discussed concept for a constructive design of a controller for these benchmark systems. Hence, any simulation or experimental verification has not been reported yet.
 %
 In this paper authors attempt to fill this gap and extend preliminary results recently discussed by \cite{bartkowiak} for the Pendubot. Authors are also interested in the applicability of such an algorithm to the physically existing robot.
+%
+
+{\color{red}An important issue of linearisation approach using state and feedback transformations discussed in \cite{Respondek_2019} is singular points. Hence, a feasible state space is constrained and a feedback cannot be designed in a global way. In the case of Pendubot, a severe constraint comes from the requirement that the system should be in a moving phase. In order to overcome these limitations we propose a hybrid controller which is supported by a simple linear feedback. Then we consider the performance of closed-loop system based on numerical analysis. In particular we search for admissible states of the Pendubot for which the hybrid algorithm ensures the convergence to the equilibrium point and makes this point to be asymptotically stable.}
 
 The paper is organized as follows. Section \ref{sec:modelowanie} describes the mathematical model for the Pendubot system, together with constrains imposed on the model. 
 %
@@ -610,7 +613,7 @@ Subsequently, the hybrid controller (\ref{eq:pendubot_u_hybrydowe}) was consider
 		\State $u = u_{Lin}$
 		\ElsIf
 %		{$\frac{1}{L_g L_f^2 h} > 0.001$}
-		{$\frac{1}{\left| L_g L_f^2 h\right|} > \delta$}
+		{$\left| L_g L_f^2 h\right| > \delta$}
 		\State $u = u_h$
 		\Else
 		\State $u=0$
@@ -805,10 +808,8 @@ One can observe that these values do not cross zero, which means that the robot 
 \section{Conclusion}
 \label{sec:konkluzje}
 
-The main objective of this paper was to present a simulation results of the new approach of controlling the Pendubot system.
+{\color{red}The main objective of this paper is to evaluate properties of the new control approach designed for the Pendubot. Based on the obtained results it is clear that the proposed hybrid controller makes it possible to overcome limitations of the algorithms discussed in \cite{Respondek_2019}, namely  the convergence set can be increased significantly. One can conclude that application of linearisation technique with respect to the Pendubot is challenging due to singular points. Hence, this approach can be seen rather as the representation of Pendubot properties than an overall recipe  for stabilizing a double inverted pendulum with one actuation. Basically, the algorithm does not guarantee that trajectories of the closed-loop system do not reach singularities. In order to overcome this issue one could employ tracking of feasible reference trajectory. This concept, however, will explored in future works.}
 
-One can draw a conclusion that analysed approach is rather a representation of Pendubot's properties than an overall recipe  for stabilizing a double inverted pendulum with one actuation.
-Basically, the algorithm does not guarantee that trajectories of the closed-loop system do not reach singularities. In order to overcome this issue one could employ tracking of feasible reference trajectory. This concept, however, will explored in future works.
 %One needs to impose several constraints in order to reflect the nature of the considered object as good as possible.
 %
 
